@@ -1,0 +1,34 @@
+{
+    "created_time": "2021-04-05T03:45:43Z",
+    "files": [
+    ],
+    "folders": [
+        {
+            "name": "vx_recycle_bin"
+        },
+        {
+            "name": "Study VTK"
+        },
+        {
+            "name": "Study OpenCV"
+        },
+        {
+            "name": "Study DCMTK"
+        },
+        {
+            "name": "Study ITK"
+        },
+        {
+            "name": "Study CGAL"
+        },
+        {
+            "name": "Study Halcon"
+        },
+        {
+            "name": "Study HALCON"
+        }
+    ],
+    "id": "1",
+    "modified_time": "2021-04-05T03:45:43Z",
+    "version": "1"
+}

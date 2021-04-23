@@ -1,0 +1,25 @@
+{
+    "created_time": "2021-03-24T08:38:11Z",
+    "files": [
+    ],
+    "folders": [
+        {
+            "name": "DICOM文件"
+        },
+        {
+            "name": "体渲染"
+        },
+        {
+            "name": "使用技巧"
+        },
+        {
+            "name": "VTK-9.0"
+        },
+        {
+            "name": "自定义Widget"
+        }
+    ],
+    "id": "0",
+    "modified_time": "2021-03-24T08:38:11Z",
+    "version": "1"
+}
