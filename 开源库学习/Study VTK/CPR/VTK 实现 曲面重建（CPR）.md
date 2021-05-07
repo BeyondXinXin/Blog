@@ -19,8 +19,10 @@ CPR+-+Curved+Planar+Reformation
 
 ### VTK实现
 
-常用功能vtk肯定提供现成办法
-![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/PixX/image.6vni6vys2to.png)
+常用功能vtk肯定提供现成办法  
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/PixX/image.6vni6vys2to.png)  
+
 
 * 期刊 地址
 [https://www.vtkjournal.org/browse/publication/838](https://www.vtkjournal.org/browse/publication/838)
@@ -47,9 +49,9 @@ CPR+-+Curved+Planar+Reformation
 
 两个都用过，第二个更好。自己可以改，这个是我最终改的版本：
 
-![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/PixX/image.15fqubkr7xhc.png)
-
-![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/PixX/image.37oqxbwvg6y0.png)
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/PixX/image.15fqubkr7xhc.png)  
+  
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/PixX/image.37oqxbwvg6y0.png)  
 
 
 
