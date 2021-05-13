@@ -20,6 +20,14 @@
 
 ## 开源库学习
 
+* [Study VTK](开源库学习/Study%20VTK.md)
+* [Study OpenCV](开源库学习/Study%20OpenCV.md)
+* [Study DCMTK](开源库学习/Study%20DCMTK.md)
+* [Study ITK](开源库学习/Study%20ITK.md)
+* [Study CGAL](开源库学习/Study%20CGAL.md)
+* [Study HALCON](开源库学习/Study%20HALCON.md)
+
+
 
 ## 程序人生
 * [回溯反思](程序人生/回溯反思.md)
