@@ -16,16 +16,19 @@
             "name": "数据结构与算法"
         },
         {
+            "name": "网络"
+        },
+        {
             "name": "Study CMake"
         },
         {
             "name": "Study Qt C++"
         },
         {
-            "name": "Visual Studio"
+            "name": "Study Python"
         },
         {
-            "name": "Study Python"
+            "name": "Visual Studio"
         }
     ],
     "id": "1",

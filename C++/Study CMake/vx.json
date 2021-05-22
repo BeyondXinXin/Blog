@@ -99,6 +99,15 @@
             "name": "创建外部项目  静态编译调用第三方库 外部构建CMAKE工程.md",
             "tags": [
             ]
+        },
+        {
+            "attachment_folder": "",
+            "created_time": "2021-05-22T06:25:55Z",
+            "id": "0",
+            "modified_time": "2021-05-22T06:26:10Z",
+            "name": "CMake Error Could NOT find PythonLibs.md",
+            "tags": [
+            ]
         }
     ],
     "folders": [

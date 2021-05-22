@@ -1,6 +1,9 @@
 # Linux 下Appimage 压缩解压命令
 
 
+# Linux 下Appimage 压缩解压命令
+
+
 参考  [https://github.com/AppImage/AppImageKit](https://github.com/AppImage/AppImageKit)
 
 
@@ -15,11 +18,11 @@
 
 > `--appimage extract`    从嵌入的文件系统映像中提取内容，然后退出。如果您在FUSE不可用的系统上使用AppImage，这将非常有用
 
-![](vx_images/3270191755920.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210126192847966.png)
 
-![](vx_images/5065700545012.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210126192855605.png)
 
-![](vx_images/1735009198397.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/2021012619290261.png)
 
 
 ## 3. 打包好的 Appimage 解压修改后在压缩
@@ -30,9 +33,9 @@
 
 请注意使用`appimagetool`压缩时，只检验文件夹内是否存在快捷方式和**AppRun**，至于需要连接的库不再验证，如果自己解压后手动删除了引用库会造成新压缩后文件无法使用。
 
-![](vx_images/822732870763.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210126192916170.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210126192920246.png)
 
-![](vx_images/1878196819167.png)
 
 
 
@@ -45,4 +48,3 @@
 wget "https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-aarch64.AppImage"
 ```
 - 或者提前下载源码自己编译下
-
