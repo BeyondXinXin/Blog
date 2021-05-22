@@ -91,46 +91,57 @@ ITK 413 https://www.jianguoyun.com/p/Db61vj4Q54WSCRis9e4D
 ### 4 生成工程
 
 #### 4.1 解压源码后再目录创建 bulid 目录
-![](vx_images/5193714178885.png)
+![\[\]](https://img-blog.csdnimg.cn/20210418171315227.png)
+
 
 
 #### 4.2 进入bulid 目录 。在地址栏输入 cmake-gui ..
 
-![](vx_images/3141615166752.png)
+![\[\]](https://img-blog.csdnimg.cn/20210418171319683.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
 
 或者手动，打开cmkae-gui 复制路径
-![](vx_images/3433716186918.png)
+![\[\]](https://img-blog.csdnimg.cn/20210418171324778.png)
+
 
 #### 4.3 根据第一步的配置，设置相关的属性
 
-![](vx_images/3979323189776.png)
+![\[\]](https://img-blog.csdnimg.cn/20210418171334457.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
 
 
-![](vx_images/4785117179587.png)
 
-![](vx_images/5460418176142.png)
+![\[\]](https://img-blog.csdnimg.cn/20210418171338177.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
 
 
-![](vx_images/3896821171896.png)
+![\[\]](https://img-blog.csdnimg.cn/20210418171344677.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
+
+
+![\[\]](https://img-blog.csdnimg.cn/20210418171350378.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
 
 
 #### 4.4 打开vs编译（mingw的话可以用qt creator打开编译）
 
-![](vx_images/2885525187380.png)
+![\[\]](https://img-blog.csdnimg.cn/20210418171356442.png)
 
-![](vx_images/3287326184882.png)
+
+![\[\]](https://img-blog.csdnimg.cn/20210418171401899.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
 
 #### 4.5 安装 （vs必须用管理员身份打开）
 
 
-![](vx_images/2007727166123.png)
+![\[\]](https://img-blog.csdnimg.cn/20210418171407937.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
 
 
 
 #### 4.6 重复 4.1 -4.5 编译 VTK 和 ITK 
 注意，ITk要使用glue。所以必须先编译好vtk后再编译itk。我这里vtk的版本命名名错了，应该是9.0.1
 
-![](vx_images/5447928188563.png)
+![\[\]](https://img-blog.csdnimg.cn/20210418171413263.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
 
 
 
@@ -138,7 +149,8 @@ ITK 413 https://www.jianguoyun.com/p/Db61vj4Q54WSCRis9e4D
 如果之前cmake使用默认安装路径，且管理员身份打开的vs。则这三个库均安装在了本地 
 Program Files（x86）
 
-![](vx_images/5023130183699.png)
+![\[\]](https://img-blog.csdnimg.cn/20210418171419684.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
 
 #### 5.1 确认安装文件
 
@@ -150,24 +162,28 @@ Program Files（x86）
 * lib：lib
 * share：版权说明
 
-![](vx_images/4444132170379.png)
+![\[\]](https://img-blog.csdnimg.cn/20210418171427972.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
 
 
 可以进去确认下后缀是否分开了
 
-![](vx_images/2678431177245.png)
+![\[\]](https://img-blog.csdnimg.cn/20210418171435241.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
 
 
 #### 5.2 合并安装文件
 本地新建一个 ThirdParty 文件夹，把刚才编译好的库（vtk itk dcmtk）全部复制到这里。
 
-![](vx_images/3063137160909.png)
+![\[\]](https://img-blog.csdnimg.cn/20210418171441475.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
 
 #### 5.3 拷贝pdb文件
 c盘的安装文件夹里没有pdb文件，在ThirdParty里新建一个pdb文件。让后拷贝这三个库的pdb文件进来。
 pdb文件都在源码目录里的bulid/bin/debug
 
-![](vx_images/3316139163413.png)
+![\[\]](https://img-blog.csdnimg.cn/20210418171447143.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
 
 
 #### 5.4 压缩ThirdParty文件夹，就可以拷贝到其他电脑使用了
@@ -242,13 +258,7 @@ https://www.jianguoyun.com/p/DXdnHkMQ54WSCRim9u4D
 
 
 
+---
 
-
-
-
-
-
-
-
-
-
+Study VTK 
+[https://github.com/BeyondXinXin/Blog-OpenLibrary/projects/1](https://github.com/BeyondXinXin/Blog-OpenLibrary/projects/1)

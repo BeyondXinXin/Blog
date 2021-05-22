@@ -16,10 +16,13 @@
 
 [https://vnotex.github.io/vnote/zh_cn/](https://vnotex.github.io/vnote/zh_cn/)
 
-![](vx_images/1795890849155.png)
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210114193040220.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210129085908690.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
 
 
-![](vx_images/5556156218385.png)
+
 
 
 ---
@@ -36,4 +39,4 @@
 **windos**下**kodexplorer**有客户端直接实现自动同步
 **Linux**下我是搞了个本地脚本，每次关机FTP上传过去，开机从网盘拉一遍最新的。
 
-![](vx_images/2030123900751.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210114193058649.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)

@@ -1,11 +1,3 @@
-&emsp;&emsp;做**kissDicomViewer**需要用到遍历标签功能。记录下每天学习内容
-
-项目地址：
-[CodeChina kissDicomViewer](https://codechina.csdn.net/a15005784320/kiss-dicom-viewer)  
-详细介绍：
-[CSDN 一个简单的 DICOM 浏览器](https://beondxin.blog.csdn.net/article/details/108678403)  
-
----
 # DCMTK 遍历 DICOM 标签/Tags  并 可视化
 
 ## 1. 效果
@@ -14,11 +6,14 @@
 
 &emsp;&emsp;区分`MetaInfo`和`DataSet`  
   
-![](vx_images/3372308226456.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210122220948824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
+
 
 &emsp;&emsp;四层嵌套显示效果  
   
-![](vx_images/3166709246622.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210122220956838.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
 
 
 ---
@@ -73,7 +68,8 @@ dfile.getMetaInfo()->print(std::cout,DCMTypes::PF_useANSIEscapeCodes);
 dfile.getDataset()->print(std::cout,DCMTypes::PF_useANSIEscapeCodes);
 ```
   
-![](vx_images/5436003775916.png)
+![](https://img-blog.csdnimg.cn/2021012222032618.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
 
 * 获取`DcmList`自己遍历的办法和输出结果  
   
@@ -144,7 +140,8 @@ int main() {
 ```
 
   
-![](vx_images/626357890759.png)
+![](https://img-blog.csdnimg.cn/20210122220335706.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
 
 
 
@@ -246,6 +243,81 @@ int main(int argc, char *argv[]) {
     wid->addTopLevelItems(items);
     wid->show();
     return a.exec();
+}
+
+```
+
+
+&emsp;&emsp;样式表
+
+```css
+/*---------------------------------------------------------------------------*/
+/*  QTreeWidget  */
+/*---------------------------------------------------------------------------*/
+/*  QListView  */
+/*---------------------------------------------------------------------------*/
+/*  QTreeView  */
+
+QTreeView,
+QTreeWidget,
+QListView {
+    border-radius:5px;
+    font-size: 14px;
+    background-color:rgba(37, 41, 43, 1);
+    border:1px solid rgba(47, 51, 54, 1);
+    outline:0px;
+    selection-background-color:#262829;
+    selection-color:#BEC0C2;
+    alternate-background-color:#262829;
+    gridline-color:#67696B;
+}
+
+QTreeView::branch,
+QTreeWidget::branch,
+QListView::branch{
+    background:#2E2F30;
+}
+
+QTreeView::branch:closed:has-children,
+QTreeWidget::branch:closed:has-children,
+QListView::branch:closed:has-children{
+    border-image:url(:/Style/StyleResources/branch_open.png);
+}
+
+QTreeView::branch:open:has-children,
+QTreeWidget::branch:open:has-children,
+QListView::branch:open:has-children{
+    border-image:url(:/Style/StyleResources/branch_close.png);
+}
+
+QTreeView::item,
+QTreeWidget::item,
+QListView::item{
+    color:rgb(184,200,212,255);
+    background: rgb(38, 40, 44);
+    padding:10px 14px;
+    height: 2px;
+}
+
+QTreeView::item:alternate,
+QTreeWidget::item:alternate,
+QListView::item:alternate {
+    background: rgb(42, 46, 49);
+}
+
+
+QTreeWidget::item:hover,
+QTreeView::item:hover,
+QListView::item:hover{
+    background: rgb(55, 61, 64);
+    color:rgb(255,255,255,255);
+}
+
+QTreeView::item:selected,
+QListView::item:selected,
+QTreeWidget::item:selected{
+    background: rgb(85, 91, 94);
+    color:rgb(255,255,255,255);
 }
 
 ```

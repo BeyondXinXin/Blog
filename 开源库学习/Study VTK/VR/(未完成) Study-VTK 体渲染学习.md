@@ -2,7 +2,7 @@
 
 
 
-![](vx_images/001.png)
+![](https://cdn.jsdelivr.net/gh/BeyondXinXin/BeyondXinXIn@main/PixX/xxx.8h5m2g3ce3o.png)
 
 
 主要参考：
@@ -68,7 +68,7 @@
 &emsp;&emsp;体数据与面数据：实心铅球跟空心乒乓球。体数据和面数据本质区别在于是否包含了体细节，跟维度无关。
 ### 体素
 &emsp;&emsp;体素是组成数据的最小单元。
-![](vx_images/4766849178386.png)
+![](https://cdn.jsdelivr.net/gh/BeyondXinXin/BeyondXinXIn@main/PixX/xxx.ckcy1mtsnbk.png)
 
 
 ### 纹理

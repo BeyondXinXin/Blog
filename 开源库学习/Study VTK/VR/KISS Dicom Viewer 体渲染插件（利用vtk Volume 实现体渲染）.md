@@ -1,8 +1,5 @@
 # KISS Dicom Viewer 体渲染插件（利用vtk Volume 实现体渲染）
 
-
-![](https://raw.githubusercontent.com/BeyondXinXin/PicGo/main/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F.jpg)
-
 项目地址：
 [CodeChina kissDicomViewer](https://codechina.csdn.net/a15005784320/kiss-dicom-viewer)  
 详细介绍：
@@ -36,14 +33,11 @@
 
 * `vtkBoxWidget2`交互也是默认，支持调整大小、移动和缩放。每次移动完成后对`vtkVolume`进行一个剪裁。
 
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210207213048300.gif#pic_center)
 
-![QQ录屏20210207200400](vx_images/666505226707.gif)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210207213054778.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
 
-
-![](vx_images/2598859190248.png)
-
-
-![](vx_images/3218559208674.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/2021020721305998.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
 
 
 

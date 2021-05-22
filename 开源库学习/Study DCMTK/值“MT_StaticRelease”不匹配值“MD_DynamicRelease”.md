@@ -11,7 +11,7 @@ ofstd.lib(ofcond.obj):-1: error: LNK2038: 检测到“RuntimeLibrary”的不匹
 
 &emsp;&emsp;没有生成动态链接库，重新编译下就可以
 
-![](vx_images/20210118194436183.png)
+![](https://img-blog.csdnimg.cn/20210118194436183.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
 
 
 
