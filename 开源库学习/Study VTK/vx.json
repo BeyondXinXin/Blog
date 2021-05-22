@@ -4,10 +4,10 @@
     ],
     "folders": [
         {
-            "name": "DICOM文件"
+            "name": "DICOM"
         },
         {
-            "name": "体渲染"
+            "name": "VR"
         },
         {
             "name": "使用技巧"
@@ -16,13 +16,25 @@
             "name": "VTK-9.0"
         },
         {
-            "name": "自定义Widget"
+            "name": "Widget"
         },
         {
             "name": "CPR"
         },
         {
             "name": "坐标变换"
+        },
+        {
+            "name": "Filter"
+        },
+        {
+            "name": "Qt"
+        },
+        {
+            "name": "python"
+        },
+        {
+            "name": "类型转换"
         }
     ],
     "id": "0",
