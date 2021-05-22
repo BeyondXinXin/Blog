@@ -1,6 +1,9 @@
 # vtk 球心拟合
 
 
+<details>
+<summary> 代码 </summary>
+
 ```cpp
 double *GetBallCentre(vtkPoints &points) {
     double matrix[16];
@@ -42,6 +45,10 @@ double *GetBallCentre(vtkPoints &points) {
     return out;
 }
 ```
+
+</details>
+
+
 
 
 ![](https://cdn.jsdelivr.net/gh/BeyondXinXin/BeyondXinXIn@main/PixX/xxx.3l7ukslwua00.png)
