@@ -34,45 +34,9 @@ void Test(T a) {
 
 &ensp;&ensp;跟`using`用法一样，在C++11中，鼓励用`using`，而不用`typedef`。原因：
 
-![](vx_images/2262104188384.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210114193513568.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210114193517100.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
 
-
-![](vx_images/4691592745907.png)
 
 
 &ensp;&ensp;`using`的写法把别名和名称强制分离，中间用 = 号等起来，非常清晰。
-
-## 函数指针
-
-&ensp;&ensp;效果一样，效率一样。`using`看的更舒服
-
-```cpp
-typedef void (*Fp1)(const QString &str);
-using Fp = void (*)(const QString &str);
-
-void test1(const QString &str) {
-    qDebug() << "test1" << str;
-}
-void test2(const QString &str) {
-    qDebug() << "test2" << str;
-}
-
-int main() {
-    Fp fp[2] = {test1, test2};
-    fp[0]("hello");
-    fp[1]("word");
-    Fp1 fp1[2] = {test1, test2};
-    fp1[0]("hello");
-    fp1[1]("word");
-    return 0;
-}
-
-```
-结果
-```
-test1 "hello"
-test2 "word"
-test1 "hello"
-test2 "word"
-```
-

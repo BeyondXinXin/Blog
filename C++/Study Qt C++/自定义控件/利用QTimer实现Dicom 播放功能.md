@@ -8,17 +8,25 @@
 
 ---
 
-# 利用QTimer实现Dicom 播放功能
+# 利用QTimer实现 Dicom 播放功能
 
 ## 1. 效果
+![
+](https://img-blog.csdnimg.cn/20210123220734132.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210123220845419.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
 
 &emsp;&emsp;支持自动循环播放、快进、快退、播放速度调整、到第一针/最后一针。
   
-![1](vx_images/1960246228590.gif)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210123220612861.gif)
+
+
+
 
 &emsp;&emsp;界面小于一定宽度，自动暂停并隐藏播放栏。
   
-![QQ录屏20210123214827](vx_images/5548250216457.gif)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210123220619714.gif)
+
+
 
 
 ## 2. 实现

@@ -16,9 +16,9 @@
 
 &emsp;&emsp;同样150%缩放模式时：使用和不使用的区别。
 
-![](vx_images/5946119218691.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210226220426611.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210226220430325.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
 
-![](vx_images/1803919200265.png)
 
 
 &emsp;&emsp;**Qt**已经封装好了很多的**Attribute**。分别针对本窗口（**WidgetAttribute**）和全局窗口（**ApplicationAttribute**），比如上边提到的支持高清屏。各种**Attribute**各项属性是如何实现的，除非特别感兴趣，否则估计很少去深入研究。还是实战一点知道有这么个东西，可以查找比较靠谱。

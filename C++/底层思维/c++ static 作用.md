@@ -11,17 +11,18 @@
 &emsp;&emsp;修饰前全局可见，修饰后只在当前文件可见。
 > 同一个文件，用到相同的变量可以在开头声明下。
 
-![](vx_images/2806203198392.png)
-
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210121225628145.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
 
 
 * 修饰局部变量  
 &emsp;&emsp;这个值只第一次初始化，然后保留。以后每次再进入这个函数时候值依然留着。
 > 可以作为一个标志，或者递增使用  
 
-![](vx_images/1813794755915.png)
+![](https://img-blog.csdnimg.cn/20210121225635242.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
 
-![](vx_images/744205545007.png)
+
+![](https://img-blog.csdnimg.cn/20210121225640692.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
 
 
 ### 1.2. 面向对象 

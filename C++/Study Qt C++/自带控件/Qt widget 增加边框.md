@@ -20,7 +20,8 @@
 &nbsp;&nbsp;`QFrame`是基本控件的基类，他继承自`QWidget`主要增加了边框的功能：  
 
 [图片来自 doc.qt.ip](https://doc.qt.io/qt-5.15/qframe.html)  
-![](vx_images/186738228586.png)
+![](https://img-blog.csdnimg.cn/20210119220046374.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
 
 ```cpp
     enum Shape {
@@ -63,8 +64,10 @@
 &emsp;&emsp;`QFrame`的`lineWidth, midLineWidth, shadow, shape`属性组合构成的Qt基本控件的外框，上图展示了他们任意组合可以构成各种边框。自己搭配这几个属性不搞样式表或者`QPaint`也可实现想要的效果。比如：  
 `Box+Plain+1`  
 
-![](vx_images/5138656229288.png)
 
-![](vx_images/1375454236619.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210119220059991.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
 
-![](vx_images/2532033210160.png)
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/2021011922010670.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/202101192201120.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)

@@ -1,4 +1,4 @@
-&emsp;&emsp;小菜鸡一个，最近几个周末约了去面试，很多被问烂了的基础问题竟然回答的一塌糊涂。这里记录下，希望以后别再忘了。内容摘抄自菜鸟教程，和一些个人看法。
+&emsp;&emsp;最近几个周末约了去面试，很多被问烂了的基础问题竟然回答的一塌糊涂。这里记录下，希望以后别再忘了。内容摘抄自菜鸟教程，和一些个人看法。
 [   菜鸟教程：C++ 教程   ](https://www.runoob.com/cplusplus/cpp-tutorial.html)
 &emsp;&emsp;
 
@@ -20,7 +20,7 @@
 
 > 结论：如果可以都用引用。引用来替代指针，会使 C++ 程序更容易阅读和维护。引用效率也会更高。
 
-![](vx_images/4707012210158.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210117225151819.png)
 
 
 
@@ -118,7 +118,8 @@ a:  000000B7B8CFF8B0  12
 
 &emsp;&emsp;翻译成汇编后，指针传递比参数多一个创建变量。
 
-![](vx_images/2814404238584.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210117225207397.png)
+
 ```
         1_17!Quote [f:\studyc\1-17\main.cpp @ 13]:
 0x7ff7534f2a60                   mov     qword ptr [rsp+8],rcx
@@ -157,7 +158,8 @@ a:  000000B7B8CFF8B0  12
 
 > 引用型参数应该在能被定义为const的情况下，尽量定义为const。
 
-![](vx_images/3442348235841.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210117225221664.png)
+
 
 ## 5. 把引用&&指针 作为返回值
 
@@ -203,10 +205,12 @@ int main() {
 
 > 引用返回局部变量不合法的，下边能编译通过，而且测试运行正常，但是如果b所在内存给其他再次使用过，那程序就炸了。
 
-![](vx_images/209329226451.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210117225231290.png)
+
 
 
 ## 6. 引用&&指针 实现多态
+&emsp;&emsp;这俩也没啥大区别。
 
 ```cpp
 class A {
@@ -220,9 +224,9 @@ int main() {
     A &aaa = a;
 }
 ```
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210117225238463.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
 
-![](vx_images/4103843246617.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/202101172252452.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
 
-![](vx_images/1186345239286.png)
 
 

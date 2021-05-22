@@ -6,7 +6,6 @@
 ---
 
 # KISS Dicom Viewer：插件实现方法
-
 @[TOC]( )
 
 &emsp;&emsp;**KISS Dicom Viewer**计划做四个插件：多平面重建(MPR)、三维重建(VR体渲染)、图像前处理、图像融合。`MPR`和`VR`需要用到`ITK+GDCM+VTK`，图像前处理和图像融合需要用到`opencv`。把这几个做成插件一方面是自己学习Qt的插件框架，另一方面主程序里只加`DCMTK`这一个除`Qt`外的第三方库。
@@ -20,9 +19,11 @@
 
 ### 1.2 界面设计
 
-![](vx_images/1904008231681.png)
+![](https://img-blog.csdnimg.cn/20210203220901718.png)
 
-![](vx_images/2675808249561.png)
+
+![](https://img-blog.csdnimg.cn/20210203220906578.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
 
 ### 1.3 插件设计
 #### 1.3.1 定义插件接口

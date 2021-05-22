@@ -4,6 +4,7 @@
 
 @[TOC](C++ 多态和析构虚函数)
 
+
 # C++ 多态和析构虚函数
 
 注意：
@@ -148,10 +149,12 @@ class A {
 A::~A() {}
 ```
 
-![](vx_images/4010501208390.png)
+![](https://img-blog.csdnimg.cn/20210119194436962.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
 
 
-![](vx_images/3047937218390.png)
+
+![](https://img-blog.csdnimg.cn/20210119194442684.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
 图片来源 [https://www.cnblogs.com/phpandmysql/p/10853354.html](https://www.cnblogs.com/phpandmysql/p/10853354.html)
 
 #### 7.1.2. 虚函数类的调用
@@ -211,9 +214,11 @@ A::fun
 
 &emsp;&emsp;这样就可以做到在程序运行是，调用那个函数取决于`vptr[x]`具体指向哪里。
 
-![](vx_images/793438775913.png)
+![](https://img-blog.csdnimg.cn/20210119194452323.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
 
-![](vx_images/2145947565005.png)
+
+![](https://img-blog.csdnimg.cn/20210119194458625.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
 
 图片来源 [https://www.cnblogs.com/phpandmysql/p/10853354.html](https://www.cnblogs.com/phpandmysql/p/10853354.html)
 

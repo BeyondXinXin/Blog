@@ -6,8 +6,7 @@
 # Qt 图像数据相关类
 &emsp;&emsp;Qt 提供了几个类用来处理图像数据：
 
-![](vx_images/2612719198382.png)
-
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210114193210941.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
 
 @[TOC](Qt 图像数据相关类)
 
