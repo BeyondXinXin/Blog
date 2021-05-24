@@ -19,7 +19,10 @@
             "name": "自带控件"
         },
         {
-            "name": "Qt Creator 使用技巧"
+            "name": "使用技巧"
+        },
+        {
+            "name": "QObject"
         }
     ],
     "id": "0",
