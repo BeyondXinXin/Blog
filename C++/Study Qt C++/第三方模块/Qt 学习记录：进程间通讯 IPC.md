@@ -1,8 +1,5 @@
 # Qt 学习记录：进程间通讯 IPC
 
-
-
-
 ---
 
 &emsp;&emsp;进程间通信（IPC-Interprocess communication），目的是为了协调不同的进程。
