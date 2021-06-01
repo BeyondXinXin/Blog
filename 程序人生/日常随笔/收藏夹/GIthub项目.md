@@ -18,6 +18,8 @@
 * 无边框暗黑主题：[Qt-Frameless-Window-DarkStyle](https://github.com/Jorgen-VikingGod/Qt-Frameless-Window-DarkStyle)
 * 思维导图：[Heimer](https://github.com/juzzlin/Heimer)
 * MD解析、笔记本管理：[vnote](https://github.com/vnotex/vnote)
+* 几个不错的样式表：[QSS](https://github.com/GTRONICK/QSS)
+
 
 ## Qt+vtk
 
@@ -26,9 +28,9 @@
 
 
 
+## 抽象思维
 
-
-
+* 设计模式：[DesignPattern](https://github.com/FengJungle/DesignPattern)
 
 
 
