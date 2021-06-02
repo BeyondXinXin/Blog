@@ -19,7 +19,7 @@
 * 思维导图：[Heimer](https://github.com/juzzlin/Heimer)
 * MD解析、笔记本管理：[vnote](https://github.com/vnotex/vnote)
 * 几个不错的样式表：[QSS](https://github.com/GTRONICK/QSS)
-
+* 翻译软件：[crow-translate](https://github.com/crow-translate/crow-translate)
 
 ## Qt+vtk
 
