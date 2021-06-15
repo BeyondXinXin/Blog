@@ -72,6 +72,15 @@
             "name": "利用vtk实现管状模型沿中心线切割平面.md",
             "tags": [
             ]
+        },
+        {
+            "attachment_folder": "",
+            "created_time": "2021-06-15T05:31:56Z",
+            "id": "0",
+            "modified_time": "2021-06-15T05:31:58Z",
+            "name": "利用vtk画螺纹.md",
+            "tags": [
+            ]
         }
     ],
     "folders": [
