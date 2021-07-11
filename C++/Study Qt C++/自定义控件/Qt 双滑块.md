@@ -1,3 +1,8 @@
+
+
+
+---
+
 # Qt 双滑块
 
 需要做一个双滑块，用来调节。
@@ -13,6 +18,7 @@
 
 改完后的工程
 
+[https://github.com/BeyondXinXin/study_qt](https://github.com/BeyondXinXin/study_qt)
 
 
 
