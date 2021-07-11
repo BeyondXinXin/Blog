@@ -30,8 +30,12 @@ Deepin Github：[https://github.com/linuxdeepin](https://github.com/linuxdeepin)
 Deepin Wiki（官方文档） [https://wiki.deepin.org/](https://wiki.deepin.org/) 
 
 ---
-# V20Beat 体验
+
+# 新版本体验
+
+- **[安装并体验 Deepin20.2.2](https://beondxin.blog.csdn.net/article/details/118653691)**
 - **[Deepin 使用教程：虚拟机（VirtualBox）安装增强功能](https://beondxin.blog.csdn.net/article/details/106558713)**
+
 
 ---
 # 软件推荐
