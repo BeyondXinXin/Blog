@@ -16,7 +16,14 @@
 * 案例 [https://kitware.github.io/vtk-examples/site/Cxx/Interaction/TrackballActor/](https://kitware.github.io/vtk-examples/site/Cxx/Interaction/TrackballActor/)
 * 修改后工程 ~~[https://github.com/BeyondXinXin/study_vtk](https://github.com/BeyondXinXin/study_vtk)~~
 
-## 代码
+
+## 原文
+
+
+[Vtk多个actor单独交互](https://github.com/BeyondXinXin/Blog/blob/master/%E5%BC%80%E6%BA%90%E5%BA%93%E5%AD%A6%E4%B9%A0/Study%20VTK/%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/Vtk%E5%A4%9A%E4%B8%AAactor%E5%8D%95%E7%8B%AC%E4%BA%A4%E4%BA%92.md)
+
+
+## 实现
 
 ```cpp
 
@@ -62,7 +69,3 @@ int main(int argc, char *argv[])
 }
 
 ```
-
-## 原文
-
-
