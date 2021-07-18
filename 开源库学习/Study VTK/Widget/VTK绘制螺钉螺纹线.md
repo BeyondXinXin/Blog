@@ -26,7 +26,7 @@
 
 ## 原文
 
-[VTK绘制螺钉螺纹线](https://github.com/BeyondXinXin/Blog/blob/master/%E5%BC%80%E6%BA%90%E5%BA%93%E5%AD%A6%E4%B9%A0/Study%20VTK/%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/Vtk%E5%A4%9A%E4%B8%AAactor%E7%BB%91%E5%AE%9A%E9%80%89%E4%B8%AD%E4%BA%8B%E4%BB%B6.md)
+[VTK绘制螺钉螺纹线](https://github.com/BeyondXinXin/Blog/blob/master/%E5%BC%80%E6%BA%90%E5%BA%93%E5%AD%A6%E4%B9%A0/Study%20VTK/Widget/VTK%E7%BB%98%E5%88%B6%E8%9E%BA%E9%92%89%E8%9E%BA%E7%BA%B9%E7%BA%BF.md)
 
 
 ## 实现
