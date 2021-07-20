@@ -43,4 +43,4 @@ git push origin master -f
 
 ## 原文
 
-[记录：git删除远程仓库提交]()
+[记录：git删除远程仓库提交](https://github.com/BeyondXinXin/Blog/blob/master/%E6%A1%8C%E9%9D%A2%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/%E8%AE%B0%E5%BD%95%EF%BC%9Agit%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E6%8F%90%E4%BA%A4.md)
