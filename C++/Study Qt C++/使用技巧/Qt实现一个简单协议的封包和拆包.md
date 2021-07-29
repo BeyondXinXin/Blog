@@ -5,6 +5,11 @@
 平时通讯经常用到遵循一定协议封包和拆包。分享一个简单的解决方案。
 
 
+## 项目
+
+[https://github.com/BeyondXinXin/study_qt](https://github.com/BeyondXinXin/study_qt)
+
+
 ## 代码
 
 
@@ -130,9 +135,6 @@ int main()
 ```
 
 
-## 项目
-
-[https://github.com/BeyondXinXin/study_qt](https://github.com/BeyondXinXin/study_qt)
 
 
 
