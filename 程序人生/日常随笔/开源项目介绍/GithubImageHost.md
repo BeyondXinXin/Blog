@@ -37,7 +37,7 @@
 
 ![xxx](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/20210905/xxx.4bz7ysg8t3s0.png)
 
-![xxx](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/20210905/xxx.10fnkyclr80w.png)
+![xxx](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/20210905/xxx.10fnkyclr80w.png1)
 
 
 ## 功能
@@ -89,9 +89,9 @@
 ## 相关笔记
 
 
-* [ ] 利用Qt实现Https网络请求
-* [ ] 利用Qt并行抓去网络图片(https)
-* [ ] 遍历Github仓库并提取所有图片
-* [ ] GithubImageHost图床本地缓存设计
-
+* [x] 利用Qt实现Https网络请求
+* [x] 利用Qt并行抓去网络图片(https)
+* [x] 遍历Github仓库并提取所有图片
+* [x] GithubImageHost图床本地缓存设计
+* [x] 利用Qt实现Gif转预览图片
 
