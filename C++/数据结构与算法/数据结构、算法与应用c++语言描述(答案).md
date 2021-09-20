@@ -1,7 +1,9 @@
+# 数据结构、算法与应用c++语言描述(答案)
+
 [https://www.cise.ufl.edu/~sahni/dsaac/view.htm](https://www.cise.ufl.edu/~sahni/dsaac/view.htm)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200412163935512.png#pic_center)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200412164102857.png#pic_center)
+
+![xxx](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/20210921/xxx.73rdv3efz500.png)
 
 &emsp;&emsp;本身不是计算机专业的，属于那种自学半路出家的，最近刚开始看这本书，不知道为什么作者放的答案只有一半，正好重新学习下c++，慢慢做吧。下边自己写的没有答案的部分，有错误请指正。
 
