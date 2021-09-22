@@ -1,6 +1,0 @@
-[book]
-authors = ["BeyondXin"]
-language = "en"
-multilingual = false
-src = "src"
-title = "docsify 笔记"
