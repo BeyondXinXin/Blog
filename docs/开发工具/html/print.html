@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">开发工具</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="CMake/cmake学习笔记.html"><strong aria-hidden="true">1.</strong> CMake</a></li><li class="chapter-item expanded "><a href="VisualStudio/index.html"><strong aria-hidden="true">2.</strong> VisualStudio</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="VisualStudio/优化/停靠窗口布局修改后闪退(2017).html"><strong aria-hidden="true">2.1.</strong> 停靠窗口布局修改后闪退(2017)</a></li><li class="chapter-item expanded "><a href="VisualStudio/cmake/cmake工程missing_and_no_known_rule_to_make_it.html"><strong aria-hidden="true">2.2.</strong> missing and no known rule to make it</a></li></ol></li><li class="chapter-item expanded "><a href="VisualStudioCode/VisualStudioCode学习笔记.html"><strong aria-hidden="true">3.</strong> VisualStudioCode</a></li><li class="chapter-item expanded "><a href="QtCreator/QtCreator学习笔记.html"><strong aria-hidden="true">4.</strong> QtCreator</a></li><li class="chapter-item expanded "><a href="cmder/cmder学习笔记.html"><strong aria-hidden="true">5.</strong> cmder</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../../index.html">更多</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">开发工具</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="CMake/cmake学习笔记.html"><strong aria-hidden="true">1.</strong> CMake</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="CMake/配置/CMake编译生成第三方库.html"><strong aria-hidden="true">1.1.</strong> CMake编译生成第三方库</a></li><li class="chapter-item expanded "><a href="CMake/配置/CMake程序既可以自己执行，也可以作为第三方库.html"><strong aria-hidden="true">1.2.</strong> CMake程序既可以自己执行，也可以作为第三方库</a></li><li class="chapter-item expanded "><a href="CMake/配置/CMake多个工程共享变量.html"><strong aria-hidden="true">1.3.</strong> CMake多个工程共享变量</a></li><li class="chapter-item expanded "><a href="CMake/配置/CMake根据不同参数编译不同程序.html"><strong aria-hidden="true">1.4.</strong> CMake根据不同参数编译不同程序</a></li><li class="chapter-item expanded "><a href="CMake/配置/CMake静态编译调用第三方库.html"><strong aria-hidden="true">1.5.</strong> CMake静态编译调用第三方库</a></li><li class="chapter-item expanded "><a href="CMake/配置/Cmake配置模板(qt).html"><strong aria-hidden="true">1.6.</strong> Cmake配置模板(qt)</a></li><li class="chapter-item expanded "><a href="CMake/配置/CMake批量生成可执行程序.html"><strong aria-hidden="true">1.7.</strong> CMake批量生成可执行程序</a></li><li class="chapter-item expanded "><a href="CMake/配置/CMake软件版本管理,名称全局绑定.html"><strong aria-hidden="true">1.8.</strong> CMake软件版本管理,名称全局绑定</a></li><li class="chapter-item expanded "><a href="CMake/配置/Cmake同时编译静态库和动态库.html"><strong aria-hidden="true">1.9.</strong> Cmake同时编译静态库和动态库</a></li><li class="chapter-item expanded "><a href="CMake/配置/CMake组织项目列表.html"><strong aria-hidden="true">1.10.</strong> CMake组织项目列表</a></li><li class="chapter-item expanded "><a href="CMake/错误/CMake_Error_Could_NOT_find_PythonLibs.html"><strong aria-hidden="true">1.11.</strong> CMake_Error_Could_NOT_find_PythonLibs</a></li></ol></li><li class="chapter-item expanded "><a href="VisualStudio/index.html"><strong aria-hidden="true">2.</strong> VisualStudio</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="VisualStudio/优化/停靠窗口布局修改后闪退(2017).html"><strong aria-hidden="true">2.1.</strong> 停靠窗口布局修改后闪退(2017)</a></li><li class="chapter-item expanded "><a href="VisualStudio/cmake/cmake工程missing_and_no_known_rule_to_make_it.html"><strong aria-hidden="true">2.2.</strong> missing and no known rule to make it</a></li><li class="chapter-item expanded "><a href="VisualStudio/cmake/cmake编译工程，默认bulid路径修改.html"><strong aria-hidden="true">2.3.</strong> cmake编译工程，默认bulid路径修改</a></li></ol></li><li class="chapter-item expanded "><a href="VisualStudioCode/VisualStudioCode学习笔记.html"><strong aria-hidden="true">3.</strong> VisualStudioCode</a></li><li class="chapter-item expanded "><a href="QtCreator/QtCreator学习笔记.html"><strong aria-hidden="true">4.</strong> QtCreator</a></li><li class="chapter-item expanded "><a href="cmder/cmder学习笔记.html"><strong aria-hidden="true">5.</strong> cmder</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../../index.html">更多</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -138,6 +138,689 @@
                         <h1 id="开发工具"><a class="header" href="#开发工具">开发工具</a></h1>
 <p>尝试建站只是为了满足一下好奇心。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="cmake学习笔记"><a class="header" href="#cmake学习笔记">cmake学习笔记</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><p>  使用cmake管理项目有一个很舒服的地方就是对于第三方库的添加，只需要<strong>find_package</strong>一行命令就可以添加第三方库的各种目录版本等。如果是自己写的代码也可以支持<strong>find_package</strong>一键导入呢？<strong>find_package</strong>本质上就是找对应库的<strong>Config.cmake</strong>文件以及文件中的<strong>INCLUDE_DIRS</strong> 和 <strong>LIB_DIR</strong>路径。</p>
+<h3 id="1-1准备一个-hin-模板文件"><a class="header" href="#1-1准备一个-hin-模板文件">1. 1.准备一个 .h.in 模板文件</a></h3>
+<ul>
+<li>
+<p>命名：
+  <strong>XXXXConfig.h.in</strong>  比如 <strong>KissDicomViewerConfig.cmake.in</strong></p>
+</li>
+<li>
+<p>包含内容：
+  <strong>INCLUDE_DIRS</strong>
+  <strong>LIB_DIR</strong>
+  <strong>LINK_DIRECTORIES</strong></p>
+</li>
+</ul>
+<p>  比如</p>
+<pre><code class="language-cpp">set(KissDicomViewer_INCLUDE_DIRS &quot;@KissDicomViewer_INCLUDE_DIRS@&quot;)
+set(KissDicomViewer_LIB_DIR &quot;@KissDicomViewer_LIB_DIR@&quot;)
+set(KissDicomViewer_Resource_DIR &quot;@KissDicomViewer_Resource_DIR@&quot;)
+LINK_DIRECTORIES(${KissDicomViewer_LIB_DIR})
+set(KissDicomViewer_SHARDE_LIBRARIES KissDicomViewer_sharde)
+set(KissDicomViewer_STATIC_LIBRARIES KissDicomViewer_static)
+</code></pre>
+<h3 id="2-2自己编写的库文件增加--cmake文件导出"><a class="header" href="#2-2自己编写的库文件增加--cmake文件导出">2. 2.自己编写的库文件增加  .cmake文件导出</a></h3>
+<p>  静态库、动态库生成目录</p>
+<pre><code class="language-cpp"># Output directory
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG
+    ${PROJECT_SOURCE_DIR}/bin/Debug)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG
+    ${PROJECT_SOURCE_DIR}/bin/Debug)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_DEBUG
+    ${PROJECT_SOURCE_DIR}/bin/Debug)
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE
+    ${PROJECT_SOURCE_DIR}/bin/Release)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE
+    ${PROJECT_SOURCE_DIR}/bin/Release)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_RELEASE
+    ${PROJECT_SOURCE_DIR}/bin/Release)
+</code></pre>
+<p>  资源文件位置</p>
+<pre><code class="language-cpp">set(SRCS ${SOURCES} ${HEADERS} ${RESOURCES} ${FORMS})
+set(KissDicomViewer_Resource_DIR ${RESOURCES} CACHE PATH &quot;mailiu Resource&quot;)
+</code></pre>
+<p>  头文件、库目录 记录</p>
+<pre><code class="language-cpp"># LOCAL FILES
+set(INCLUDE_DIRS ${PROJECT_SOURCE_DIR}/src)
+set(KissDicomViewer_INCLUDE_DIRS &quot;${INCLUDE_DIRS}&quot;)
+set(KissDicomViewer_LIB_DIR      &quot;${PROJECT_SOURCE_DIR}/bin/Release&quot;)
+set(KissDicomViewer_CMAKE_DIR    &quot;${PROJECT_BINARY_DIR}&quot;)
+</code></pre>
+<p>  生成<strong>Config.cmake</strong>文件</p>
+<pre><code class="language-cpp"># Set Config
+message(STATUS &quot;Generating '${PROJECT_BINARY_DIR}/KissProjectConfig.cmake'&quot;)
+configure_file(${PROJECT_SOURCE_DIR}/cmake/KissDicomViewerConfig.cmake.in
+  &quot;${PROJECT_BINARY_DIR}/KissDicomViewerConfig.cmake&quot; @ONLY)
+</code></pre>
+<h3 id="3-3新工程使用"><a class="header" href="#3-3新工程使用">3. 3.新工程使用</a></h3>
+<pre><code class="language-cpp">find_package(KissDicomViewer REQUIRED)
+include_directories(${KissDicomViewer_INCLUDE_DIRS})
+
+target_link_libraries(
+    ${PROJECT_NAME}
+    ${KissDicomViewer_SHARDE_LIBRARIES})
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><p>  下边有两个工程，第二个工程<strong>KissDicomViewer</strong>既可以自己执行，也可以作为库（动态）链接到第一个工程使用。</p>
+<p><img src="https://img-blog.csdnimg.cn/20201003145237450.png#pic_center" alt="在这里插入图片描述" /></p>
+<p><img src="https://img-blog.csdnimg.cn/20201003145145283.png#pic_center" alt="在这里插入图片描述" /></p>
+<p>  
+  
+  如果有跟我类似的需求，可以这样试下</p>
+<h3 id="1-拆分入口函数"><a class="header" href="#1-拆分入口函数">1. 拆分入口函数</a></h3>
+<ul>
+<li>src 里是源码
+<img src="https://img-blog.csdnimg.cn/20201003150150787.png#pic_center" alt="在这里插入图片描述" /></li>
+<li>apps 里是几个入口函数
+<img src="https://img-blog.csdnimg.cn/20201003150236874.png#pic_center" alt="在这里插入图片描述" /></li>
+<li>bin 是生成的库
+<img src="https://img-blog.csdnimg.cn/20201003150246711.png#pic_center" alt="在这里插入图片描述" /></li>
+</ul>
+<h3 id="2-2静态动态编译链接库"><a class="header" href="#2-2静态动态编译链接库">2. 2.静态+动态编译链接库</a></h3>
+<pre><code class="language-cpp"># Output directory
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG
+    ${PROJECT_SOURCE_DIR}/bin/Debug)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG
+    ${PROJECT_SOURCE_DIR}/bin/Debug)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_DEBUG
+    ${PROJECT_SOURCE_DIR}/bin/Debug)
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE
+    ${PROJECT_SOURCE_DIR}/bin/Release)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE
+    ${PROJECT_SOURCE_DIR}/bin/Release)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_RELEASE
+    ${PROJECT_SOURCE_DIR}/bin/Release)
+
+</code></pre>
+<pre><code class="language-cpp">cmake_minimum_required(VERSION 3.5)
+
+project(KissDicomViewer VERSION &quot;0.0.0.0&quot;)
+
+configure_file(
+    &quot;${PROJECT_SOURCE_DIR}/KissDicomViewConfig.h.in&quot;
+    &quot;${PROJECT_SOURCE_DIR}/Global/KissDicomViewConfig.h&quot;
+    )
+
+file(GLOB_RECURSE SOURCES &quot;*.cpp&quot; &quot;*.cxx&quot; &quot;*.cc&quot;)
+file(GLOB_RECURSE RESOURCES &quot;*.qrc&quot;)
+file(GLOB_RECURSE HEADERS &quot;*.h&quot;)
+file(GLOB_RECURSE FORMS *.ui)
+
+set(SRCS ${SOURCES} ${HEADERS} ${RESOURCES} ${FORMS})
+set(KissDicomViewer_Resource_DIR ${RESOURCES} CACHE PATH &quot;mailiu Resource&quot;)
+
+add_library(KissDicomViewer_sharde SHARED ${SRCS})
+add_library(KissDicomViewer_static STATIC ${SRCS})
+
+target_link_libraries(
+    KissDicomViewer_sharde
+    Qt5::Core
+    Qt5::Gui
+    Qt5::Widgets
+    Qt5::Sql
+    Qt5::Xml
+    Qt5::Network
+    Qt5::Concurrent
+    ${DCMTK_LIBRARIES}
+    )
+
+target_link_libraries(
+    KissDicomViewer_static
+    Qt5::Core
+    Qt5::Gui
+    Qt5::Widgets
+    Qt5::Sql
+    Qt5::Xml
+    Qt5::Network
+    Qt5::Concurrent
+    ${DCMTK_LIBRARIES}
+    )
+</code></pre>
+<h3 id="3-3绑定入口函数和库生成可执行文件"><a class="header" href="#3-3绑定入口函数和库生成可执行文件">3. 3.绑定入口函数和库，生成可执行文件</a></h3>
+<pre><code class="language-cpp">macro(DCMTK_ADD_EXECUTABLE PROGRAM)
+    include_directories(${KissDicomViewer_INCLUDE_DIRS})
+    add_executable(${PROGRAM} ${PROGRAM}.cpp  ${KissDicomViewer_Resource_DIR})
+    target_link_libraries(${PROGRAM} KissDicomViewer_sharde)
+endmacro()
+
+foreach(SUBDIR studyexplorer dicomviewer logviewer)
+  DCMTK_ADD_EXECUTABLE(${SUBDIR})
+endforeach()
+</code></pre>
+<h3 id="4-4生成--xxxxconfigcmake-文件"><a class="header" href="#4-4生成--xxxxconfigcmake-文件">4. 4.生成  xxxxConfig.cmake 文件</a></h3>
+<pre><code class="language-cpp"># LOCAL FILES
+set(INCLUDE_DIRS ${PROJECT_SOURCE_DIR}/src)
+set(KissDicomViewer_INCLUDE_DIRS &quot;${INCLUDE_DIRS}&quot;)
+set(KissDicomViewer_LIB_DIR      &quot;${PROJECT_SOURCE_DIR}/bin/Release&quot;)
+set(KissDicomViewer_CMAKE_DIR    &quot;${PROJECT_BINARY_DIR}&quot;)
+
+# Set Config
+message(STATUS &quot;Generating '${PROJECT_BINARY_DIR}/KissProjectConfig.cmake'&quot;)
+configure_file(${PROJECT_SOURCE_DIR}/cmake/KissDicomViewerConfig.cmake.in
+  &quot;${PROJECT_BINARY_DIR}/KissDicomViewerConfig.cmake&quot; @ONLY)
+</code></pre>
+<h3 id="5-5打开第二个工程链接configcmake"><a class="header" href="#5-5打开第二个工程链接configcmake">5. 5.打开第二个工程，链接Config.cmake</a></h3>
+<pre><code class="language-cpp">find_package(KissDicomViewer REQUIRED)
+include_directories(${KissDicomViewer_INCLUDE_DIRS})
+
+target_link_libraries(
+    ${PROJECT_NAME}
+    ${KissDicomViewer_SHARDE_LIBRARIES})
+</code></pre>
+<h3 id="6-6第二个工程调用"><a class="header" href="#6-6第二个工程调用">6. 6.第二个工程调用</a></h3>
+<div style="break-before: page; page-break-before: always;"></div><p>  <strong>cmake</strong> 定义变量一般使用<strong>set</strong>，但是一般用法变量只能从父目录传递到子目录，无法反向或者统计目录共同使用。比如：</p>
+<pre><code class="language-cpp">set(OpenCV_DIR  &quot;D:/lib/opencv-3.4.9/bulid&quot;)
+</code></pre>
+<p>  这时需要把变量写到cache（缓存变量）里才可以，比如：</p>
+<pre><code class="language-cpp">set(Resource
+    ${PROJECT_SOURCE_DIR}/resource/resource.qrc
+    ${PROJECT_SOURCE_DIR}/resource/style.qrc)
+set(Resource_Path ${Resource} CACHE PATH &quot;mailiu Resource&quot;)
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><p>  Qt cmake 根据不同参数编译不同程序。
+  比如我这里的例子，编译的主机是否编译libtorch、是否编译拥有gpu，分三种情况执行三种函数。就是判断一下Calculation_Method的值，对应引入不同的cpp。ventricularremodeling.h里所有函数分开两个cpp存放，ventricularremodeling.cpp放通用的函数实现，剩下那个放不通用的函数。</p>
+<pre><code class="language-bash">#USE_GPU：本地成功编译libtorch，装有gpu且配置好cuda环境
+#USE_CPU：本地成功编译libtorch，利用cpu计算
+#USE_FAKE：本地未编译libtorch
+
+SET(Calculation_Method  &quot;USE_CPU&quot;)
+configure_file (
+    &quot;${PROJECT_SOURCE_DIR}/calculation_method.h.in&quot;
+    &quot;${PROJECT_SOURCE_DIR}/calculation_method.h&quot;
+    )
+include_directories(script/libtorch)
+if(Calculation_Method STREQUAL &quot;USE_GPU&quot;)
+    SET(Torch_DIR &quot;/home/yx/Documents/lib/pytorch/build/lib.linux-x86_64-3.7/torch/share/cmake/Torch&quot;
+        CACHE PATH &quot;Torch_DIR directory override&quot; FORCE)
+    find_package(Torch REQUIRED)
+    include_directories(${TORCH_INCLUDE_DIRS})
+    set(libtorch
+        script/libtorch/ventricularremodeling.cpp
+        script/libtorch/ventricularremodeling.h
+        script/libtorch/use_gpu.cpp)
+elseif(Calculation_Method STREQUAL &quot;USE_CPU&quot;)
+    SET(Torch_DIR &quot;/home/yx/Documents/lib/pytorch/build/lib.linux-x86_64-3.7/torch/share/cmake/Torch&quot;
+        CACHE PATH &quot;Torch_DIR directory override&quot; FORCE)
+    find_package(Torch REQUIRED)
+    include_directories(${TORCH_INCLUDE_DIRS})
+    set(libtorch
+        script/libtorch/ventricularremodeling.cpp
+        script/libtorch/ventricularremodeling.h
+        script/libtorch/use_cpu.cpp)
+elseif(Calculation_Method STREQUAL &quot;USE_FAKE&quot;)
+    set(libtorch
+        script/libtorch/ventricularremodeling.cpp
+        script/libtorch/ventricularremodeling.h
+        script/libtorch/use_fake.cpp)
+else()
+    message(&quot;Calculation_Method set err&quot;)
+    return ()
+endif()
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><p>  有一些比较小的第三方库或者自己封装的常用库，把他们加进自己工程会造成比较繁琐，而且代码格式/规范跟现有软件不一样看着很别扭。要是把他们完全封装成.so或者lib，说不定什么时候还会需要修改。这时候就很需要搞一个第三方的引用库。</p>
+<p>  这里用qt很常用的两个类做例子 <strong>QCustomPlot</strong>和<strong>QuaZIP</strong>。一个属于完整的外部工程，一个可以算作自己构建的外部项目。这两个如果直接加到自己项目里，会使项目变复杂而且那俩玩意规范跟自己写的肯定不一样。感觉把他们放到第三方库是最合适的选择。</p>
+<p>  <a href="https://www.qcustomplot.com/"><strong>QCustomPlot</strong>是一个小型的Qt画图标类，支持绘制静态曲线、动态曲线、多重坐标曲线，柱状图，蜡烛图等。只需要在项目中加入头文件qcustomplot.h和qcustomplot.cpp文件，然后使一个widget提升为<strong>QCustomPlot</strong>类，即可使用。</a></p>
+<p>  <a href="https://github.com/stachenov/quazip"><strong>QuaZIP</strong>是Gilles Vollant的ZIP / UNZIP软件包（又名Minizip）的C ++包装程序，它使用了Trolltech的Qt库。如果您需要使用QIODevice API将文件写入ZIP存档或从其中读取文件，则QuaZIP正是您需要的工具。</a></p>
+<p>  如果觉得下边这个工程有用的话，下载：<a href="http://118.25.63.144/temporary/3rdparty_test.zip">http://118.25.63.144/temporary/3rdparty_test.zip</a></p>
+<h3 id="1-默认创建一个cmake工程"><a class="header" href="#1-默认创建一个cmake工程">1. 默认创建一个cmake工程</a></h3>
+<p>  一路默认创建就可以了。
+<img src="https://img-blog.csdnimg.cn/20200423182910639.png" alt="在这里插入图片描述" /></p>
+<h3 id="2-cmake增加qt支持"><a class="header" href="#2-cmake增加qt支持">2. cmake增加qt支持</a></h3>
+<p>  按照下边修改cmake。
+<img src="https://img-blog.csdnimg.cn/20200423183152764.png" alt="在这里插入图片描述" /></p>
+<pre><code class="language-cpp">cmake_minimum_required(VERSION 3.1)
+
+project(untitled)
+
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_CXX_STANDARD 14)
+option(BUILD_SHARED_LIBS &quot;&quot; OFF)
+
+find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets Sql Test Xml Network Concurrent)
+find_package(Qt5LinguistTools)
+
+
+add_executable(${PROJECT_NAME} &quot;main.cpp&quot;)
+
+target_link_libraries(
+    ${PROJECT_NAME}
+    Qt5::Core
+    Qt5::Gui
+    Qt5::Widgets
+    Qt5::Sql
+    Qt5::Xml
+    Qt5::Network
+    Qt5::Concurrent)
+</code></pre>
+<h3 id="3-引入自己创建的外部项目比如qcustomplot"><a class="header" href="#3-引入自己创建的外部项目比如qcustomplot">3. 引入自己创建的外部项目，比如QCustomPlot</a></h3>
+<p>  工程目录新建一个文件夹 3rdparty 用来存放第三方库或者自己写的外部项目。
+<img src="https://img-blog.csdnimg.cn/20200423183348905.png" alt="在这里插入图片描述" />
+   修改两个CMakeList.txt
+<img src="https://img-blog.csdnimg.cn/20200423183704708.png" alt="在这里插入图片描述" /></p>
+<pre><code class="language-cpp">if( WIN32 )
+    add_definitions( -DUNICODE )
+endif()
+add_library( qcustomplot STATIC
+    src/qcustomplot.cpp
+    src/qcustomplot.h)
+set_target_properties( qcustomplot PROPERTIES AUTOMOC TRUE )
+target_link_libraries( qcustomplot Qt5::Widgets Qt5::Network )
+
+</code></pre>
+<pre><code class="language-cpp">cmake_minimum_required(VERSION 3.1)
+
+project(untitled)
+
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_CXX_STANDARD 14)
+option(BUILD_SHARED_LIBS &quot;&quot; OFF)
+
+find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets Sql Test Xml Network Concurrent)
+find_package(Qt5LinguistTools)
+
+add_subdirectory(3rdparty/qcustomplot)
+include_directories(3rdparty/qcustomplot/src)
+
+
+add_executable(${PROJECT_NAME} &quot;main.cpp&quot;)
+
+target_link_libraries(
+    ${PROJECT_NAME}
+    Qt5::Core
+    Qt5::Gui
+    Qt5::Widgets
+    Qt5::Sql
+    Qt5::Xml
+    Qt5::Network
+    Qt5::Concurrent)
+
+target_link_libraries(# 封装到项目中第三方库 lib文件
+    ${PROJECT_NAME}
+    qcustomplot)
+</code></pre>
+<h3 id="4-引入完整的第三方工程比如-quazip"><a class="header" href="#4-引入完整的第三方工程比如-quazip">4. 引入完整的第三方工程，比如 QuaZIP</a></h3>
+<p>  下载完整的第三方库，并放进自己工程下的3rdparty。
+<img src="https://img-blog.csdnimg.cn/20200423184222398.png#pic_center" alt="在这里插入图片描述" />
+  修改cmake。</p>
+<p><img src="https://img-blog.csdnimg.cn/20200423184959564.png" alt="在这里插入图片描述" /></p>
+<pre><code class="language-cpp">cmake_minimum_required(VERSION 3.1)
+
+project(untitled)
+
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_CXX_STANDARD 14)
+option(BUILD_SHARED_LIBS &quot;&quot; OFF)
+
+find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets Sql Test Xml Network Concurrent)
+find_package(Qt5LinguistTools)
+
+add_subdirectory(3rdparty/qcustomplot)
+include_directories(3rdparty/qcustomplot/src)
+
+if(WIN32)
+    add_subdirectory(3rdparty/quazip-0.8.1-win)
+    include_directories(3rdparty/quazip-0.8.1-win/quazip)
+else()
+    add_subdirectory(3rdparty/quazip-0.8.1)
+    include_directories(3rdparty/quazip-0.8.1/quazip)
+endif()
+
+add_executable(${PROJECT_NAME} &quot;main.cpp&quot;)
+
+target_link_libraries(
+    ${PROJECT_NAME}
+    Qt5::Core
+    Qt5::Gui
+    Qt5::Widgets
+    Qt5::Sql
+    Qt5::Xml
+    Qt5::Network
+    Qt5::Concurrent)
+
+target_link_libraries(
+    ${PROJECT_NAME}
+    qcustomplot
+    quazip)
+</code></pre>
+<hr />
+<p>本案例代码：
+<a href="https://gitee.com/yaoxin001/WorkDemo">https://gitee.com/yaoxin001/WorkDemo</a></p>
+<p>个人博客首页
+<a href="http://118.25.63.144/">http://118.25.63.144/</a></p>
+<div style="break-before: page; page-break-before: always;"></div><p>cmake常用指令很少</p>
+<ol>
+<li>cmake_minimum_required(VERSION 
+major.minor[.patch[.tweak]] 
+[FATAL_ERROR])</li>
+</ol>
+<p>指定构建工程时所需要的版本要求。</p>
+<ul>
+<li><strong>VERSION</strong>必须关键字 指最低要求</li>
+<li><strong>major.minor[.patch[.tweak]]</strong>   可选关键字 指定使用哪一个版本</li>
+<li><strong>FATAL_ERROR</strong> 可选关键字，如果版本不对应提示什么错误</li>
+</ul>
+<ol start="2">
+<li>project(&lt; PROJECT-NAME &gt; [&lt; language-name &gt;...])
+project(&lt; PROJECT-NAME &gt;
+[VERSION <major>[.<minor>[.<patch>[.<tweak>]]]]
+[DESCRIPTION <project-description-string>]
+[HOMEPAGE_URL <url-string>]
+[LANGUAGES <language-name>...])</li>
+</ol>
+<p>指的就是项目名称、支持语言（默认c/c++）、版本号。使用这个命令隐含两个变量 
+PROJECT_BINARY_DIR
+PROJECT_SOURCE_DIR</p>
+<ol start="3">
+<li>find_package(<PackageName>
+[version] 
+[EXACT] 
+[QUIET] 
+[REQUIRED]  [components...]]
+[OPTIONAL_COMPONENTS components...]
+[NO_POLICY_SCOPE])  mode模式</li>
+</ol>
+<p>用来搜索并加载外部工程</p>
+<ul>
+<li>version 可选参数 版本兼容</li>
+<li>EXACT 可选参数 版本必须对应</li>
+<li>REQUIRED 务必找到</li>
+</ul>
+<ol start="4">
+<li>include(&lt;file|module&gt; [OPTIONAL] [RESULT_VARIABLE <VAR>] [NO_POLICY_SCOPE])</li>
+</ol>
+<p>载入并运行来自于文件或模块的CMake代码
+include(${VTK_USE_FILE})   就是包含UserVTK.cmake文件</p>
+<ol start="5">
+<li>add_executable(&lt; name&gt; [WIN32] [MACOSX_BUNDLE]</li>
+</ol>
+<p>生成一个name的可执行文件，相关源文件后边用空格隔开</p>
+<ol start="6">
+<li>target_link_libraries(<target> [item1] [item2] [...]
+[[debug|optimized|general] <item>] ...)</li>
+</ol>
+<p>生成可执行文件需要链接那些文件   target 必须和第五步生成的name一样</p>
+<hr />
+<p>最下边给出我常用的cmake模板，小白可以跟我一样当成模板每次自己修改用
+我就qt  添加常用模块  network  Core  Gui  Xml等
+引用开源库opencv3     和itk4</p>
+<p>其实qmake挺好的，就是引用开源库只能像vs一样添加一堆lib，还有各种路径
+如果开源库直接用cmake编译的，那个qt也用cmake其实会很爽比如qt+itk 我这里给家比较感受下
+第一个cmake下qt里调用itk
+第二个qmake下qt里调用itk
+<img src="https://img-blog.csdnimg.cn/2019082814152175.png" alt="在这里插入图片描述" /></p>
+<p><img src="https://img-blog.csdnimg.cn/20190828141532620.png" alt="在这里插入图片描述" /></p>
+<pre><code class="language-javascript">cmake_minimum_required(VERSION 3.10.2)
+project(MinimalPathExtractionExamples)
+
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${PROJECT_SOURCE_DIR}/bin)
+
+
+find_package(OpenCV REQUIRED)
+include_directories(  ${OpenCV_INCLUDE_DIRS} )
+find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets Sql Test Xml )
+find_package(Qt5LinguistTools)
+find_package(Qt5Network)
+find_package(ITK REQUIRED
+    COMPONENTS MinimalPathExtraction
+    ITKIOImageBase
+    ITKImageFunction
+    ITKOptimizers
+    ITKPath
+    ITKIOMeta
+    ITKIOPNG
+    ITKIOJPEG
+    )
+
+include(${ITK_USE_FILE})
+option(BUILD_SHARED_LIBS &quot;&quot; OFF)
+
+set(Resources
+    Resources/qss.qrc
+    Resources/app.h
+    Resources/app.cpp
+    Resources/stable.h
+    Resources/main.qrc
+    Resources/qt_opencv.h
+    Resources/qt_opencv.cpp）
+set(farm
+    farm/mainwindow.h
+    farm/ mainwindow.cpp
+    farm/ mainwindow.ui）
+
+add_executable(
+    ${PROJECT_NAME}
+   ${Business}
+   ${farm}
+    main.cpp  
+    )
+
+target_link_libraries(
+    ${PROJECT_NAME}
+    ${ITK_LIBRARIES}
+    )
+target_link_libraries(
+    ${PROJECT_NAME}
+    Qt5::Core
+    Qt5::Gui
+    Qt5::Widgets
+    Qt5::Sql
+    Qt5::Xml
+    Qt5::Network)
+target_link_libraries(
+    ${PROJECT_NAME}
+    ${OpenCV_LIBS}
+    &quot;opencv_core&quot;
+    &quot;opencv_highgui&quot;
+    &quot;opencv_imgcodecs&quot;
+    &quot;opencv_imgproc&quot;
+    &quot;dl&quot;)
+</code></pre>
+<pre><code class="language-javascript">cmake_minimum_required ( VERSION  3.5)
+//cmake版本
+
+project (text)
+//工程名称
+
+add_executable(text  main.cpp)
+//添加 main.cpp 	方法1
+ add_executable( ${PROJECT_NAME} main.cpp)
+//添加 main.cpp	方法2
+set(Source
+    main.cpp)
+add_executable(${PROJECT_NAME}  ${Source})
+//添加 main.cpp	方法3
+
+add_library(MathFunctions mysqrt.cxx)
+
+if(WIN32)    
+elseif(UNIX)    
+else()  
+endif()
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${PROJECT_SOURCE_DIR}/bin/Debug)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${PROJECT_SOURCE_DIR}/bin/Release)
+//三个系统区分生成位置
+
+find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets Sql Test Network)
+find_package(Qt5LinguistTools)
+target_link_libraries(
+    ${PROJECT_NAME}
+    Qt5::Core
+    Qt5::Gui
+    Qt5::Widgets
+    Qt5::Sql)
+//引用qt相关
+
+find_package(OpenCV REQUIRED)
+include_directories(  ${OpenCV_INCLUDE_DIRS} )
+target_link_libraries(
+    ${PROJECT_NAME}
+    ${OpenCV_LIBS}
+    &quot;opencv_core&quot;
+    &quot;opencv_highgui&quot;
+    &quot;opencv_imgcodecs&quot;
+    &quot;opencv_imgproc&quot;
+    &quot;dl&quot;)
+//调用opencv
+
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><p>  程序中如果有大量可执行程序需要添加，cmake 提供了macro指令帮助批量生成。下边这个可以实现每次生成<strong>studyexplorer dicomviewer logviewer</strong>三个可执行程序</p>
+<pre><code class="language-cpp">macro(DCMTK_ADD_EXECUTABLE PROGRAM)
+    include_directories(${KissDicomViewer_INCLUDE_DIRS})
+    add_executable(${PROGRAM} ${PROGRAM}.cpp  ${KissDicomViewer_Resource_DIR})
+    target_link_libraries(${PROGRAM} KissDicomViewer_sharde)
+endmacro()
+
+foreach(SUBDIR studyexplorer dicomviewer logviewer)
+  DCMTK_ADD_EXECUTABLE(${SUBDIR})
+endforeach()
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20201003092843251.png#pic_center" alt="在这里插入图片描述" /></p>
+<div style="break-before: page; page-break-before: always;"></div><p>说白了其实就是建一个头文件专门存放软件的版本和名称，用的时候全局调用</p>
+<p><strong>CMakeLIst.tst</strong>里需要写</p>
+<pre><code class="language-bash">project(OpenBrowser VERSION &quot;0.5.0&quot;)
+configure_file(
+    &quot;${PROJECT_SOURCE_DIR}/DeeplvConfig.h.in&quot;
+    &quot;${PROJECT_SOURCE_DIR}/Source/01Business/DeeplvConfig.h&quot;
+)
+# configure_file作用就是拷贝文件
+</code></pre>
+<p>目录里新建<strong>DeeplvConfig.h.in</strong></p>
+<pre><code class="language-cpp">#ifndef INCLUDE_GUARD
+#define INCLUDE_GUARD
+
+#define OpenBrowser_NAME &quot;OpenBrowser&quot;
+#define OpenBrowser_VER  &quot;@OpenBrowser_VERSION@&quot;
+#define OpenBrowser_YEARS &quot;2020&quot;
+#define OpenBrowser_VER_MAJOR &quot;@OpenBrowser_VERSION_MAJOR@&quot;
+#define OpenBrowser_VER_MINOR &quot;@OpenBrowser_VERSION_MINOR@&quot;
+#define OpenBrowser_VER_PATCH &quot;@OpenBrowser_VERSION_PATCH@&quot;
+
+#endif // INCLUDE_GUARD
+</code></pre>
+<p>这样在执行cmake的时候，会自动在程序源码目录下自动新建一个<strong>DeeplvConfig.h</strong>，程序里只要调用这个就可以了。
+<img src="https://img-blog.csdnimg.cn/20200301104150869.png#pic_center" alt="在这里插入图片描述" /></p>
+<p>Qt label/button等 控件调用方法</p>
+<pre><code class="language-cpp">  ui-&gt;label-&gt;setText(QString::fromStdString(OpenBrowser_NAME) + &quot; V&quot; 
+						+ QString::fromStdString(OpenBrowser_VER));
+  ui-&gt;label-&gt;setText(ui-&gt;label-&gt;text()
+                       .arg(QString::fromStdString(OpenBrowser_NAME) + &quot; V&quot;)
+                       .arg(QString::fromStdString(OpenBrowser_VER)));
+</code></pre>
+<p>Qt QTreeWidget/QTabWidget等 控件调用方法</p>
+<pre><code class="language-cpp">	QStringList strlist1 = {&quot;产品型号&quot;, QString::fromStdString(OpenBrowser_NAME)};
+    QTreeWidgetItem *item1 = new QTreeWidgetItem(strlist1);
+    ui-&gt;software_tree-&gt;addTopLevelItem(item1);
+
+	QTreeWidgetItem *tmp_item = ui-&gt;software_tree-&gt;topLevelItem(1);
+    tmp_item-&gt;setText(1, QString::fromStdString(OpenBrowser_NAME));
+    tmp_item = ui-&gt;software_tree-&gt;topLevelItem(2);
+    tmp_item-&gt;setText(1, tmp_item-&gt;text(1).arg(QString::fromStdString(OpenBrowser_VER)));
+</code></pre>
+<p>Qt QtableWidget等 控件调用方法</p>
+<pre><code class="language-cpp">	ui-&gt;tab_widget-&gt;setTabText(0, QString::fromStdString(OpenBrowser_NAME));
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><pre><code class="language-cpp">cmake_minimum_required(VERSION 3.5)
+
+project(KissDicomViewer VERSION &quot;0.0.0.0&quot;)
+
+file(GLOB_RECURSE SOURCES &quot;*.cpp&quot; &quot;*.cxx&quot; &quot;*.cc&quot;)
+file(GLOB_RECURSE RESOURCES &quot;*.qrc&quot;)
+file(GLOB_RECURSE HEADERS &quot;*.h&quot;)
+file(GLOB_RECURSE FORMS *.ui)
+
+set(SRCS ${SOURCES} ${HEADERS} ${RESOURCES} ${FORMS})
+set(KissDicomViewer_Resource_DIR ${RESOURCES} CACHE PATH &quot;mailiu Resource&quot;)
+
+add_library(KissDicomViewer_sharde SHARED ${SRCS})
+add_library(KissDicomViewer_static STATIC ${SRCS})
+
+target_link_libraries(
+    KissDicomViewer_sharde
+    Qt5::Core
+    Qt5::Gui
+    Qt5::Widgets
+    Qt5::Sql
+    Qt5::Xml
+    Qt5::Network
+    Qt5::Concurrent
+    ${DCMTK_LIBRARIES}
+    )
+
+target_link_libraries(
+    KissDicomViewer_static
+    Qt5::Core
+    Qt5::Gui
+    Qt5::Widgets
+    Qt5::Sql
+    Qt5::Xml
+    Qt5::Network
+    Qt5::Concurrent
+    ${DCMTK_LIBRARIES}
+    )
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="qtcreator利用cmake组织项目列表"><a class="header" href="#qtcreator利用cmake组织项目列表">QtCreator利用cmake组织项目列表</a></h1>
+<p>之前纠结过<strong>Qt creator</strong>项目结构树的问题，今天才认识到<strong>cmaek</strong>有<strong>source_group</strong>，又增加了新知识。</p>
+<ul>
+<li>之前困惑写的博客：<a href="https://blog.csdn.net/a15005784320/article/details/105925291?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162677505316780261941354%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&amp;request_id=162677505316780261941354&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2%7Eblog%7Efirst_rank_v2%7Erank_v29-3-105925291.pc_v2_rank_blog_default&amp;utm_term=QtCreator&amp;spm=1018.2226.3001.4450">Qt creator 项目结构树Header Files、Source Files</a></li>
+<li><strong>source_group</strong> 介绍：<a href="https://cmake.org/cmake/help/latest/command/source_group.html">source_group</a></li>
+</ul>
+<h2 id="使用和效果"><a class="header" href="#使用和效果">使用和效果</a></h2>
+<p>不同版本的<strong>Qt creator</strong>管理camke项目，如果不分组则会使用不同的分组。设置了<strong>source_group</strong>则一致。</p>
+<pre><code class="language-cmake">project(CmakeSourceGroup)
+
+file(GLOB_RECURSE SOURCES &quot;*.cpp&quot; &quot;*.cxx&quot; &quot;*.cc&quot;)
+file(GLOB_RECURSE HEADERS &quot;*.h&quot;)
+file(GLOB_RECURSE RESOURCES &quot;*.qrc&quot;)
+file(GLOB_RECURSE FORMS *.ui)
+
+set(SRCS ${SOURCES} ${HEADERS} ${RESOURCES} ${FORMS})
+
+# 图一
+
+# 图二
+# source_group(&quot;&quot; FILES ${SRCS})
+# 图三
+# source_group(&quot;SOURCES&quot; FILES ${SRCS})
+# 图四
+# source_group(TREE ${CMAKE_SOURCE_DIR} ${SRCS})
+
+if(WIN32)
+  set(exec_flag WIN32)
+elseif(MACOS)
+  set(exec_flag MACOSX_BUNDLE)
+else()
+  set(exec_flag)
+endif()
+
+add_executable(${PROJECT_NAME} ${exec_flag} ${SRCS})
+
+target_link_libraries(${PROJECT_NAME} Qt5::Gui Qt5::Widgets)
+
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/PixX/xxx.24ugl1hb5fpc.png" alt="xxx" /></p>
+<p><img src="https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/PixX/xxx.77d28jedkqg0.png" alt="xxx" /></p>
+<p><img src="https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/PixX/xxx.2879xpnxeh1c.png" alt="xxx" /></p>
+<p><img src="https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/PixX/xxx.44sunt0z03c0.png" alt="xxx" /></p>
+<p>项目  <a href="https://github.com/BeyondXinXin/study_qt">https://github.com/BeyondXinXin/study_qt</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cmake-error-could-not-find-pythonlibs"><a class="header" href="#cmake-error-could-not-find-pythonlibs">CMake Error Could NOT find PythonLibs</a></h1>
+<pre><code class="language-bash">sudo apt-get install python3-dev
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="网站建设管理"><a class="header" href="#网站建设管理">网站建设、管理</a></h1>
 <p>尝试建站只是为了满足一下好奇心。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="停靠窗口布局修改后闪退2017"><a class="header" href="#停靠窗口布局修改后闪退2017">停靠窗口布局修改后闪退（2017）</a></h1>
@@ -182,6 +865,11 @@
 <li>cmakeCommandArgs -j12</li>
 </ol>
 <p>  改好了重新生成就可以了，还报错应该还是路径有问题，比如你的工程用了其他的第三方库，可是其他库没有编译成功。</p>
+<div style="break-before: page; page-break-before: always;"></div><p>vs code使用cmake编译工程，默认bulid路径修改</p>
+<hr />
+<p>设置了搜索   Cmake: Build Directory
+<img src="https://img-blog.csdnimg.cn/20200113155000900.png" alt="在这里插入图片描述" />
+<a href="https://blog.csdn.net/a15005784320/article/details/103923402">vs code 编译调试 cmake（qt/c++）工程</a> </p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="visualstudiocode学习笔记"><a class="header" href="#visualstudiocode学习笔记">VisualStudioCode学习笔记</a></h1>
 <h2 id="插件"><a class="header" href="#插件">插件</a></h2>
 <h3 id="通用插件"><a class="header" href="#通用插件">通用插件</a></h3>
