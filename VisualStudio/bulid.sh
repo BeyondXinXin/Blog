@@ -1,0 +1,1 @@
+mdbook build ./ --dest-dir ./../books/VisualStudio

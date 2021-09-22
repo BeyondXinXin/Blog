@@ -1,0 +1,1 @@
+mdbok init --theme
