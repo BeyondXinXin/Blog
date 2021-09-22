@@ -7,7 +7,7 @@ language = "zh"
 multilingual = false
 
 [build]
-build-dir = "./../../books/服务器/html"
+build-dir = "./../../docs/服务器/html"
 create-missing = false
 use-default-preprocessors = true
 
