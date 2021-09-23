@@ -1,0 +1,891 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>抽象思维</title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">抽象思维</a></li><li class="spacer"></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> 设计模式</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> 数据结构与算法</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="数据结构与算法/常见算法分析.html"><strong aria-hidden="true">2.1.</strong> 常见算法分析</a></li><li class="chapter-item expanded "><a href="数据结构与算法/面试总结-数据结构与算法.html"><strong aria-hidden="true">2.2.</strong> 面试总结-数据结构与算法</a></li><li class="chapter-item expanded "><a href="数据结构与算法/若干空间几何计算实现代码(Qt、C++).html"><strong aria-hidden="true">2.3.</strong> 若干空间几何计算实现代码(Qt、C++)</a></li><li class="chapter-item expanded "><a href="数据结构与算法/数据结构、算法与应用c++语言描述(答案).html"><strong aria-hidden="true">2.4.</strong> 数据结构、算法与应用c++语言描述(答案)</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="../../index.html">更多</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">抽象思维</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="抽象思维"><a class="header" href="#抽象思维">抽象思维</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="常见算法分析"><a class="header" href="#常见算法分析">常见算法分析</a></h1>
+<p>整理笔记，也不只能合适会全部更新完成。</p>
+<h2 id="气泡排序"><a class="header" href="#气泡排序">气泡排序</a></h2>
+<h3 id="1-定义"><a class="header" href="#1-定义">1. 定义</a></h3>
+<p>冒泡排序是一种算法，用于比较相邻元素，并在相邻元素未按预期顺序进行交换时交换它们的位置。顺序可以是升序或降序。<br />
+这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端（升序或降序排列），就如同碳酸饮料中二氧化碳的气泡最终会上浮到顶端一样，故名“冒泡排序”。</p>
+<h3 id="2-气泡排序工作步骤"><a class="header" href="#2-气泡排序工作步骤">2. 气泡排序工作步骤</a></h3>
+<ol>
+<li>从第一个索引开始，比较元素1和2，位置不对则进行交换，直到最后一个元素。这样保证最后一个元素是最大元素，我们称为已排序元素</li>
+</ol>
+<p><strong>第一次排序</strong><br />
+<img src="https://img-blog.csdnimg.cn/20191220172259635.png#pic_center" alt="" /></p>
+<ol start="2">
+<li>跟之前一样，直到最后一个未排序元素。</li>
+</ol>
+<p><strong>第二次排序</strong><br />
+<img src="https://img-blog.csdnimg.cn/20191220172900149.png#pic_center" alt="" /><br />
+<strong>第三次排序</strong><br />
+<img src="https://img-blog.csdnimg.cn/20191220173653739.png#pic_center" alt="在这里插入图片描述" /><br />
+<strong>第四次排序</strong><br />
+<img src="https://img-blog.csdnimg.cn/20191220173813317.png#pic_center" alt="在这里插入图片描述" /></p>
+<h3 id="3-程序"><a class="header" href="#3-程序">3. 程序</a></h3>
+<pre><code class="language-cpp">void bubbleSort(int array[], int size)
+{
+  for (int step = 0; step &lt; size - 1; ++step)
+  {
+    for (int i = 0; i &lt; size - step - 1; ++i)
+    {
+      if (array[i] &gt; array[i + 1])// 升序，降序反过来
+      {
+        int temp = array[i];
+        array[i] = array[i + 1];
+        array[i + 1] = temp;
+      }
+    }
+  }
+}
+
+int main()
+{
+  int data[] = {-2, 45, 0, 11, -9};
+  int size = sizeof(data) / sizeof(data[0]);
+  bubbleSort(data, size);
+}
+</code></pre>
+<h3 id="4-算法优化"><a class="header" href="#4-算法优化">4. 算法优化</a></h3>
+<p>上边工作步骤可以感觉到，如果顺序已经排好，还要进行所有比较。<br />
+我们设置信号量==swap==，如果本次没有发生排序，则直接结束。</p>
+<h3 id="5-优化程序"><a class="header" href="#5-优化程序">5. 优化程序</a></h3>
+<pre><code class="language-cpp">void bubbleSort(int array[], int size)
+{
+for (int step = 0; step &lt; size - 1; ++step)
+  {
+    int swapped = 0;
+    for (int i = 0; i &lt; size - step - 1; ++i)
+    {
+      if (array[i] &gt; array[i + 1])
+      {
+        int temp = array[i];
+        array[i] = array[i + 1];
+        array[i + 1] = temp;
+        swapped++;
+      }
+    }
+    if (swapped == 0)
+      break;
+  }
+}
+
+int main()
+{
+  int data[] = {-2, 45, 0, 11, -9};
+  int size = sizeof(data) / sizeof(data[0]);
+  bubbleSort(data, size);
+}
+</code></pre>
+<h3 id="6-复杂度"><a class="header" href="#6-复杂度">6. 复杂度</a></h3>
+<table><thead><tr><th align="center">迭代</th><th align="center">比较次数</th></tr></thead><tbody>
+<tr><td align="center">第1次迭代</td><td align="center">n-1</td></tr>
+<tr><td align="center">第2次迭代</td><td align="center">n-2</td></tr>
+<tr><td align="center">第3次迭代</td><td align="center">n-3</td></tr>
+<tr><td align="center">...</td><td align="center">...</td></tr>
+<tr><td align="center">第n次迭代</td><td align="center">1</td></tr>
+</tbody></table>
+<p>总次数 = (n-1) + (n-2) + (n-3) +.....+ 1 = n(n-1)/2 近似n^2^</p>
+<h3 id="7-应用"><a class="header" href="#7-应用">7. 应用</a></h3>
+<ul>
+<li>数据已经是快排好的</li>
+</ul>
+<h2 id="dijkstra最短路径"><a class="header" href="#dijkstra最短路径">Dijkstra最短路径</a></h2>
+<h3 id="1-定义-1"><a class="header" href="#1-定义-1">1. 定义</a></h3>
+<p>Dijkstra算法允许我们在图的任意两个顶点之间找到最短路径，它不同于最小生成树，因为两个顶点之间的最短距离可能不包括图的所有顶点。</p>
+<h3 id="2-dijkstra最短路径工作步骤"><a class="header" href="#2-dijkstra最短路径工作步骤">2. Dijkstra最短路径工作步骤</a></h3>
+<p>Dijkstra算法的工作原理是，顶点A和D之间的最短路径A-&gt;D的任何子路径B-&gt;D也是顶点B和D之间的最短路径。</p>
+<p>Djikstra在相反的方向使用了这个属性，即我们高估了每个顶点到起始顶点的距离。然后我们访问每个节点及其相邻节点，以找到最短子路径。</p>
+<p><img src="https://img-blog.csdnimg.cn/20191220231331710.png#pic_center" alt="在这里插入图片描述" /></p>
+<p>该算法使用贪婪的方法，即我们寻找下一个最佳解，希望最终结果是整个问题的最佳解。</p>
+<h3 id="3-dijkstra最短路径-算法示例"><a class="header" href="#3-dijkstra最短路径-算法示例">3. Dijkstra最短路径 算法示例</a></h3>
+<p><img src="https://img-blog.csdnimg.cn/20191220235249999.png" alt="在这里插入图片描述" /></p>
+<p><img src="https://img-blog.csdnimg.cn/20191220235331356.png" alt="在这里插入图片描述" />
+<img src="https://img-blog.csdnimg.cn/20191220235430699.png" alt="在这里插入图片描述" />
+<img src="https://img-blog.csdnimg.cn/20191220235517372.png" alt="在这里插入图片描述" />
+<img src="https://img-blog.csdnimg.cn/20191220235558584.png" alt="在这里插入图片描述" /></p>
+<h3 id="4-算法优化-1"><a class="header" href="#4-算法优化-1">4. 算法优化</a></h3>
+<p>百度可以找到很多Dijkstra最短路径的代码，总是初始化两个矩阵，一个路径矩阵、一个点是否检测矩阵。<br />
+这样做增加了很大的内存和时间，我测试案例权重图比较大，84个平面，每个平面1000+个点，结果按照使用初始化矩阵图的形式，内存占了20多g，时间也超长，完全没法搞。<br />
+其实很多时候大家只是找一个点到另一个点的距离，不需要到所有点的距离。那我们只要找初始点到末位点就可以了。程序也不要搞一个初始化矩阵，每个点建立一个类，存放相关信息比较靠谱。</p>
+<h3 id="5-优化程序-1"><a class="header" href="#5-优化程序-1">5. 优化程序</a></h3>
+<p>实现输入超大数据，快速找最短路径。单点对单点。</p>
+<p>程序讲解</p>
+<p><strong>Node：节点类</strong>
+size_t get_pos() const 返回节点编号<br />
+size_t node_pos_  节点编号<br />
+adjacent_nodes_ 相邻节点编号<br />
+adjacent_weights_ 相邻节点权重<br />
+shortest_path_ 最短路径<br />
+visited 是否被访问<br />
+parent_node  父节点</p>
+<p><strong>rule：multiset的重载结构体，包括比较函数。用于multiset的排序</strong></p>
+<p><strong>Graph：网络图</strong>
+get_node 返回对应节点<br />
+num_verticies_ 网络下节点数量<br />
+V_ 网络下节点集</p>
+<p><strong>Dijkstra_SP 寻找最短路径<br />
+Recover_Path 打印路径</strong></p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;tuple&gt;
+#include &quot;../Graph.h&quot;
+using namespace std;
+
+int main(void) {
+    Graph G_test(6);
+    G_test.V_[0].adjacent_nodes_ = vector&lt;size_t&gt; {1, 2, 5};
+    G_test.V_[0].adjacent_weights_ = vector&lt;uint64_t&gt; {7, 9, 14};
+    G_test.V_[1].adjacent_nodes_ = vector&lt;size_t&gt; {0, 2, 3};
+    G_test.V_[1].adjacent_weights_ = vector&lt;uint64_t&gt; {7, 10, 15};
+    G_test.V_[2].adjacent_nodes_ = vector&lt;size_t&gt; {0, 1, 3, 5};
+    G_test.V_[2].adjacent_weights_ = vector&lt;uint64_t&gt; {9, 10, 11, 2};
+    G_test.V_[3].adjacent_nodes_ = vector&lt;size_t&gt; {1, 2, 4};
+    G_test.V_[3].adjacent_weights_ = vector&lt;uint64_t&gt; {15, 11, 6};
+    G_test.V_[4].adjacent_nodes_ = vector&lt;size_t&gt; {3, 5};
+    G_test.V_[4].adjacent_weights_ = vector&lt;uint64_t&gt; {6, 9};
+    G_test.V_[5].adjacent_nodes_ = vector&lt;size_t&gt; {0, 2, 4};
+    G_test.V_[5].adjacent_weights_ = vector&lt;uint64_t&gt; {14, 2, 9};
+    size_t src_node_pos = 0;
+    size_t dst_node_pos = 5;
+    uint64_t sp = 0;
+    bool found = false;
+    std::tie(sp, found) = Dijkstra_SP(G_test, src_node_pos, dst_node_pos);
+    if (found) {
+        list&lt;Node&gt; path = Recover_Path(G_test, src_node_pos, dst_node_pos);
+        cout &lt;&lt; &quot;Shortest path len : &quot; &lt;&lt; sp &lt;&lt; endl;
+        cout &lt;&lt; &quot;Shortest path : &quot;;
+
+        for(list&lt;Node&gt;::iterator it = path.begin(); it != path.end(); it++) {
+            cout &lt;&lt; it-&gt;get_pos();
+        }
+        cout &lt;&lt; endl;
+    } else {
+        cout &lt;&lt; &quot;No path found.\n&quot; &lt;&lt; endl;
+    }
+    cout &lt;&lt; &quot;done&quot; &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<pre><code class="language-cpp">#include &lt;vector&gt;
+#include &lt;list&gt;
+#include &lt;limits&gt;
+#include &lt;unordered_set&gt;
+#include &lt;tuple&gt;
+using namespace std;
+#ifndef GRAPH_H_
+#define GRAPH_H_
+class Node {
+  public:
+    Node() {
+    }
+    size_t get_pos() const;// 返回节点编号
+    size_t node_pos_ = 0;// 节点编号
+    vector&lt;size_t&gt; adjacent_nodes_;// 相邻节点编号
+    vector&lt;uint64_t&gt; adjacent_weights_;// 相邻节点权重
+    uint64_t shortest_path_ = std::numeric_limits&lt;uint64_t&gt;::max();// 最短路径
+    bool visited = false;// 是否被访问
+    Node *parent_node = nullptr;// 父节点
+};
+class Graph {
+  public:
+    Graph(size_t num_verticies);
+    Node &amp;get_node(size_t node_pos);// 返回对应节点
+    ~Graph() {}
+    size_t num_verticies_;// 网络下节点数量
+    vector&lt;Node&gt; V_;// 网络下节点集
+};
+std::tuple&lt;uint64_t, bool&gt; Dijkstra_SP(
+    Graph &amp;G, size_t src_node_pos, size_t dst_node_pos);// 寻找最短路径
+list&lt;Node&gt; Recover_Path(
+    Graph &amp;G, size_t src_node_pos, size_t dst_node_pos);// 打印路径
+#endif
+</code></pre>
+<pre><code class="language-cpp">#include &lt;random&gt;
+#include &lt;limits&gt;
+#include &lt;iostream&gt;
+#include &lt;set&gt;
+#include &quot;Graph.h&quot;
+
+
+struct rule {
+    bool operator()(const Node &amp;n1, const Node &amp;n2) {
+        return n1.shortest_path_ &lt; n2.shortest_path_;
+    }
+};
+
+Graph::Graph(size_t num_verticies) {
+    num_verticies_ = num_verticies;
+    V_ = vector&lt;Node&gt;(num_verticies);
+    for (size_t i = 0; i &lt; num_verticies; i++) {
+        V_[i].node_pos_ = i;
+    }
+}
+
+Node &amp;Graph::get_node(size_t node_pos) {
+    return V_[node_pos];
+}
+
+size_t Node::get_pos() const {
+    return node_pos_;
+}
+
+std::tuple&lt;uint64_t, bool&gt; Dijkstra_SP(
+    Graph &amp;G, size_t src_node_pos, size_t dst_node_pos) {
+
+    // 初始化路径矩阵
+    for (vector&lt;Node&gt;::iterator it = G.V_.begin(); it != G.V_.end(); ++it) {
+        it-&gt;shortest_path_ = numeric_limits&lt;uint64_t&gt;::max();
+        it-&gt;visited  = false;
+    }
+
+    // 初始点
+    Node &amp;start_node = G.get_node(src_node_pos);
+    start_node.shortest_path_ = 0;
+    start_node.visited = true;
+
+    std::multiset&lt;Node, rule&gt; frontier;
+    frontier.insert(start_node);
+
+    // 没有找到结束节点时
+    while (!G.get_node(dst_node_pos).visited) {
+
+        if (frontier.empty()) {
+            return std::make_tuple(0, false);
+        }
+
+        // 获取边界中最近的节点
+        multiset&lt;Node, rule&gt;::iterator nearest_node_it = frontier.begin();
+        Node &amp;nearest_node = G.get_node(nearest_node_it-&gt;node_pos_);
+        frontier.erase(nearest_node_it);
+
+        nearest_node.visited = true;
+
+        // 如果我们找到路径它是最短的路径
+        if (nearest_node.get_pos() == dst_node_pos) {
+            return std::make_tuple(nearest_node.shortest_path_, true);
+        }
+
+        // 处理所有相邻节点
+        for (size_t i = 0; i &lt; nearest_node.adjacent_nodes_.size(); i++) {
+            Node &amp;node = G.get_node(nearest_node.adjacent_nodes_[i]);
+
+            // 如果已经访问过节点，则跳过它
+            if (node.visited == false) {
+
+                // 计算到节点的新的最短距离
+                uint64_t current_sp = nearest_node.shortest_path_ +
+                                      nearest_node.adjacent_weights_[i];
+
+                // 如果新计算出的路径较短，则之前计算出的路径
+                if(current_sp &lt; node.shortest_path_) {
+                    // 查找此节点是否在边境
+                    multiset&lt;Node, rule&gt;::iterator ret = frontier.find(node);
+
+                    // 如果是，我们找到较短的路径，则在多集中更新此节点的路径和位置
+                    if (ret != frontier.end()) {
+                        frontier.erase(ret);
+                    }
+
+                    // 我们发现到该节点的路径较短
+                    node.shortest_path_ = current_sp;
+                    node.parent_node = &amp;nearest_node;
+                    // 更新多集节点
+                    frontier.insert(node);
+                }
+
+            }
+        }
+    }
+
+    return std::make_tuple(0, false);
+}
+
+list&lt;Node&gt; Recover_Path(Graph &amp;G, size_t src_node_pos, size_t dst_node_pos) {
+    list&lt;Node&gt; path;
+
+    Node &amp;src_node = G.get_node(src_node_pos);
+    Node &amp;cur_node = G.get_node(dst_node_pos);
+
+    // 从目标节点开始恢复路径
+    while(cur_node.get_pos() != src_node.get_pos()) {
+        path.push_front(cur_node);
+        cur_node = *cur_node.parent_node;
+    }
+
+    path.push_front(src_node);
+    return path;
+}
+</code></pre>
+<h3 id="6-复杂度-1"><a class="header" href="#6-复杂度-1">6. 复杂度</a></h3>
+<p>优化后复杂度 n*m；</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="面试总结-数据结构与算法"><a class="header" href="#面试总结-数据结构与算法">面试总结-数据结构与算法</a></h1>
+<h2 id="1-解决哈希冲突的办法"><a class="header" href="#1-解决哈希冲突的办法">1 解决哈希冲突的办法</a></h2>
+<ol>
+<li>链地址 相当于重复的键单独搞个链表</li>
+<li>公共溢出区，把重复的键集中存储</li>
+<li>多搞几个哈希函数，第一个重复了用第二个</li>
+<li>开放定址，冲突后用冲突的键再产生一个新的地址</li>
+</ol>
+<p><code>QHash</code> 默认情况下根据不同的键产生不同的哈希函数（提升搜索加密解密速度）。<br />
+<code>QHash</code>为了防止被针对攻击，默认情况下采用随机数生成哈希函数。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="若干空间几何计算实现代码qtc"><a class="header" href="#若干空间几何计算实现代码qtc">若干空间几何计算实现代码(Qt、C++)</a></h1>
+<h2 id="1-已知空间两个向量求与其垂直第三个向量"><a class="header" href="#1-已知空间两个向量求与其垂直第三个向量">1 已知空间两个向量，求与其垂直第三个向量</a></h2>
+<pre><code class="language-cpp">    /*!
+     * \brief 求垂直与两向量的第三个向量
+     */
+void MatUtil::GetVerticalVector(const QList&lt;double&gt; coordinate_z,
+                                const QList&lt;double&gt; coordinate_x,
+                                QList&lt;double&gt; &amp;coordinate_y) {
+    coordinate_y[0] = coordinate_x[1] * coordinate_z[2] -
+                      coordinate_x[2] * coordinate_z[1];
+    coordinate_y[1] = coordinate_x[2] * coordinate_z[0] -
+                      coordinate_x[0] * coordinate_z[2];
+    coordinate_y[2] = coordinate_x[0] * coordinate_z[1] -
+                      coordinate_x[1] * coordinate_z[0];
+}
+</code></pre>
+<h2 id="2-求封闭图形面积"><a class="header" href="#2-求封闭图形面积">2 求封闭图形面积</a></h2>
+<p>把封闭图形差分成一个个三角形，依次求每个三角形面积。最后一组记得是两个三角形</p>
+<pre><code class="language-cpp">    /*!
+     * \brief 求封闭图形面积
+     * points  输入点。第一个list为几张图片、第二个list位每张图片多少点、第三个list为每个点实际坐标
+     * areas   输出每个图片面积
+     */
+void MatUtil::GetCircleArea(
+    const QList&lt;QList&lt;QList&lt;double&gt;&gt;&gt; points, QList&lt;double&gt; &amp;areas) {
+    areas.clear();
+    for(qint32 i = 0; i &lt; points.count(); ++i) {
+        double area = 0.0;
+        for(qint32 j = 0; j &lt; points[i].count() - 1; ++j) {
+            double x1 = points[i][j][0];
+            double y1 = points[i][j][1];
+            double x2 = points[i][j + 1][0];
+            double y2 = points[i][j + 1][1];
+            double x3 = 352.0;
+            double y3 = 352.0;
+            area +=
+                0.01 * 0.01 *
+                abs(0.5 * (x1 * y2 + x2 * y3 + x3 * y1 - x1 * y3 - x2 * y1 - x3 * y2));
+        }
+        double x1 = points[i][0][0];
+        double y1 = points[i][0][1];
+        double x2 = points[i][points[i].count() - 1][0];
+        double y2 = points[i][points[i].count() - 1][1];
+        double x3 = 352.0;
+        double y3 = 352.0;
+        area +=
+            0.01 * 0.01 *
+            abs(0.5 * (x1 * y2 + x2 * y3 + x3 * y1 - x1 * y3 - x2 * y1 - x3 * y2));
+        areas &lt;&lt; area;
+    }
+}
+</code></pre>
+<h2 id="3-计算两个点的距离"><a class="header" href="#3-计算两个点的距离">3 计算两个点的距离</a></h2>
+<p>有个需求是寻找中心线上曲率最大的一系列点，这里记录下</p>
+<pre><code class="language-cpp">// 求dot距离
+   double distance(const QList&lt;double&gt; a, const QList&lt;double&gt; b) { //求两点间距离
+        double dis;//两点间距离
+        double x, y, z;
+        x = a[0] - b[0];
+        y = a[1] - b[1];
+        z = a[2] - b[2];
+        dis = sqrt((x * x + y * y + z * z));
+        return dis;
+    }
+</code></pre>
+<pre><code class="language-cpp">/**
+ * @brief GetDotDistance 求两点距离
+ * @param p
+ * @param x
+ * @return
+ */
+double GetDotDistance(const double p[3], const double x[3]) {
+    return   sqrt((p[0] - x[0]) * (p[0] - x[0]) +
+                  (p[1] - x[1]) * (p[1] - x[1]) +
+                  (p[2] - x[2]) * (p[2] - x[2]));
+}
+</code></pre>
+<h2 id="4-求三点的曲率半径和曲率求中心线曲率最大的系列点"><a class="header" href="#4-求三点的曲率半径和曲率求中心线曲率最大的系列点">4 求三点的曲率半径和曲率、求中心线曲率最大的系列点</a></h2>
+<p><img src="https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/20210921/xxx.jkfe43lyfjk.png" alt="xxx" /></p>
+<p><img src="https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/20210921/xxx.7huh38scwls0.png" alt="xxx" /></p>
+<pre><code class="language-cpp">// 求dot曲率
+    double DotCurvature(const QList&lt;double&gt; dot1,
+                        const QList&lt;double&gt; dot2,
+                        const QList&lt;double&gt; dot3) {
+        double cur;//求得的曲率
+        double radius;//曲率半径
+        double dis1, dis2, dis3; //距离
+        dis1 = distance(dot1, dot2);
+        dis2 = distance(dot1, dot3);
+        dis3 = distance(dot2, dot3);
+        radius = sqrt((dis1 + dis2 - dis3) * (dis1 - dis2 + dis3) *
+                      (dis2 + dis3 - dis1) * (dis1 + dis2 + dis3)) / (dis1 * dis2 * dis3);
+        cur = 1 / radius;
+        return cur;
+    }
+</code></pre>
+<pre><code class="language-cpp">// 选择contour_points曲率最大点
+    void Geometry(QList&lt;QList&lt;double&gt;&gt; contour_points,
+                  QList&lt;QList&lt;double&gt;&gt; &amp;out_points,
+                  QList&lt;qint32&gt; &amp;number) {
+        number &lt;&lt; 0 &lt;&lt; contour_points.count();
+        contour_points[0][4] = 0.0;
+        contour_points[contour_points.count() - 1][4] = 0.0;
+        QList&lt;double&gt; dot;
+        QList&lt;qint32&gt; tmp_number;
+        for(qint32 i = 30; i &lt; contour_points.count() - 30; ++i) {
+            double tmp = DotCurvature(contour_points.at(i + 1),
+                                      contour_points.at(i ),
+                                      contour_points.at(i + 2));
+            contour_points[i + 1][4] = tmp;
+            dot &lt;&lt; tmp;
+            tmp_number &lt;&lt; i + 1;
+        }
+        DotCurvatureSort(dot, tmp_number);
+        number &lt;&lt; tmp_number.at(0);
+        qSort(number.begin(), number.end());
+        dot.clear();
+        tmp_number.clear();
+        qint32 result = 1;
+        qint32 result_compare = 0;
+        while ( result_compare != result) {
+            result_compare = result;
+            qint32 size = number.count() - 1;
+            for(qint32 i = 0; i &lt; size; ++i) {
+                if(number.at(i + 1) - number.at(i) &gt; 60) {
+                    result ++;
+                    for(qint32 j = number.at(i) + 30; j &lt; number.at(i + 1) - 30; ++j) {
+                        dot &lt;&lt; contour_points[j][4];
+                        tmp_number &lt;&lt; j;
+                    }
+                    DotCurvatureSort(dot, tmp_number);
+                    number &lt;&lt; tmp_number.at(0);
+                    dot.clear();
+                    tmp_number.clear();
+                }
+
+            }
+
+            qSort(number.begin(), number.end());
+        }
+        for(qint32 i = 0; i &lt; number.size() - 1; ++i) {
+            out_points &lt;&lt; contour_points.at(number.at(i));
+        }
+        out_points &lt;&lt; contour_points.at( contour_points.size() - 1);
+    }
+</code></pre>
+<pre><code class="language-cpp">// 对dot排序，number为序列号
+    void DotCurvatureSort(QList&lt;double&gt; dot, QList&lt;qint32&gt; &amp;number) {
+        double t;
+        qint32 i, j, t1;
+        qint32 length = dot.count();
+        for(j = 0; j &lt; length; j++)
+            for(i = 0; i &lt; length - 1 - j; i++)
+                if(dot[i] &lt; dot[i + 1]) {
+                    t = dot[i];
+                    dot[i] = dot[i + 1];
+                    dot[i + 1] = t;
+                    t1 = number[i];
+                    number[i] = number[i + 1];
+                    number[i + 1] = t1;
+                }
+    }
+
+
+</code></pre>
+<h2 id="5-求图像重心"><a class="header" href="#5-求图像重心">5 求图像重心</a></h2>
+<pre><code class="language-cpp">    /*!
+     * \brief 求重心
+     * points  输入点。第一个list为几张图片、第二个list位每张图片多少点、第三个list为每个点实际坐标
+     * gravity 输出每张图片的重心
+     */
+void MatUtil::GetImageCenterOfGravity(
+    const QList&lt;QList&lt;QList&lt;double&gt; &gt; &gt; points, QList&lt;QList&lt;double&gt;&gt; &amp;gravity) {
+    gravity.clear();
+    for(qint32 i = 0; i &lt; points.count(); ++i) {
+        double x_tmp = 0.0, y_tmp = 0.0;
+        QList&lt;double&gt; gravity_tmp;
+        for(qint32 j = 0; j &lt; points[i].count() - 1; ++j) {
+            x_tmp += points[i][j][0];
+            y_tmp += points[i][j][1];
+        }
+        x_tmp /= points[i].count();
+        y_tmp /= points[i].count();
+        gravity_tmp &lt;&lt; ( x_tmp - 352.0) * 0.01 &lt;&lt; (y_tmp - 352.0) * 0.01 &lt;&lt; 0;
+        gravity &lt;&lt; gravity_tmp;
+    }
+}
+</code></pre>
+<h2 id="6-已知xz求y轴向量"><a class="header" href="#6-已知xz求y轴向量">6 已知x、z求y轴向量</a></h2>
+<pre><code class="language-cpp">/**
+ * @brief GetVerticalVector 已知x、z求y轴向量
+ * @param coordinate_z z轴向量
+ * @param coordinate_x x轴向量
+ * @param coordinate_y y轴向量
+ */
+void GetVerticalVector(
+                       const QList&lt;double&gt; coordinate_z,
+                       const QList&lt;double&gt; coordinate_x,
+                       QList&lt;double&gt; &amp;coordinate_y) {
+    coordinate_y[0] = coordinate_x[1] * coordinate_z[2] - coordinate_x[2] * coordinate_z[1];
+    coordinate_y[1] = coordinate_x[2] * coordinate_z[0] - coordinate_x[0] * coordinate_z[2];
+    coordinate_y[2] = coordinate_x[0] * coordinate_z[1] - coordinate_x[1] * coordinate_z[0];
+}
+</code></pre>
+<h2 id="7-获取两点组成的单位向量"><a class="header" href="#7-获取两点组成的单位向量">7 获取两点组成的单位向量</a></h2>
+<pre><code class="language-cpp">/**
+ * @brief GetTwoPointUnitVector 获取两点组成的单位向量
+ * @param point_1
+ * @param point_2
+ * @param unit_vctor
+ */
+void GetTwoPointUnitVector(const QList&lt;double&gt; &amp;point_1,
+                           const QList&lt;double&gt; &amp;point_2,
+                           QList&lt;double&gt; &amp;unit_vctor) {
+    QList&lt;double&gt; vctor;
+    vctor &lt;&lt; point_2.at(0) - point_1.at(0)
+          &lt;&lt; point_2.at(1) - point_1.at(1)
+          &lt;&lt; point_2.at(2) - point_1.at(2);
+    double distance = vctor.at(0) * vctor.at(0) +
+                      vctor.at(1) * vctor.at(1) +
+                      vctor.at(2) * vctor.at(2);
+    distance = sqrt(distance);
+    unit_vctor.clear();
+    unit_vctor &lt;&lt; vctor.at(0) / distance;
+    unit_vctor &lt;&lt; vctor.at(1) / distance;
+    unit_vctor &lt;&lt; vctor.at(2) / distance;
+}
+</code></pre>
+<h2 id="8-求点在新坐标系下位置"><a class="header" href="#8-求点在新坐标系下位置">8 求点在新坐标系下位置</a></h2>
+<p><a href="https://blog.csdn.net/jc_laoshu/article/details/69657579">图形学1-三维坐标系间的变换矩阵推导</a></p>
+<p><img src="https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/20210921/xxx.7huh38scwls0.png" alt="xxx" /></p>
+<pre><code class="language-cpp">/**
+ * @brief AffineTransformation 空间坐标系变换
+ * @param coordinate_x
+ * @param coordinate_y
+ * @param coordinate_z
+ * @param center
+ * @param point
+ * @param outpoint
+ */
+void AffineTransformation(
+    const QList&lt;double&gt; coordinate_x,
+    const QList&lt;double&gt; coordinate_y,
+    const QList&lt;double&gt; coordinate_z,
+    const QList&lt;double&gt; center,
+    const QList&lt;double&gt; point,
+    QList&lt;double&gt; &amp;outpoint) {
+    outpoint &lt;&lt; (point.at(0) - center.at(0)) * coordinate_x.at(0)
+             + (point.at(1) - center.at(1)) * coordinate_x.at(1)
+             + (point.at(2) - center.at(2)) * coordinate_x.at(2) ;
+    outpoint &lt;&lt; (point.at(0) - center.at(0)) * coordinate_y.at(0)
+             + (point.at(1) - center.at(1)) * coordinate_y.at(1)
+             + (point.at(2) - center.at(2)) * coordinate_y.at(2);
+    outpoint &lt;&lt; (point.at(0) - center.at(0)) * coordinate_z.at(0)
+             + (point.at(1) - center.at(1)) * coordinate_z.at(1)
+             + (point.at(2) - center.at(2)) * coordinate_z.at(2);
+}
+</code></pre>
+<h2 id="9-求点到直线距离两点式"><a class="header" href="#9-求点到直线距离两点式">9 求点到直线距离（两点式）</a></h2>
+<pre><code class="language-cpp">/**
+ * @brief ScriptCtpSVD::DistanceFromPointToLine
+ * 点到直线距离
+ * @return
+ */
+double ScriptCtpSVD::DistanceFromPointToLine(
+    const double &amp;x0, const double &amp;y0,
+    const double &amp;x1, const double &amp;y1,
+    const double &amp;x2, const double &amp;y2) {
+    double d = (fabs((y2 - y1) * x0 + (x1 - x2) * y0 + ((x2 * y1) - (x1 * y2)))) /
+               (sqrt(pow(y2 - y1, 2) + pow(x1 - x2, 2)));
+    return d;
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="数据结构算法与应用c语言描述答案"><a class="header" href="#数据结构算法与应用c语言描述答案">数据结构、算法与应用c++语言描述(答案)</a></h1>
+<p><a href="https://www.cise.ufl.edu/%7Esahni/dsaac/view.htm">https://www.cise.ufl.edu/~sahni/dsaac/view.htm</a></p>
+<p><img src="https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/20210921/xxx.73rdv3efz500.png" alt="xxx" /></p>
+<p>  本身不是计算机专业的，属于那种自学半路出家的，最近刚开始看这本书，不知道为什么作者放的答案只有一半，正好重新学习下c++，慢慢做吧。下边自己写的没有答案的部分，有错误请指正。</p>
+<p><strong>chapter 1  02</strong></p>
+<pre><code class="language-cpp">template &lt;typename T&gt;
+qint32 count(const QList&lt;T&gt; &amp;list, const T &amp;value) {
+    qint32 sum = 0;
+    foreach (auto var, list) {
+        if(var == value) {
+            sum++;
+        }
+    }
+    return sum;
+}
+int main() {
+    QList&lt;qint32&gt; list_int = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 0, 0, 0, 0};
+    std::cout &lt;&lt; &quot;list_int Count is &quot; &lt;&lt; count(list_int, 0) &lt;&lt; std::endl;
+    QList&lt;QString&gt; list_str = {&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;c&quot;, &quot;c&quot;};
+    QString str = &quot;c&quot;;
+    std::cout &lt;&lt; &quot;list_str Count is &quot; &lt;&lt; count(list_str, str) &lt;&lt; std::endl;
+    return 0;
+}
+</code></pre>
+<p><strong>chapter 1  04</strong></p>
+<pre><code class="language-cpp">template &lt;typename T&gt;
+bool inner_product(const QList&lt;T&gt; &amp;list_a, const QList&lt;T&gt; &amp;list_b, T &amp;result) {
+    if(list_a.size() != list_b.size()) {
+        qWarning() &lt;&lt; &quot;list_a.size() != list_b.size()&quot;;
+        return 0;
+    }
+    QList&lt;T&gt; list_result;
+    T theSum = 0;
+    for (qint32 i = 0; i &lt; list_a.size() ; ++i) {
+        list_result &lt;&lt; list_a.at(i)*list_b.at(i);
+    }
+    result = accumulate(list_result.begin(), list_result.end(), theSum);
+    return 1;
+}
+
+int main() {
+    QList&lt;qint32&gt; list_a = {1, 2, 3}, list_b = {1, 2, 3};
+    QList&lt;double&gt; list_c = {1.1, 2.0, 3.0}, list_d = {1.0, 2.0, 3.0};
+    qint32 result_ab = 0;
+    double result_cd = 0.0;
+    if(inner_product(list_a, list_b, result_ab)) {
+        qDebug() &lt;&lt; &quot;result_ab inner_product&quot; &lt;&lt; result_ab;
+    }
+    if(inner_product(list_c, list_d, result_cd)) {
+        qDebug() &lt;&lt; &quot;result_cd inner_product&quot; &lt;&lt; result_cd;
+    }
+    return 0;
+}
+
+</code></pre>
+<p><strong>chapter 1  06</strong></p>
+<pre><code class="language-cpp">template &lt;typename T&gt;
+bool is_sorted(const QList&lt;T&gt; &amp;list, qint32 n = -1) {
+    if(n &lt; 0) {
+        n = list.size();
+    }
+    for (qint32 i = 0; i &lt; n - 1; i++)
+        if (list[i] &gt; list[i + 1]) {
+            return 0;
+        }
+    return 1;
+}
+
+int main() {
+    QList&lt;qint32&gt; list_int = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 0, 0, 0, 0};
+    qDebug() &lt;&lt; is_sorted(list_int);
+    qDebug() &lt;&lt; is_sorted(list_int, 10);
+    list_int[3] = 0;
+    qDebug() &lt;&lt; is_sorted(list_int, 10);
+    return 0;
+}
+
+</code></pre>
+<p><strong>chapter 1  08</strong>
+  具有相同的签名，但是这玩意根本就编译不过啊。两个函数仅仅只有函数返回值不同，那么系统是无法区分这两个函数的，此时编译器会提示语法错误。</p>
+<p><strong>chapter 1  10</strong>
+  这个就是判断让后修改下跑出异常就可以。</p>
+<p><strong>chapter 1  12</strong></p>
+<pre><code class="language-cpp">template &lt;class T&gt;
+bool make2dArray(T ** &amp;x, int numberOfRows, int rowSize[]) {
+    try {
+        x = new T * [numberOfRows];
+        for (int i = 0; i &lt; numberOfRows; i++) {
+            x[i] = new int [rowSize[i]];
+        }
+        return true;
+    } catch (std::bad_alloc) {
+        return false;
+    }
+}
+
+int main() {
+    int **a;
+    int rowSize[2];
+    rowSize[0] = 2;
+    rowSize[1] = 3;
+    make2dArray(a, 2, rowSize);
+    a[0][0] = 1;
+    a[0][1] = 2;
+    a[1][0] = 3;
+    a[1][1] = 4;
+    a[1][2] = 5;
+    cout &lt;&lt; a[0][0] &lt;&lt; ' ' &lt;&lt; a[0][1] &lt;&lt; endl;
+    cout &lt;&lt; a[0][0] &lt;&lt; ' ' &lt;&lt; a[1][1] &lt;&lt; ' ' &lt;&lt; a[1][2] &lt;&lt; endl;
+    return 0;
+}
+
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="beyond欣-blog"><a class="header" href="#beyond欣-blog">Beyond欣 Blog</a></h1>
+<blockquote>
+<p>人最怕安逸，追求什么也别追求安逸。</p>
+</blockquote>
+<p>本仓库用来存放个人学习笔记，周末会同步到  <a href="https://blog.csdn.net/a15005784320">CSDN</a> 。</p>
+<hr />
+<p><img src="https://cdn.jsdelivr.net/gh/BeyondXinXin/BeyondXinXIn@main/PixX/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F.19r7xgrosnhc.jpg" alt="" /></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+    </body>
+</html>
