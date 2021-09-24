@@ -9,6 +9,7 @@
 ## 2 利用python输出信息
 **print()**:括号里放需要显示的变量
 **str()**:把变量变为比较方便阅读的信息
+
 ```python
 print("study python")
 message="study python"
