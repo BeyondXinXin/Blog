@@ -3,7 +3,9 @@
 ---
 #  1.最终效果
 &emsp;&emsp;一直想要一个桌面就可以显示电脑信息的插件，先看效果。
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191207153316888.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/conky-manager%20%E7%BE%8E%E5%8C%96%20%E5%A2%9E%E5%8A%A0%E6%A1%8C%E9%9D%A2%E5%86%85%E5%AD%98%E3%80%81cpu%E5%8D%A0%E7%94%A8%E6%98%BE%E7%A4%BA.md/538633110226935.png)
+
 这个是借助Conky-manager实现的。
 
 # 2. 安装Conky-manager
@@ -78,8 +80,9 @@ ${color #FFFFFF}网络:${color}$alignr${addr wlp0s20f3}
 ```
 
 保存后打开 Conky-manager 。启动器下就有，刷新一下，选中自己刚才新建的，记得设置开机自启。
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191207154537536.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70#pic_center)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191207154606540.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70#pic_center)
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/conky-manager%20%E7%BE%8E%E5%8C%96%20%E5%A2%9E%E5%8A%A0%E6%A1%8C%E9%9D%A2%E5%86%85%E5%AD%98%E3%80%81cpu%E5%8D%A0%E7%94%A8%E6%98%BE%E7%A4%BA.md/463213210222689.png)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191207154650197.png#pic_center)
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/conky-manager%20%E7%BE%8E%E5%8C%96%20%E5%A2%9E%E5%8A%A0%E6%A1%8C%E9%9D%A2%E5%86%85%E5%AD%98%E3%80%81cpu%E5%8D%A0%E7%94%A8%E6%98%BE%E7%A4%BA.md/181983310238173.png)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/conky-manager%20%E7%BE%8E%E5%8C%96%20%E5%A2%9E%E5%8A%A0%E6%A1%8C%E9%9D%A2%E5%86%85%E5%AD%98%E3%80%81cpu%E5%8D%A0%E7%94%A8%E6%98%BE%E7%A4%BA.md/259483310235675.png)

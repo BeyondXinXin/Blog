@@ -11,7 +11,9 @@ Itk下载 git
 itk4.13+vtk 8.12
 itk4.13+vtk 8.20
 itk4.13+no vtk
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191115132238229.png)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E7%BC%96%E8%AF%91itk.md/52123910231106.png)
+
 解压完成，在目录里新建bulid
 进入bulid 执行
 
@@ -19,9 +21,12 @@ itk4.13+no vtk
 
 需要跟vtk联合编译的勾选itkvtkglue，vtkdir选择之前编译的vtk就可以了，注意版本对应，不需要的直接跳过
 取消勾选 test（itk默认编译test，vtk默认编译example，两个费事不讨好的东西，务必取消，要不然网不好增加几个小时的时间，有需要直接去官网下载案例他不香吗。）
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191115132306237.png)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E7%BC%96%E8%AF%91itk.md/137013910216658.png)
+
 勾选review
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191115132313935.png)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E7%BC%96%E8%AF%91itk.md/207643910232937.png)
 
 Configuring done
 Generating done

@@ -4,9 +4,10 @@
 
 # MP4等视频文件转为gif动态图片
 **ImageMagick图片处理是一套功能强大、稳定而且免费的工具集和开发包。**
+
 **FFmpeg是一套可以用来记录、转换数字音频、视频，并能将其转化为流的开源计算机程序。**
 
-&emsp;&emsp;利用**FFmpeg**可以实现视频转为gif、视频每一帧转为图片。如果我们需要把MP4文件转为gif文件，有下面几种方式：
+利用**FFmpeg**可以实现视频转为gif、视频每一帧转为图片。如果我们需要把MP4文件转为gif文件，有下面几种方式：
 
  1. 直接利用**FFmpeg**转gif（效果不是很好，没法增删帧，每帧不能修改）
 
@@ -28,10 +29,12 @@ ffmpeg -ss 0  -r 15 -t 60 -y -i /home/yc/Desktop/01.mp4 -vf fps=15,scale=270:-1 
 ```
 
 
- 2. 利用**FFmpeg**批量导出每一帧图片，自己修改图片、删减图片。利用 **ImageMagick(convert)** 把图片拼接成gif。
+ 2. 利用**FFmpeg**批量导出每一帧图片，自己修改图片、删减图片。利用 **ImageMagick(convert)** 把图片拼接成gif
+
 
  3. 利用 **ImageMagick(convert)** 把视频转为gif
  
+
 
 ```bash
 convert '/home/yc/Desktop/01.mp4' -layers Optimize 1.gif
@@ -42,7 +45,7 @@ convert '/home/yc/Desktop/01.mp4' -fuzz 50% -layers Optimize 1.gif
 ```
 
 
-&emsp;&emsp;**三种方式   质量   2>3>1  速度  1>3>2**
+**三种方式   质量   2>3>1  速度  1>3>2**
 
 ---
 #  FFmpeg安装

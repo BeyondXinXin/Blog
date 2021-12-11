@@ -10,14 +10,14 @@
 
 [Deepin 使用教程：命令行和shell脚本编程（三）](https://blog.csdn.net/a15005784320/article/details/104710728)
 
-# 4 Deepin 下更多的shell命令
+# Deepin 下更多的shell命令
 &emsp;&emsp;本章主要涉及  进程的管理、磁盘信息统计、挂载新磁盘、排序数据、归档数据。
-## 4.1 监测程序
+## 1 监测程序
 &emsp;&emsp;大量的应用才能生成完整的桌面环境，deepin精美桌面的背后总是运行这大量的程序，我们需要熟练掌握管理程序的基本工具及用法。本节依次介绍
       &emsp;&emsp;&emsp;&emsp;  **1. 探查进程　ps 命令**
       &emsp;&emsp;&emsp;&emsp; **2. 实时监测进程　top 命令**
      &emsp;&emsp;&emsp;&emsp; **3. 结束进程　kill 命令**
-### 4.1.1 探查进程　ps 命令
+### 1.1 探查进程　ps 命令
 &emsp;&emsp;程序运行在系统上，称之为进程（process），一个程序就是一个单独的进程（程序内的并列多个程序叫做线程）。如果需要查看进程，就要使用ps命令，他基本上可以输出所有程序的所有信息。ps命令是最基本同时也是非常强大的进程查看命令，使用该命令可以确定有哪些进程正在运行和运行的状态、进程是否结束、进程有没有僵死、哪些进程占用了过多的资源等等，总之大部分信息都是可以通过执行该命令得到的。
 &emsp;&emsp;但是！！！这玩意参数太多了，多到吓人，我们会使用常用的几种参数就可以了。
 
@@ -56,7 +56,7 @@ ps -aux | grep named # 查看named进程详细信息
 ps -o command -p 91730 | sed -n 2p # 通过进程id获取服务名称
 ```
 
-### 4.1.2 实时监测进程　top 命令
+### 1.2 实时监测进程　top 命令
 &emsp;&emsp;ps 命令只能显示特定时间的信息，但是程序很多时候是频繁内存交换，用ps就不方便了。top跟ps类似，但是top可以实时显示。
 1）第一行显示当前时间、系统运行时间、登录用户数、系统平均负载（1分钟内、5分钟内、15分钟内，值越大负载越高）；
 2）第二行显示了进程概要。task总任务数量，running、sleeping、stopped、zombie分别表示运行、休眠、停止、僵化数量。（僵化就是进程完成了，但是他的父进程无响应）；
@@ -76,11 +76,14 @@ ps -o command -p 91730 | sed -n 2p # 通过进程id获取服务名称
 &emsp;&emsp;MEN 使用内存占可用内存比例
 &emsp;&emsp;TIME+ 程序启动到目前为止占用cpu时间
 &emsp;&emsp;COMMAND 程序名
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200301144000214.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8Cshell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89.md/52884810227101.png)
+
 &emsp;&emsp;默认情况下按照cpu进行排序。
 &emsp;&emsp;退出 q；
 
-### 4.1.3 结束进程　kill 命令
+### 1.3 结束进程　kill 命令
 &emsp;&emsp;作为程序员，很重要技能就是知道何时以及如何结束进程。进程之间通过信号来通信。进程的信号就是预先定义好的消息，进程可以识别他并快速反应。
 linxu进程信号
 1 HUP 挂起
@@ -120,14 +123,16 @@ linxu进程信号
 ```
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**！！！killall注意哈，如果用通配符别关了不该关闭的，造成文件损坏这种情况**
 
-## 4.2 监测磁盘空间
+## 2 监测磁盘空间
 &emsp;&emsp;程序员另外一个重要职责就是检测磁盘使用情况。
-### 4.2.1 挂载存储媒体（u盘、移动硬盘）
+### 2.1 挂载存储媒体（u盘、移动硬盘）
 &emsp;&emsp;deepin是插上存储设备后自动挂载，偶尔拔出时候未完全关闭，导致下次插入报错，需要重新挂载。Ext4格式基本上不会出现这个问题，NTFS（windos下数据），在deepin系统下偶尔会发生需要重新手动挂起的情况。
 &emsp;&emsp;deepin的文件系统是，把所有的磁盘都并入一个虚拟目录下，如果使用新的存储媒体，需要把他也放进虚拟目录，这个工作就叫挂载。
 
 &emsp;&emsp;我下边给电脑插了一个2T的移动硬盘，1TNTFS格式1TExt4格式。名两行输入mount可以看到挂载设备列表。我把它复制出来可以看到包含四个部分，媒体设备文件名、虚拟目录挂载点、文件系统类型、已挂载媒体访问状态
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200301152113441.png)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8Cshell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89.md/162454810217940.png)
+
 ```bash
 /dev/sdb2 on /media/yc/linux type ext4 (rw,nosuid,nodev,relatime,data=ordered,uhelper=udisks2)
 /dev/sdb1 on /media/yc/win type fuseblk (rw,nosuid,nodev,relatime,user_id=0,group_id=0,default_permissions,allow_other,blksize=4096,uhelper=udisks2)
@@ -136,28 +141,42 @@ linxu进程信号
 mount -t type device directory
 有挂载对应就是卸载
 umount directory|device
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2020030115255088.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8Cshell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89.md/265744810235581.png)
+
 可以看到只剩下一块了，win已经没了。
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200301152637211.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8Cshell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89.md/388554810226561.png)
+
 可以看到linux也没了。
 
-### 4.2.2 df命令查询设备剩余磁盘空间
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200301152926257.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70#pic_center)
+### 2.2 df命令查询设备剩余磁盘空间
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8Cshell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89.md/480504810226217.png)
+
 看的比较难受，因为这玩意默认是看有多少字节块（每个1024字节大小）
 df -h 用G/M来代替
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200301153144644.png#pic_center)
-### 4.2.3 du命令显示文件占多少磁盘
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8Cshell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89.md/122264910242312.png)
+
+### 2.3 du命令显示文件占多少磁盘
 -h 按用户易读的格式输出
 -c 显示一个总大小
 &emsp;&emsp;这里会很长，没有可读性，没有啥意义，如果处理数据文件请看下一节
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200301153451678.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70#pic_center)
 
-## 4.3 处理数据文件
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8Cshell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89.md/256344910235604.png)
+
+## 3 处理数据文件
 &emsp;&emsp;当你有大量数据，很难提取到有用信息，比如上一节的du，导致系统输出过量信息。deepin系统提高一些命令工具来处理数据。这会非常方便，务必掌握。
-###  4.3.1 排序数据   sort命令
+### 3.1 排序数据   sort命令
 默认情况下，sort会按照语言排序规则进行排序。
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200301154352655.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70#pic_center)
- 涉及数字的话，是否使用-n参数看你需要![在这里插入图片描述](https://img-blog.csdnimg.cn/2020030115461821.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70#pic_center)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8Cshell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89.md/389484910214759.png)
+
+ 涉及数字的话，是否使用-n参数看你需要
+ 
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8Cshell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89.md/509454910230840.png)
+
 涉及月份（log一般月份开头）的话，使用参数-M
 -b   排序忽略起始的空白   
 -d   忽略特殊字符，仅考虑空白和字母
@@ -169,7 +188,9 @@ df -h 用G/M来代替
 
 &emsp;&emsp;kt连起来用比较常见，t确定字符分割，k判断从哪里开始
 `sort -t ':' -k 3 -n /etc/passwd`，比如对密码文件可以根据用户ID进行排序（第三列）
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200301160323288.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8Cshell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89.md/95735010223834.png)
+
 &emsp;&emsp;上一节的du命令的话 
 
 ```bash
@@ -178,17 +199,21 @@ du -sh * | sort -nr
 du -sh * | sort -nr
 ```
 &emsp;&emsp;看下对比，是不是清楚多了。
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200301160914171.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70#pic_center)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200301160605721.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70#pic_center)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8Cshell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89.md/282265010235295.png)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8Cshell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89.md/376465010231165.png)
+
 &emsp;&emsp;你也许会问，k、g、m怎么没有按大小来啊，如果需要的话，命令行就复杂了。含义就不解释了，接下来几章会讲到。
 
 ```bash
 for i in $(ls -l |grep '^d' |du -s * |sort -nr|awk '{print $2}');do du -sh $i;done
 ```
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2020030116183414.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200301161847431.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8Cshell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89.md/484865010229967.png)
 
-###  4.3.2 搜索数据   grep命令
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8Cshell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89.md/553625010223051.png)
+
+### 3.2 搜索数据   grep命令
 &emsp;&emsp;总是需要在很多文件中找一行数据，不用手动翻看，grep是必备技能。egrep更强大，fgrep甚至支持列搜索。这个后面在学习。目前先熟悉grep。
 &emsp;&emsp;`grep three test.txt`  &emsp;&emsp;&emsp;&emsp;在txt中搜索带three的行
 &emsp;&emsp;`grep t test.txt`  &emsp;&emsp;&emsp;&emsp;在txt中搜索带t的行
@@ -200,7 +225,7 @@ for i in $(ls -l |grep '^d' |du -s * |sort -nr|awk '{print $2}');do du -sh $i;do
 &emsp;&emsp;grep 支持正则表达式，详细使用放在以后正则表达是说。如果会正则的话，直接&emsp;`grep [tf] test.txt`  &emsp;用就行了。
 
 
-###  4.3.2 压缩数据   
+### 3.3 压缩数据   
 &emsp;&emsp;zip工具可以把大型文件压缩成占用更小的文件。deepin默认包含很多解压工具。
 | 工具 | 文件拓展名 |描述 |
 |:--------:| :-------------:| :-------------:|
@@ -211,7 +236,7 @@ for i in $(ls -l |grep '^d' |du -s * |sort -nr|awk '{print $2}');do du -sh $i;do
 |zip|.zip|windos核心压缩工具|
 &emsp;&emsp;gzip软件包是GUN的项目产物，为了替代compress。gzip使用：
 **gzip 用来压缩**、**gzcat 用来浏览** 、**zunzip用来解压**
-###  4.3.2 归档数据  tar命令
+### 3.4 归档数据  tar命令
 &emsp;&emsp;上一节说的zip能够很好的压缩数据，但是linux/deepin下最广泛的还是tar。
 
 ```bash
@@ -272,7 +297,9 @@ drwxr-xr-x 2 yc yc  4096 3月   1 16:42 tar_Test12
 -rw-r--r-- 1 yc yc 10240 3月   1 16:45 test.tar
 (base) yc@yc-PC:~/Desktop/Test$ 
 ```
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200301164710872.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8Cshell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89.md/141805110216177.png)
+
 &emsp;&emsp;**之前也写过，很多下载的开源库都是.tgz（.tar.gz），比如cmake。这是gzip压缩的tar文件。可以直接用**
 
 ```bash
@@ -284,43 +311,41 @@ tar -zxvf filename.tgz打开
 
 
 ---
-# 5 理解shell
+# 理解shell
 &emsp;&emsp;本章主要探究shell的类型、理解shell的父/子关系、别出心裁的子shell用法、探究内建的shell命令。如果想学习shell，需要先清楚什么是CLI。shell与shell之间关系是本章重点。
 
-## 5.1 什么是shell
+## 1 什么是shell
 &emsp;&emsp;对于图形界面，用户点击某个图标就能启动某个程序；对于命令行，用户输入某个程序的名字（可以看做一个命令）就能启动某个程序。这两者的基本过程都是类似的，都需要查找程序在硬盘上的安装位置，然后将它们加载到内存运行。换句话说，图形界面和命令行要达到的目的是一样的，都是让用户控制计算机。
 &emsp;&emsp;真正能够控制计算机硬件（CPU、内存、显示器等）的只有操作系统内核（Kernel），图形界面和命令行只是架设在用户和内核之间的一座桥梁。
 &emsp;&emsp;由于安全、复杂、繁琐等原因，用户不能直接接触内核（也没有必要），需要另外再开发一个程序，让用户直接使用这个程序；该程序的作用就是接收用户的操作（点击图标、输入命令），并进行简单的处理，然后再传递给内核，这样用户就能间接地使用操作系统内核了。
 &emsp;&emsp;**用户界面和命令行就是这个另外开发的程序，就是这层“代理”。在Linux下，这个命令行程序叫做 Shell。Shell 是一个应用程序，它连接了用户和 Linux 内核，让用户能够更加高效、安全、低成本地使用 Linux 内核，这就是 Shell 的本质。**
 &emsp;&emsp;**Shell 本身并不是内核的一部分，它只是站在内核的基础上编写的一个应用程序，它和 QQ、迅雷、Firefox 等其它软件没有什么区别。然而 Shell 也有着它的特殊性，就是开机立马启动，并呈现在用户面前；用户通过 Shell 来使用 Linux，不启动 Shell 的话，用户就没办法使用 Linux。
 
-## 5.2 shell 的类型
+## 2 shell 的类型
 &emsp;&emsp;系统启动什么样的shell取决于个人用户的ID配置。/etc/passwd 文件第七个字段列出了默认的shell类型。基本上默认shell都是bash shell。
 默认的交互shell会在用户登录控制台（之前介绍的 tty ）或终端或在gui中运行仿真器时启动。下边显示的那个另外的shell  /bin/sh 是系统使用的shell，用来启动系统shell脚本。
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200306131031286.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8Cshell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89.md/300925110218587.png)
 
 
-## 5.3 shell 的父子关系
+## 3 shell 的父子关系
 &emsp;&emsp;  **CLI**  使用文本命令进行交互的用户界面
 &emsp;&emsp;每次打开深度终端时候启动的shell，是一个父shell。这个shell提供**CLI**提示符，等待命令行输入。如果在**CLI**后输入/bin/bash或其他等效bash命令时，会创建新的shell程序，这个就是子shell。
 &emsp;&emsp; 生成新的子shell后，没有任何相关信息。上一章的ps可以搞清楚
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200306132259970.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8Cshell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89.md/404995110225142.png)
+
 &emsp;&emsp;生成子shell时候只有部分父进程的环境被复制到子shell环境中，这会对变量在内的一些东西造成影像。子shell也可以创建子shell。退出子shell  exit就可以了。（使用shell脚本也可以生成子shell，这里一定要搞清楚环境的关系，我以后写。）
 
-## 5.4 shell 内建命令
+## 4 shell 内建命令
 &emsp;&emsp;外部命令，在bash shell外部的命令。
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200307121722114.png)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8Cshell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89.md/515755110237519.png)
+
+
 &emsp;&emsp;外部命令相当于创建一个子进程，子进程的环境也需要资源来创建，外部命令还是有代价的。
 &emsp;&emsp;内建命令和外部命令区别就是不需要借助外部程序文件来运行。比如 cd 、exit等命令。因为不需要衍生新的子进程，所以内建命令会更快。
 
 
-
-&emsp;
-&emsp;
-&emsp;
-&emsp;
-&emsp;
-&emsp;
-未完待续…
 
 

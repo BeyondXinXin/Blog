@@ -1,8 +1,10 @@
 # Deepin 使用教程：装机无法链接wifi（联想） tty报错 iwlwifi
 
 联想的ldeapad_laptop会干扰无线wifi硬件的开关，下图是官方解释
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191207151548516.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70#pic_center )
-#  1. 临时使用
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E8%A3%85%E6%9C%BA%E6%97%A0%E6%B3%95%E9%93%BE%E6%8E%A5wifi%EF%BC%88%E8%81%94%E6%83%B3%EF%BC%89%20tty%E6%8A%A5%E9%94%99%20iwlwifi.md/420483410221172.png)
+
+# 1. 临时使用
 在终端输入如下命令，WiFi就可以正常使用了
 
 ```bash
@@ -11,7 +13,7 @@ sudo rfkill list
 sudo modprobe -r ideapad_laptop
 ```
 
-#  2. 永久使用
+# 2. 永久使用
 上边只是临时使用，如果需要永久使用需要增加开机启动命令。有很多方法可以实现，我是增加一个开机启动脚本。当然你可以直接增加 rc.local  [deepin官方介绍自动动程序](https://wiki.deepin.org/wiki/%E8%87%AA%E5%90%AF%E5%8A%A8%E7%A8%8B%E5%BA%8F#.E4.BD.BF.E7.94.A8systemd.E6.89.A7.E8.A1.8Crc.local)
 
 ```bash
@@ -36,7 +38,10 @@ echo '1'|sudo -S modprobe -r ideapad_laptop
 
 exit 0
 ```
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191207150454491.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70#pic_center)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E8%A3%85%E6%9C%BA%E6%97%A0%E6%B3%95%E9%93%BE%E6%8E%A5wifi%EF%BC%88%E8%81%94%E6%83%B3%EF%BC%89%20tty%E6%8A%A5%E9%94%99%20iwlwifi.md/547613410211702.png)
+
+
 增加开机启动即可
 
 ```bash

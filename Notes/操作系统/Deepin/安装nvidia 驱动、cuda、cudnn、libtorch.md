@@ -1,6 +1,6 @@
 # Deepin 使用教程：安装nvidia 驱动、cuda、cudnn、libtorch
 
-## 标题Deepin 使用教程：安装nvidia 驱动、cuda、cudnn、libtorch
+## 1 标题Deepin 使用教程：安装nvidia 驱动、cuda、cudnn、libtorch
 
 最近两周都是远程办公，公司电脑没法用，我寻思把家里的笔记本也配置好gpu的工作环境吧。系统装的deepin自动安装各种失败，这里手动安装记录下。
 

@@ -18,15 +18,21 @@ Git上可以下载历史版本
 链接: [https://pan.baidu.com/s/1bDT6kDrnj7USYu_Klxz8Fg](https://pan.baidu.com/s/1bDT6kDrnj7USYu_Klxz8Fg)  密码: drku
 
 解压完成，在目录里新建bulid
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191115125855325.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E7%BC%96%E8%AF%91vtk.md/522073610211503.png)
+
 进入bulid 执行 
 
 > cmake-gui ..
 
 第一次Configuring勾选  qt相关
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191115125905308.png)![在这里插入图片描述](https://img-blog.csdnimg.cn/20191115125908579.png)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E7%BC%96%E8%AF%91vtk.md/18083710223593.png)
+
  取消勾选 test
-  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20191115125926403.png)
+ 
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E7%BC%96%E8%AF%91vtk.md/99473710228632.png)
+
   第二次选择qt_dir   cmake路径
   这是我的
 /home/yx/Qt5.11.3/5.11.3/gcc_64/lib/cmake/Qt5
@@ -42,6 +48,7 @@ Generating done
 
 
 两个版本安装方式一样，注意8.20我用带一个mode_vtkDICOM模块，源码需要改一下，路径见下图第六行改一下，要不然找不到
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191115130008503.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191115130017692.png)
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E7%BC%96%E8%AF%91vtk.md/211013710229927.png)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E7%BC%96%E8%AF%91vtk.md/295113710230929.png)
 

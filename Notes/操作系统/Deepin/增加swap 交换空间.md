@@ -14,7 +14,9 @@
 ```bash
 sudo swapon --show #查询当前是否存在交换空间
 ```
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191130125804822.png#pic_center)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%A2%9E%E5%8A%A0swap%20%E4%BA%A4%E6%8D%A2%E7%A9%BA%E9%97%B4.md/182054710233859.png)
+
 &emsp;&emsp;如果没有输出，表示装系统时候没有分swap。
 
 ```bash
@@ -24,7 +26,9 @@ free -h -t -s 1
 	# -t 显示合计信息
 	# -s 刷新间隔
 ```
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191130130302829.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70#pic_center)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%A2%9E%E5%8A%A0swap%20%E4%BA%A4%E6%8D%A2%E7%A9%BA%E9%97%B4.md/262944710238657.png)
+
 # 2.查询硬盘驱动器分区上的可用空间
 
 ```bash
@@ -32,9 +36,9 @@ df -h
 # df 显示有关每个文件所在的文件系统或默认情况下所有文件系统的信息。
 	#-h humanble,易读的
 ```
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191130132504391.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70#pic_center)
-&emsp;&emsp;挂载点表示我们的磁盘，这里可以看到我的剩余控件还很大。
 
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%A2%9E%E5%8A%A0swap%20%E4%BA%A4%E6%8D%A2%E7%A9%BA%E9%97%B4.md/403534710235016.png)
+&emsp;&emsp;挂载点表示我们的磁盘，这里可以看到我的剩余控件还很大。
 # 3. 创建交换文件
 
 ```bash

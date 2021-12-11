@@ -23,7 +23,7 @@
 * Deepin Wiki（官方文档） [https://wiki.deepin.org/](https://wiki.deepin.org/) 
 
 
----
+
 
 ## 2 软件推荐
 
@@ -39,7 +39,6 @@
 [图像处理与合成工具GIMP](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%90%88%E6%88%90%E5%B7%A5%E5%85%B7GIMP.md)
 
 
----
 
 
 ## 3 系统安装及驱动设置
@@ -53,14 +52,13 @@
 * [虚拟机拷贝  VMware、VirtualBox](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%8B%B7%E8%B4%9D%20%20VMware%E3%80%81VirtualBox.md)
 
 
----
 
 ## 4 系统优化
 * [增加swap 交换空间](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E5%A2%9E%E5%8A%A0swap%20%E4%BA%A4%E6%8D%A2%E7%A9%BA%E9%97%B4.md)
 * [调整缓存压力设置](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E8%B0%83%E6%95%B4%E7%BC%93%E5%AD%98%E5%8E%8B%E5%8A%9B%E8%AE%BE%E7%BD%AE.md)
 * [更改镜像源](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E6%9B%B4%E6%94%B9%E9%95%9C%E5%83%8F%E6%BA%90.md)
 
----
+
 
 ## 5 shell教程
 * [命令行和shell脚本编程  （三）](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8Cshell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%20%20%EF%BC%88%E4%B8%89%EF%BC%89.md)
@@ -69,7 +67,7 @@
 * [deepin terminal 没有tree命令](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/deepin%20terminal%20%E6%B2%A1%E6%9C%89tree%E5%91%BD%E4%BB%A4.md)
 
 
----
+
 
 ## 6 开发-软件安装
 
@@ -85,7 +83,7 @@
 * [git 代理](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/git%20%E4%BB%A3%E7%90%86.md)
 
 
----
+
 
 ## 7 开发-开源库编译
 * [编译armadillo](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E7%BC%96%E8%AF%91armadillo.md)
@@ -93,7 +91,7 @@
 * [编译opencv](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E7%BC%96%E8%AF%91opencv.md)
 * [编译vtk](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E7%BC%96%E8%AF%91vtk.md)
 
----
+
 
 ## 8 开发-插件/使用
 * [Qt 代码格式化  编译安装Artistic style](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/Qt%20%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F%E5%8C%96%20%20%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85Artistic%20style.md)
@@ -106,7 +104,6 @@
 * [vs code 编译调试 cmake（qtc++）工程](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/vs%20code%20%E7%BC%96%E8%AF%91%E8%B0%83%E8%AF%95%20cmake%EF%BC%88qtc%2B%2B%EF%BC%89%E5%B7%A5%E7%A8%8B.md)
 
 
----
 
 
 

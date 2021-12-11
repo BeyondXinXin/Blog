@@ -21,7 +21,7 @@ ssh  git@gitee.com:yaoxin001/openBrowser.git
 qt win下打包很方便，直接用 Engima Virtual Box 把dll等文件和exe压缩到一起就可以了。
 qt linux下打包，对于我这种半路出家的一直很恶心，我这里提供一种打包的方式。
 
-## 1.1 linux安装包
+## 1 linux安装包
 
 linux安装包类型有很多很多种（rmvb dep rpm pkg tar gzip AppImage 源码包），每种有自己的安装方式。
 大致上安装方式：直接双击 或者 直接解压看INSTALL.txt或者README。
@@ -31,9 +31,11 @@ flatpak可以直接下载下来用，deepin直接支持的；
 snapd要在终端先安装下运行环境；
 appimage下载下来加个可执行权限就能用了。
 至于安装方式，真多，
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191120153521393.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/20211211/xxx.6u8j7fge2j40.png)
+
 当然还有pip conda等等
-## 1.2 AppImage文件
+## 2 AppImage文件
 
 这里着重介绍一下AppImage这个安装包，它有这几个好处：
 1. 不需要安装，纯绿色方式
@@ -44,7 +46,7 @@ appimage下载下来加个可执行权限就能用了。
 这应该是最适合我这种个人（小型）桌面/控制台程序的发布方式。
 我理解AppImage文件只是个压缩文件，在它运行时候挂载，所有文件都在自己内部。
 
-## 1.3 .desktop文件
+## 3 .desktop文件
 
 这其实就是linux的桌面快捷方式文件
 
@@ -80,7 +82,7 @@ Categories                    应用的类型（内容相关）
 %U：URL列表。每个URL以分割段的方式传递给执行程序。本地文件以文件URL或文件路径的方式传递。
 ```
 
-## 1.4 linuxdeployqt
+## 4 linuxdeployqt
 
 > Makes Linux applications self-contained by copying in the libraries and plugins that the application uses, and optionally generates an AppImage. Can be used for Qt and other applications
 
@@ -108,7 +110,9 @@ sudo make install
 
 如果只想为x86_64平台捆绑应用程序，
 一般直接用编译好的就可以[https://github.com/probonopd/linuxdeployqt/releases](https://github.com/probonopd/linuxdeployqt/releases)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191120134609469.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/20211211/xxx.76w10a2o9zk0.png)
+
 就14m，如果慢的话，我的个人镜像    
 链接: [https://pan.baidu.com/s/1lO4WY6-C0mCwrXjMFwig7Q](https://pan.baidu.com/s/1lO4WY6-C0mCwrXjMFwig7Q)  密码: urtr
 
@@ -160,36 +164,42 @@ linuxdelpoyqt --version
 普通封装打包，了解这些就够了，如果很多定制化要求，请移步git主页
 
 # 2软件打包，截图注意看路径
-## 2.1准备工作
-######  1）准备好打包的程序，qt creator内relese下编译且运行测试过。
+## 1 2.1准备工作
+###### 1.1.1.1.1 1）准备好打包的程序，qt creator内relese下编译且运行测试过。
 生成文件的路径cmake里可以改
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2019112014373852.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191120143546308.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
 
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/20211211/xxx.6d705kmimsk0.png)
 
-###### 2）准备一个文件结构
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2019112014193441.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/20211211/xxx.3zehf3x61l00.png)
+
+###### 1.1.1.1.2 2）准备一个文件结构
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/20211211/xxx.p199ajsbzcw.png)
+
 三个空文件夹就可以
 your_app下一节放
 your_app.desktop    your_app.png放在上一级就可以，见下一步
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2019112014331379.png)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/20211211/xxx.1zdfmw35kruo.png)
 
 文件夹下增加两个文件，图标和.desktop文件，desktop文件怎么写看本文1.3 .desktop文件
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191120143350334.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191120144032868.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
 
+![](https://cdn.jsdelivr.net/gh/BeyondXinXin/BeyondXinXIn@main/20211211/xxx.dhfz0dendcg.png)
 
-###### 3）准备下载好的  linuxdeployqt-x86_64.AppImage文件
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/20211211/xxx.2fzlpot72x7o.png)
+
+###### 1.1.1.1.3 3）准备下载好的  linuxdeployqt-x86_64.AppImage文件
 git
 [https://github.com/probonopd/linuxdeployqt/releases](https://github.com/probonopd/linuxdeployqt/releases)
 我的个人镜像    
 链接: [https://pan.baidu.com/s/1lO4WY6-C0mCwrXjMFwig7Q](https://pan.baidu.com/s/1lO4WY6-C0mCwrXjMFwig7Q)  密码: urtr
 只能打包64！！！，32的需要自己编译。（详细了解看本文1.4）
 它名字太长了，把他重命名linuxdeployqt.AppImage
-###### 4）把上边三个文件，放在一个文件夹下，比如我的
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2019112014322073.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+###### 1.1.1.1.4 把上边三个文件，放在一个文件夹下，比如我的
 
-## 2.2打包
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/20211211/xxx.4wr1zwn2ssu0.png)
+
+## 2 2.2打包
 新建文件 bulid_openBrowser.sh，上图4）那个文件
 如果提示没有权限一律
 
@@ -262,13 +272,16 @@ libfcitxplatforminputcontextplugin.so   解决qt creator无法输入中文
 libqsqlpsql.so、libqsqlmysql.so这两个数据库用的，如果程序没有数据库，我的openBrowser（也没用），脚本里这两个相关的可以删了。这是我其他程序用到了，这里没删，总有时候会用到。
 
 
-## 2.3测试
+## 3 2.3测试
 执行
 > sudo '/home/yc/Documents/work/bulid_openBrowser.sh'
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191120144802991.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191120144903734.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191120144925853.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/20211211/xxx.7fapff4d54s0.png)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/20211211/xxx.3pfkz1359vy0.png)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/20211211/image.png)
+
 *注意：此方法仅向上兼容，
 **deepin15 打包后   deepin15可运行   ubuntu18可运行   ubuntu16不可运行**
 **ubuntu18 打包后   deepin15可运行   ubuntu18可运行   ubuntu16不可运行**

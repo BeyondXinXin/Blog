@@ -21,14 +21,12 @@
 官方下载页面：[https://www.deepin.org/zh/download/](https://www.deepin.org/zh/download/)
 
 
-![image](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/PixX/image.6563zkmpeyw0.png)
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%AE%89%E8%A3%85%E5%B9%B6%E4%BD%93%E9%AA%8C%20deepin20.2.2.md/256894210215875.png)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%AE%89%E8%A3%85%E5%B9%B6%E4%BD%93%E9%AA%8C%20deepin20.2.2.md/321504210226352.png)
 
 
-![image](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/PixX/image.1ohqsqax31s0.png)
-
-
-![image](https://cdn.jsdelivr.net/gh/BeyondXinXin/BeyondXinXIn@main/PixX/image.30nw4lclj9k0.png)
-
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%AE%89%E8%A3%85%E5%B9%B6%E4%BD%93%E9%AA%8C%20deepin20.2.2.md/396494210218922.png)
 
 
 ## 2 安装系统：

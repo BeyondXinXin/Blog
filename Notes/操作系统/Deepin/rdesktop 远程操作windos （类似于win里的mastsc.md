@@ -24,7 +24,9 @@ rdesktop  -a 16 -u Administrator -p  xinxin  118.25.63.144
 ```bash
   "!"  
 ```
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2019112401231552.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/20211211/xxx.48p5vacue9q0.png)
+
  2. 远程操作不能全屏，不能改垂直方向分辨率，横向可以用-g设置
 
 

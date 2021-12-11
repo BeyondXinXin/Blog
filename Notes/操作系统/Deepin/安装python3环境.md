@@ -16,7 +16,8 @@
 
 
 安装完成后，退出重进命令行，测试一下python，如下图就是正常
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191115144323124.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%AE%89%E8%A3%85python3%E7%8E%AF%E5%A2%83.md/417004410220952.png)
 
 开发环境用vs code，你打开py文件，会提示你安装几个插件，安装好就可以了。
 

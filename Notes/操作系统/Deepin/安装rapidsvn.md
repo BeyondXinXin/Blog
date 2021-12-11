@@ -1,7 +1,10 @@
 # Deepin 使用教程：安装rapidsvn
 
 Deepin应用商店可以直接找到
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191115124744336.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%AE%89%E8%A3%85rapidsvn.md/459324310243873.png)
+
 全中文的，怎么用，没啥好讲的
 安装meld  Deepin应用商店可以直接找到
 安装vs code Deepin应用商店可以直接找到
@@ -12,5 +15,5 @@ Standrad explore设置code（我用vs code ，你要是别的也行比如gvim等
 Diff tool  设置 meld
 Merge 设置meld
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191115124806476.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/deepin/%E5%AE%89%E8%A3%85rapidsvn.md/563874310243968.png)
 
