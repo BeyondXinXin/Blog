@@ -22,101 +22,88 @@
 * Deepin Github：[https://github.com/linuxdeepin](https://github.com/linuxdeepin)
 * Deepin Wiki（官方文档） [https://wiki.deepin.org/](https://wiki.deepin.org/) 
 
----
-
-## 2 新版本体验
-
-- **[安装并体验 Deepin20.2.2](https://beondxin.blog.csdn.net/article/details/118653691)**
-- **[Deepin 使用教程：虚拟机（VirtualBox）安装增强功能](https://beondxin.blog.csdn.net/article/details/106558713)**
-
 
 ---
-## 3 软件推荐
-- **[Deepin 使用教程：软件安装时 apt install pip install conda install 的区别](https://blog.csdn.net/a15005784320/article/details/103085456)**
 
+## 2 软件推荐
 
-#### 3.1.1 游戏
-- **[Deepin 使用教程：安装steam dota2](https://blog.csdn.net/a15005784320/article/details/103083319)**
-
-
-#### 3.1.2 桌面美化
-- **[Deepin 使用教程：苹果风格顶部拓展栏](https://blog.csdn.net/a15005784320/article/details/104713827)**
+* [apt install  pip install  conda install](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/apt%20install%20%20pip%20install%20%20conda%20install.md)
+* [Deepin 安装steam dota2](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/Deepin%20%E5%AE%89%E8%A3%85steam%20dota2.md)
+* [苹果风格顶部拓展栏](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E8%8B%B9%E6%9E%9C%E9%A3%8E%E6%A0%BC%E9%A1%B6%E9%83%A8%E6%8B%93%E5%B1%95%E6%A0%8F.md)
+* [FFmpeg  和 Convert   MP4等视频文件转为gif动态图片](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/FFmpeg%20%20%E5%92%8C%20Convert%20%20%20MP4%E7%AD%89%E8%A7%86%E9%A2%91%E6%96%87%E4%BB%B6%E8%BD%AC%E4%B8%BAgif%E5%8A%A8%E6%80%81%E5%9B%BE%E7%89%87.md)
+* [rdesktop 远程操作windos （类似于win里的mastsc](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/rdesktop%20%E8%BF%9C%E7%A8%8B%E6%93%8D%E4%BD%9Cwindos%20%EF%BC%88%E7%B1%BB%E4%BC%BC%E4%BA%8Ewin%E9%87%8C%E7%9A%84mastsc.md)
+* [画流程图、时序图、uml图等](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E7%94%BB%E6%B5%81%E7%A8%8B%E5%9B%BE%E3%80%81%E6%97%B6%E5%BA%8F%E5%9B%BE%E3%80%81uml%E5%9B%BE%E7%AD%89.md)
+* [打开.jar程序](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E6%89%93%E5%BC%80.jar%E7%A8%8B%E5%BA%8F.md)
+* [数据库可视化](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%AF%E8%A7%86%E5%8C%96.md)
 - [**Deepin 使用教程：Conky-manager 美化 增加桌面内存等占用显示**](https://blog.csdn.net/a15005784320/article/details/103436084)
-
-
-#### 3.1.3 图像视频浏览/处理
-
 - **[Deepin 使用教程：图像处理与合成工具GIMP](https://blog.csdn.net/a15005784320/article/details/104589114)**
 
 
-
-- **[Deepin 使用教程：FFmpeg 和 Convert MP4等视频文件转为gif动态图片](https://blog.csdn.net/a15005784320/article/details/104716766)**
-
-#### 3.1.4 其他
-- **[Deepin 使用教程：rdesktop 远程操作windos(类似于win里的mastsc)](https://blog.csdn.net/a15005784320/article/details/103220878)**
-- **[Deepin 使用教程：画流程图/时序图/uml图等](https://blog.csdn.net/a15005784320/article/details/104854788)**
-- **[Deepin 使用教程：打开.jar程序](https://blog.csdn.net/a15005784320/article/details/104858875)**
 ---
 
-# 系统相关
-#### 1.1.1 系统安装及驱动设置
- - **Deepin 使用教程：系统安装**
-这个比较简单，deepin官网有详细步骤，windos或者ubuntu下U盘制作我都试过，一键即可制作完成。
 
-- **[Deepin 使用教程：ssh链接](https://blog.csdn.net/a15005784320/article/details/103220785)**
-- **[Deepin 使用教程：安装nvidia 驱动、cuda、cudnn、libtorch](https://blog.csdn.net/a15005784320/article/details/104353904)**
-- **[Deepin 使用教程：配置网络打印  装机自带打印设置，添加搜索就可以了](https://blog.csdn.net/a15005784320/article/details/103083299)**
-- **[Deepin 使用教程：装机无法链接wifi（联想） tty报错  iwlwifi 0000:00:14.3: Unhandled alg: 0x707）](https://blog.csdn.net/a15005784320/article/details/103083288)**
- - **[Deepin 使用教程：虚拟机拷贝 VMware、VirtualBox](https://blog.csdn.net/a15005784320/article/details/104858386)**
+## 3 系统安装及驱动设置
 
-#### 1.1.2 系统优化
-- **[Deepin 使用教程：增加swap 交换空间](https://blog.csdn.net/a15005784320/article/details/103323346)**
-- **[Deepin 使用教程：调整缓存压力设置](https://blog.csdn.net/a15005784320/article/details/103220825)**
-- **[Deepin 使用教程：打开文件浏览器快捷键](https://blog.csdn.net/a15005784320/article/details/103084901)**
-- **[Deepin 使用教程：更改镜像源](https://blog.csdn.net/a15005784320/article/details/103083392)**
-
-#### 1.1.3 shell教程
-- **[Deepin 使用教程：命令行和shell脚本编程（一）](https://blog.csdn.net/a15005784320/article/details/103392759)**
-- **[Deepin 使用教程：命令行和shell脚本编程（二）](https://blog.csdn.net/a15005784320/article/details/104591335)**
-- **[Deepin 使用教程：命令行和shell脚本编程（三）](https://blog.csdn.net/a15005784320/article/details/104710728)**
-- **[Deepin 使用教程：deepin terminal 没有tree命令](https://blog.csdn.net/a15005784320/article/details/103568291)**
+* [安装并体验 Deepin20.2.2](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E5%AE%89%E8%A3%85%E5%B9%B6%E4%BD%93%E9%AA%8C%20Deepin20.2.2.md)
+* [虚拟机（VirtualBox）安装增强功能](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%88VirtualBox%EF%BC%89%E5%AE%89%E8%A3%85%E5%A2%9E%E5%BC%BA%E5%8A%9F%E8%83%BD.md)
+* [ssh链接](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/ssh%E9%93%BE%E6%8E%A5.md)
+* [安装nvidia 驱动、cuda、cudnn、libtorch](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E5%AE%89%E8%A3%85nvidia%20%E9%A9%B1%E5%8A%A8%E3%80%81cuda%E3%80%81cudnn%E3%80%81libtorch.md)
+* [配置网络打印  装机自带打印设置，添加搜索就可以了](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C%E6%89%93%E5%8D%B0%20%20%E8%A3%85%E6%9C%BA%E8%87%AA%E5%B8%A6%E6%89%93%E5%8D%B0%E8%AE%BE%E7%BD%AE%EF%BC%8C%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%B0%B1%E5%8F%AF%E4%BB%A5%E4%BA%86.md)
+* [装机无法链接wifi（联想） tty报错 iwlwifi](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E8%A3%85%E6%9C%BA%E6%97%A0%E6%B3%95%E9%93%BE%E6%8E%A5wifi%EF%BC%88%E8%81%94%E6%83%B3%EF%BC%89%20tty%E6%8A%A5%E9%94%99%20iwlwifi.md)
+* [虚拟机拷贝  VMware、VirtualBox](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%8B%B7%E8%B4%9D%20%20VMware%E3%80%81VirtualBox.md)
 
 
 ---
-# Deepin 程序开发
-#### 1.1.1 软件安装
-- **[Deepin 使用教程：安装Git](https://blog.csdn.net/a15005784320/article/details/103083327)** 
-- **[Deepin 使用教程：安装Rapidsvn](https://blog.csdn.net/a15005784320/article/details/103083335)** 
-- **[Deepin 使用教程：安装Gitkraken](https://blog.csdn.net/a15005784320/article/details/103083351)**
-- **[Deepin 使用教程：安装Qt creator（c++ 一套](https://blog.csdn.net/a15005784320/article/details/103083373)**
-- **[Deepin 使用教程：安装Cmake](https://blog.csdn.net/a15005784320/article/details/103083407)**
-- **[Deepin 使用教程：安装FontZip2  字体提取工具](https://blog.csdn.net/a15005784320/article/details/104858607)**
-- **[Deepin 使用教程：安装SqliteBrowser 数据库可视化](https://blog.csdn.net/a15005784320/article/details/103163542)**
-- **[Deepin 使用教程：安装Anaconda  python3.7 环境](https://blog.csdn.net/a15005784320/article/details/103084981)**
--  **[Deepin 使用教程：安装Meld 文件比较工具](https://blog.csdn.net/a15005784320/article/details/105025208)**
 
-#### 1.1.2 开源库编译
-- **[Deepin 使用教程：编译Vtk](https://blog.csdn.net/a15005784320/article/details/103083420)**
-- **[Deepin 使用教程：编译Itk](https://blog.csdn.net/a15005784320/article/details/103083623)**
-- **[Deepin 使用教程：编译Opencv](https://blog.csdn.net/a15005784320/article/details/103083642)**
-- **[Deepin 使用教程：编译CGAL](https://blog.csdn.net/a15005784320/article/details/101346916)**
-- **[Deepin 使用教程：编译Armadillo](https://blog.csdn.net/a15005784320/article/details/103083672)**
+## 4 系统优化
+* [增加swap 交换空间](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E5%A2%9E%E5%8A%A0swap%20%E4%BA%A4%E6%8D%A2%E7%A9%BA%E9%97%B4.md)
+* [调整缓存压力设置](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E8%B0%83%E6%95%B4%E7%BC%93%E5%AD%98%E5%8E%8B%E5%8A%9B%E8%AE%BE%E7%BD%AE.md)
+* [更改镜像源](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E6%9B%B4%E6%94%B9%E9%95%9C%E5%83%8F%E6%BA%90.md)
+
+---
+
+## 5 shell教程
+* [命令行和shell脚本编程  （三）](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8Cshell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%20%20%EF%BC%88%E4%B8%89%EF%BC%89.md)
+* [命令行和shell脚本编程（一）](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8Cshell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89.md)
+* [命令行和shell脚本编程（二）](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8Cshell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89.md)
+* [deepin terminal 没有tree命令](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/deepin%20terminal%20%E6%B2%A1%E6%9C%89tree%E5%91%BD%E4%BB%A4.md)
 
 
+---
 
-#### 1.1.3 插件/使用
-- **[Deepin 使用教程：Qt 代码格式化  编译安装Artistic style](https://blog.csdn.net/a15005784320/article/details/103083692)**
+## 6 开发-软件安装
 
-- **[Deepin 使用教程：Qt creator 无法输入中文](https://blog.csdn.net/a15005784320/article/details/105449095)**
 
-- **[Deepin 使用教程：Deepin 控制台前多了个 base](https://blog.csdn.net/a15005784320/article/details/103085341)**
-- **[Deepin 使用教程：qt  打开qss文件 语法高亮](https://blog.csdn.net/a15005784320/article/details/103089341)**
-- **[Deepin 使用教程：命令行打开软件，退出中断后软件不关闭](https://blog.csdn.net/a15005784320/article/details/103099351)**
-- **[Deepin 使用教程：qt程序打包 linuxdeployqt 封装 AppImage](https://blog.csdn.net/a15005784320/article/details/103160721)**
-- **[Deepin 使用教程：Qt creator 无法输入中文](https://blog.csdn.net/a15005784320/article/details/105449095)**
-- **[Deepin 使用教程：markdown 编辑器](https://blog.csdn.net/a15005784320/article/details/103213020)**
-- **[Deepin 使用教程：vs code 编译调试 cmake（qt/c++）工程](https://blog.csdn.net/a15005784320/article/details/103923402)**
+* [安装Gitkraken](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E5%AE%89%E8%A3%85Gitkraken.md)
+* [安装Meld 文件比较工具](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E5%AE%89%E8%A3%85Meld%20%E6%96%87%E4%BB%B6%E6%AF%94%E8%BE%83%E5%B7%A5%E5%85%B7.md)
+* [安装VM虚拟机](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E5%AE%89%E8%A3%85VM%E8%99%9A%E6%8B%9F%E6%9C%BA.md)
+* [安装cmake](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E5%AE%89%E8%A3%85cmake.md)
+* [安装git](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E5%AE%89%E8%A3%85git.md)
+* [安装python3环境](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E5%AE%89%E8%A3%85python3%E7%8E%AF%E5%A2%83.md)
+* [安装qt（c++ 一套](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E5%AE%89%E8%A3%85qt%EF%BC%88c%2B%2B%20%E4%B8%80%E5%A5%97.md)
+* [安装rapidsvn](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E5%AE%89%E8%A3%85rapidsvn.md)
+* [git 代理](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/git%20%E4%BB%A3%E7%90%86.md)
 
+
+---
+
+## 7 开发-开源库编译
+* [编译armadillo](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E7%BC%96%E8%AF%91armadillo.md)
+* [编译itk](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E7%BC%96%E8%AF%91itk.md)
+* [编译opencv](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E7%BC%96%E8%AF%91opencv.md)
+* [编译vtk](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E7%BC%96%E8%AF%91vtk.md)
+
+---
+
+## 8 开发-插件/使用
+* [Qt 代码格式化  编译安装Artistic style](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/Qt%20%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F%E5%8C%96%20%20%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85Artistic%20style.md)
+* [Qt creator 无法输入中文](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/Qt%20creator%20%E6%97%A0%E6%B3%95%E8%BE%93%E5%85%A5%E4%B8%AD%E6%96%87.md)
+* [Deepin 控制台前多了个 base](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/Deepin%20%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%89%8D%E5%A4%9A%E4%BA%86%E4%B8%AA%20base.md)
+* [qt  打开qss文件 语法高亮](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/qt%20%20%E6%89%93%E5%BC%80qss%E6%96%87%E4%BB%B6%20%E8%AF%AD%E6%B3%95%E9%AB%98%E4%BA%AE.md)
+* [命令行打开软件，退出中断后软件不关闭](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%89%93%E5%BC%80%E8%BD%AF%E4%BB%B6%EF%BC%8C%E9%80%80%E5%87%BA%E4%B8%AD%E6%96%AD%E5%90%8E%E8%BD%AF%E4%BB%B6%E4%B8%8D%E5%85%B3%E9%97%AD.md)
+* [qt程序打包  linuxdeployqt 封装 AppImage](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/qt%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85%20%20linuxdeployqt%20%E5%B0%81%E8%A3%85%20AppImage.md)
+* [markdown 编辑器](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/markdown%20%E7%BC%96%E8%BE%91%E5%99%A8.md)
+* [vs code 编译调试 cmake（qtc++）工程](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/vs%20code%20%E7%BC%96%E8%AF%91%E8%B0%83%E8%AF%95%20cmake%EF%BC%88qtc%2B%2B%EF%BC%89%E5%B7%A5%E7%A8%8B.md)
 
 
 ---
