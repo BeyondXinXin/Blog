@@ -35,8 +35,8 @@
 * [画流程图、时序图、uml图等](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E7%94%BB%E6%B5%81%E7%A8%8B%E5%9B%BE%E3%80%81%E6%97%B6%E5%BA%8F%E5%9B%BE%E3%80%81uml%E5%9B%BE%E7%AD%89.md)
 * [打开.jar程序](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E6%89%93%E5%BC%80.jar%E7%A8%8B%E5%BA%8F.md)
 * [数据库可视化](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%AF%E8%A7%86%E5%8C%96.md)
-- [**Deepin 使用教程：Conky-manager 美化 增加桌面内存等占用显示**](https://blog.csdn.net/a15005784320/article/details/103436084)
-- **[Deepin 使用教程：图像处理与合成工具GIMP](https://blog.csdn.net/a15005784320/article/details/104589114)**
+[Conky-manager 美化 增加桌面内存等占用显示](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/Conky-manager%20%E7%BE%8E%E5%8C%96%20%E5%A2%9E%E5%8A%A0%E6%A1%8C%E9%9D%A2%E5%86%85%E5%AD%98%E3%80%81cpu%E5%8D%A0%E7%94%A8%E6%98%BE%E7%A4%BA.md)
+[图像处理与合成工具GIMP](https://github.com/BeyondXinXin/Blog/blob/master/Notes/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Deepin/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%90%88%E6%88%90%E5%B7%A5%E5%85%B7GIMP.md)
 
 
 ---
