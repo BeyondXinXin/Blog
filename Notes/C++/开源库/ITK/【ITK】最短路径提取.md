@@ -1,23 +1,33 @@
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190827112717371.gif)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190827112725617.gif)
+# 【ITK】最短路径提取
 
-有一个寻找最短路径的需求
-搜索后发现这篇文章  
-Fast Marching Minimal Path Extraction in ITK 
-https://www.insight-journal.org/browse/publication/213
+![](https://img-blog.csdnimg.cn/20190827112717371.gif =800x)
+
+![](https://img-blog.csdnimg.cn/20190827112725617.gif =800x)
+
+有一个寻找最短路径的需求,搜索后发现这篇文章
+
+Fast Marching Minimal Path Extraction in ITK
+(https://www.insight-journal.org/browse/publication/213)
+
 开源的作者08年写的，2019这个项目在git上还有更新。
-作者使用了    梯度下降和正阶梯度下降。详细思路可以去git上下载pdf，有具体讲解
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190827105532948.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
-**我下文用的图像处理opencv、qt、itk都用了，不建议这样，最好只用一个。我是为了图快速完成，之前写过现成的就直接复制过来了。随后我会都改成只用qt的**
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190827105852934.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2019082710592220.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190827105949587.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+作者使用了梯度下降和正阶梯度下降。详细思路可以去git上下载pdf，有具体讲解
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2019082711000070.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/itk/%E3%80%90itk%E3%80%91%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E6%8F%90%E5%8F%96.md/20715215240574.png =800x)
+
+我下文用的图像处理opencv、qt、itk都用了，不建议这样，最好只用一个。我是为了图快速完成，之前写过现成的就直接复制过来了。随后我会都改成只用qt的
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/itk/%E3%80%90itk%E3%80%91%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E6%8F%90%E5%8F%96.md/199025215238178.png =800x)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/itk/%E3%80%90itk%E3%80%91%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E6%8F%90%E5%8F%96.md/306095215235680.png =800x)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/itk/%E3%80%90itk%E3%80%91%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E6%8F%90%E5%8F%96.md/424295215216921.png =600x)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/itk/%E3%80%90itk%E3%80%91%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E6%8F%90%E5%8F%96.md/552795215239361.png =600x)
 
 
 作者给出案例使用的是  mhd（zraw）图，我们肯定需要png/bmp传入了。修改如下：
-第一步      图片如果是彩色的做一个灰度变换、图片如果是二值图，把他拉到灰度
+
+## 1 图片如果是彩色的做一个灰度变换、图片如果是二值图，把他拉到灰度
 
 ```javascript
 QImage OpencvImgChange::cvMat2QImage(const Mat &mat) {  // Mat 改成 QImage
@@ -117,8 +127,9 @@ QImage OpencvGray::Bin(QImage src, int threshold) {		// 二值化
 ```
 
 
-第二部 把案例接口类型转换，说白了就就是作者程序接受的是float类型并压缩后的zraw图片
-我们就把png图片从char转换成float并压缩成二进制就好了（不压缩也可以，1024*1024的图片压缩和不压缩寻找路径时间差值在0.05s左右）
+## 2 把案例接口类型转换
+
+说白了就就是作者程序接受的是float类型并压缩后的zraw图片,我们就把png图片从char转换成float并压缩成二进制就好了（不压缩也可以，1024*1024的图片压缩和不压缩寻找路径时间差值在0.05s左右）
 
 ```
 	constexpr unsigned int Dimension = 2;
@@ -151,9 +162,12 @@ QImage OpencvGray::Bin(QImage src, int threshold) {		// 二值化
         }
 ```
 
-第三部 结果生成显示
+## 3 结果生成显示
+
 作者在文章里指出，结果不支持输入输出，用户需要手动实现对文件的读写
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190827105232903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/itk/%E3%80%90itk%E3%80%91%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E6%8F%90%E5%8F%96.md/457545315234497.png =800x)
+
 那我就把图片变成背景透明，让后叠加在背景图片上，用这两个函数
 
 ```
@@ -186,18 +200,9 @@ void MainWindow::ConvertImageToTransparent(QImage &baseImage) {
     }
 }
 ```
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2019082710575964.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/201908271058235.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/itk/%E3%80%90itk%E3%80%91%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E6%8F%90%E5%8F%96.md/132625415228043.png =800x)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/itk/%E3%80%90itk%E3%80%91%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E6%8F%90%E5%8F%96.md/235305415221177.png =800x)
 
 
-&emsp;
-&emsp;
-&emsp;
-&emsp;
-&emsp;
-&emsp;
-
----
-vtk学习教程
-[Study-VTK](https://blog.csdn.net/a15005784320/article/details/104855111)

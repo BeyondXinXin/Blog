@@ -1,13 +1,19 @@
-自相交包括三种（三角形片体），而模型有自相交则无法生成体网格等。vcg（meshlab）有提供一个自相交检测接口，在实际使用时有些bug，比如补完部分自相交后，其余自相交检测不准确。这里用cgal测试一下效果。
+# 【CGAL 】自相交检测
+
+自相交包括三种（三角形片体），而模型有自相交则无法生成体网格等。
+
+vcg（meshlab）有提供一个自相交检测接口，在实际使用时有些bug，比如补完部分自相交后，其余自相交检测不准确。这里用cgal测试一下效果。
 
 思路就是vtk读取片体的stl模型，生成off文件。
 cgal读取off文件，识别自相交并记录相交片体。
 vtk显示自相交片体。
-（如果修补下次更新）
 
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200119173909133.png#pic_center)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200119173854191.png)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/cgal/%E3%80%90cgal%20%E3%80%91%E8%87%AA%E7%9B%B8%E4%BA%A4%E6%A3%80%E6%B5%8B.md/481260912239916.png =800x)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/cgal/%E3%80%90cgal%20%E3%80%91%E8%87%AA%E7%9B%B8%E4%BA%A4%E6%A3%80%E6%B5%8B.md/545550912235024.png =800x)
+
 
 ```cpp
 cmake_minimum_required(VERSION 3.1.0)

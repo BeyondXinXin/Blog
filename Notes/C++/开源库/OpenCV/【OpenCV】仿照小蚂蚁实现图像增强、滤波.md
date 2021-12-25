@@ -16,7 +16,7 @@
 
 
 
-## 实现方法
+## 1 实现方法
 
 &emsp;&emsp;图像前处理思路就是每次再界面上刷新图片时调用一个模板函数`QPixmap(const QPixmap &, QWidget *)`，实现最后渲染不同效果。
 
@@ -84,7 +84,4 @@ QPixmap Emboss(const QPixmap &pix, QWidget * ) {
     return QPixmap::fromImage(image);
 }
 ```
-
-## 插件设计
-&emsp;&emsp;[KISS Dicom Viewer：插件实现方法](https://beondxin.blog.csdn.net/article/details/113620696)
 

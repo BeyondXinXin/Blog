@@ -1,16 +1,20 @@
-@[TOC](CGAL  选择某一孔进行补洞)
-
-# 需求和原理
+# CGAL 选择某一孔进行补洞
+## 1 需求和原理
 需要做一个片状模型表面选择补洞的效果，之前代码是用vtk实现的，就是寻找边缘，让后依次链接，但是效果不是很好。把洞用三角形补上后显得很突兀，没有对空洞根据周围做一个细化和光顺。vtk只进行到步骤b，cgal有现成的到步骤d
 
 补洞原理是这片文章
-P. Liepa. Filling holes in meshes. In Proceedings of the 2003 Eurographics/ACM SIGGRAPH Symposium on Geometry Processing, pages 200–205. Eurographics Association, 2003.
-补洞后光顺是这篇文章
-M. Zou, T. Ju, and N. Carr. An algorithm for triangulating multiple 3d polygons. In Computer Graphics Forum, volume 32, pages 157–166. Wiley Online Library, 2013.
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191006113428235.png)
 
-# 官方案例
+> P. Liepa. Filling holes in meshes. In Proceedings of the 2003 Eurographics/ACM SIGGRAPH Symposium on Geometry Processing, pages 200–205. Eurographics Association, 2003.
+
+补洞后光顺是这篇文章
+> M. Zou, T. Ju, and N. Carr. An algorithm for triangulating multiple 3d polygons. In Computer Graphics Forum, volume 32, pages 157–166. Wiley Online Library, 2013.
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/cgal/%E3%80%90cgal%E3%80%91%E9%80%89%E6%8B%A9%E6%9F%90%E4%B8%80%E5%AD%94%E8%BF%9B%E8%A1%8C%E8%A1%A5%E6%B4%9E.md/385385111226937.png =800x)
+
+## 2 官方案例
+
 [CGAL补洞案例](https://doc.cgal.org/latest/Polygon_mesh_processing/index.html#title22)
+
 这个案例有一个问题，就是他是针对所有空洞全部封闭，无法选择某一个孔进行封闭。
 **Hole Filling**
 此软件包提供了一种算法，用于填充三角形曲面网格中或由描述多段线的点序列定义的一个闭合孔。文[6]描述了该算法的主要步骤，总结如下。
@@ -78,11 +82,12 @@ int main(int argc, char* argv[])
   return 0;
 }
 ```
-# 自己思路
+
+## 3 自己思路
+
 无非就这四部：
 识别网格上的洞、对每个洞三角化、网格细分、网格光滑
 
-这是我具体思路
 1. 先通过vtk手动选择需要补孔的片体（存为stl格式）
 2. 把原模型（stl格式）和步骤一vtk选择的孔洞（stl文件）同时输入给CGAL
 3. 把孔洞文件所有点记录在list里
@@ -93,27 +98,39 @@ int main(int argc, char* argv[])
 8. 把修补好的洞进行细化和光顺
 
 
-# 实现截图
-待修补的模型![](https://img-blog.csdnimg.cn/201910061143121.png#pic_center)
-选择要封闭区域![在这里插入图片描述](https://img-blog.csdnimg.cn/20191006114502487.png#pic_center)
-选择区域完成![在这里插入图片描述](https://img-blog.csdnimg.cn/20191006114527483.png#pic_center)
-正在修补![在这里插入图片描述](https://img-blog.csdnimg.cn/20191006114554159.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_10,color_FFFFFF,t_50#pic_center)
-修补完成![在这里插入图片描述](https://img-blog.csdnimg.cn/20191006114628348.png)
-修补效果![在这里插入图片描述](https://img-blog.csdnimg.cn/20191006114655550.png)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191006114754997.png)![在这里插入图片描述](https://img-blog.csdnimg.cn/20191006114806769.png)![在这里插入图片描述](https://img-blog.csdnimg.cn/20191006114814589.png)
+## 4 实现截图
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191006114847156.png)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191006114859482.png)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191006114906799.png)
+![待修补的模型](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/cgal/%E3%80%90cgal%E3%80%91%E9%80%89%E6%8B%A9%E6%9F%90%E4%B8%80%E5%AD%94%E8%BF%9B%E8%A1%8C%E8%A1%A5%E6%B4%9E.md/381055311222691.png =800x)
 
 
-# 程序源码
+![选择要封闭区域](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/cgal/%E3%80%90cgal%E3%80%91%E9%80%89%E6%8B%A9%E6%9F%90%E4%B8%80%E5%AD%94%E8%BF%9B%E8%A1%8C%E8%A1%A5%E6%B4%9E.md/502825311240571.png =800x)
 
-这个是补洞的全部源码
+![选择区域完成](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/cgal/%E3%80%90cgal%E3%80%91%E9%80%89%E6%8B%A9%E6%9F%90%E4%B8%80%E5%AD%94%E8%BF%9B%E8%A1%8C%E8%A1%A5%E6%B4%9E.md/31095411238175.png =800x)
 
----
+
+![正在修补](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/cgal/%E3%80%90cgal%E3%80%91%E9%80%89%E6%8B%A9%E6%9F%90%E4%B8%80%E5%AD%94%E8%BF%9B%E8%A1%8C%E8%A1%A5%E6%B4%9E.md/159365411235677.png =800x)
+
+
+![修补完成](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/cgal/%E3%80%90cgal%E3%80%91%E9%80%89%E6%8B%A9%E6%9F%90%E4%B8%80%E5%AD%94%E8%BF%9B%E8%A1%8C%E8%A1%A5%E6%B4%9E.md/350125411216918.png =800x)
+
+
+![修补效果](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/cgal/%E3%80%90cgal%E3%80%91%E9%80%89%E6%8B%A9%E6%9F%90%E4%B8%80%E5%AD%94%E8%BF%9B%E8%A1%8C%E8%A1%A5%E6%B4%9E.md/502295411239358.png =800x)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/cgal/%E3%80%90cgal%E3%80%91%E9%80%89%E6%8B%A9%E6%9F%90%E4%B8%80%E5%AD%94%E8%BF%9B%E8%A1%8C%E8%A1%A5%E6%B4%9E.md/315595511234494.png =200x)
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/cgal/%E3%80%90cgal%E3%80%91%E9%80%89%E6%8B%A9%E6%9F%90%E4%B8%80%E5%AD%94%E8%BF%9B%E8%A1%8C%E8%A1%A5%E6%B4%9E.md/495205511228040.png =200x)
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/cgal/%E3%80%90cgal%E3%80%91%E9%80%89%E6%8B%A9%E6%9F%90%E4%B8%80%E5%AD%94%E8%BF%9B%E8%A1%8C%E8%A1%A5%E6%B4%9E.md/579325511221174.png =200x)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/cgal/%E3%80%90cgal%E3%80%91%E9%80%89%E6%8B%A9%E6%9F%90%E4%B8%80%E5%AD%94%E8%BF%9B%E8%A1%8C%E8%A1%A5%E6%B4%9E.md/74225611211704.png =200x)
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/cgal/%E3%80%90cgal%E3%80%91%E9%80%89%E6%8B%A9%E6%9F%90%E4%B8%80%E5%AD%94%E8%BF%9B%E8%A1%8C%E8%A1%A5%E6%B4%9E.md/149865611214208.png =200x)
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/cgal/%E3%80%90cgal%E3%80%91%E9%80%89%E6%8B%A9%E6%9F%90%E4%B8%80%E5%AD%94%E8%BF%9B%E8%A1%8C%E8%A1%A5%E6%B4%9E.md/262625611223155.png =200x)
+
+
+## 5 程序源码
+
+
 [app.h里是预编译文件，这个没必要用，把他去了换成自己的预编译头文件](https://blog.csdn.net/a15005784320/article/details/98480663)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191006115611620.png)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/cgal/%E3%80%90cgal%E3%80%91%E9%80%89%E6%8B%A9%E6%9F%90%E4%B8%80%E5%AD%94%E8%BF%9B%E8%A1%8C%E8%A1%A5%E6%B4%9E.md/451495611216040.png =800x)
 
 ---
  * CGALThread类

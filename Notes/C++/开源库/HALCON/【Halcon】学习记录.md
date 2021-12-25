@@ -1,42 +1,65 @@
-@[TOC](Qt、Halcon联合开发)
+# 【Halcon】学习记录
+
 最近比较空闲，记录下自己原来学习过的东西。
+
 本人菜鸟一个，机械出身半路转学qt，所有东西都是自己在网上学习，不保证此博客正确性，仅仅是我个人理解。
 
 Halcon是一款优秀的商业版图像处理软件，Qt在可视化和界面开发方面拥有很强大的功能和便捷性。两者结合可以做很多事情。关于背景、介绍等等百度有一大把，我就不再复制，直接介绍我自己的理解和应用。
 
 我个人把qt和halcon相结合分成三类，展示如下。
+
 1.没有交互过程，halcon处理qt显示
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190804115507609.gif)
 2.halcon独自完成交互过程
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190804120628896.gif)
 
 3.qt完成交互过程
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190804115600627.gif)
+
 https://github.com/chinayaoxin/halcon_qt.git
-## 1. qt安装
+
+## 1 1. qt安装
+
 官网下载直接安装就可以，我直接用的vs2015座编译和调试器
 
-## 2. halcon安装
+## 2 2. halcon安装
+
 官网下载直接安装就可以，每个月更新下license
 
-## 3. qt配置halcon环境
+## 3 3. qt配置halcon环境
+
 qt和halcon环境都搭建好后，我们联合开发。
+
 为了便于以后利用，我们把halcon配置单独写进api里。
+
 首先一路默认新建一个qt widgets application 程序
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190802152721410.png)
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2019080215281123.png)
+
 建好后，选中.pro文件，右键在资源管理器打开，可以看到生成文件。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190802152827818.png)
+
 在这个文件夹下我们新建文件夹Qt_HALCON文件夹，方便以后移植。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190802153109564.png)
+
 在Qt_HALCON文件夹里新建两个.txt文件，我们手写pri文件和头文件。（个人认为pri是qmake为了便于整理代码用的，和直接放入pro一模一样）
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190802153615235.png)
+
 重命名为 qt_halcon.pri 和 QT_Halcon
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190802153648436.png)
+
 用记事本打开这两个文件分别写入
 
-```javascript
+```cpp
 // qt_halcon.pri
 INCLUDEPATH += 'C:/Program Files/MVTec/HALCON-18.05-Progress/include'
 INCLUDEPATH += 'C:/Program Files/MVTec/HALCON-18.05-Progress/include/halconcpp'
@@ -60,13 +83,17 @@ LIBS += -L'C:/Program Files/MVTec/HALCON-18.05-Progress/lib/x64-win64/' -lhalcon
 using namespace HalconCpp;
 #endif
 ```
+
 qt_halcon.pri就是引用halcon的头文件和lib文件，halcon在c++下不分debug和relese
+
 **具体路径要根据自己安装来定**
+
 QT_Halcon就是为了方便我们其他文件调用halcon的头文件
 
 
 建立好模板后我们需要调用，打开我们的pro文件，文件最后添加
-```javascript
+
+```cpp
 // untitleda.pro文件添加
 INCLUDEPATH     += $$PWD/Qt_HALCON
 include         ($$PWD/Qt_HALCON/qt_halcon.pri)
@@ -76,9 +103,13 @@ RCC_DIR         = temp/rcc  #指定rcc命令将.qrc文件转换成qrc_*.h文件�
 UI_DIR          = temp/ui   #指定rcc命令将.qrc文件转换成qrc_*.h文件的存放目录
 OBJECTS_DIR     = temp/obj  #指定目标文件(obj)的存放目录
 ```
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190802154808458.png)
+
 添加后，选中.pro文件，右键qmake，可以看到添加完成。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190802154909964.png)
+
 此时，这个程序的halcon环境就配置完成，这个Qt_HALCON文件夹就可以作为我们的模板，以后需要用到halcon，直接把这个文件夹复制进去就好。
 
 
@@ -86,30 +117,30 @@ OBJECTS_DIR     = temp/obj  #指定目标文件(obj)的存放目录
 
 
 
-## 4. qt下使用halcon
+## 4 4. qt下使用halcon
 
-### 4.1. 方式一   完全脱离
+### 4.1 4.1. 方式一   完全脱离
 完全脱离，不需要过多的界面交互，qt仅作为图片显示。
 此方式没有任何Qt和Halon的交互，和使用opencv一样，qt负责前端显示，halcon负责图像处理。
 这里涉及到QImage与HImage 相互转换，或者共用内存。我直接给出如何转换，要知道原理的话自己百度，我就不复制了。
 
-***为了测试我们这里定义一个简单的需求，qt打开彩色图片，halcon将其旋转180°***
-***为了模拟大家正常使用情况，halcon程序我们由halcon自带的ide编写，让后导出c++代码，由qt引用***
+为了测试我们这里定义一个简单的需求，qt打开彩色图片，halcon将其旋转180°
+
+为了模拟大家正常使用情况，halcon程序我们由halcon自带的ide编写，让后导出c++代码，由qt引用
 
 
 在之前建立的工程里我们在mainwindow类下添加
 *程序转自https://blog.csdn.net/liyuanbhu/article/details/91356988*
 
-```javascript
+```cpp
 //mainwindow.h添加
 #include <QT_Halcon>
-
 ------------------------------------
-
 bool HImage2QImage(HalconCpp::HImage &from, QImage &to);
 bool QImage2HImage(QImage &from, HalconCpp::HImage &to);
 ```
-```javascript
+
+```cpp
 //mainwindow.cpp添加
 bool MainWindow::HImage2QImage(HalconCpp::HImage &from, QImage &to)
 {
@@ -201,25 +232,38 @@ bool MainWindow::QImage2HImage(QImage &from, HalconCpp::HImage &to)
 }
 
 ```
+
 这两个函数就是QImage 和HalconCpp的互转。
 接下来打开mainwindow.ui，拖两个btn一个label
 两个btn直接右键新建click槽函数
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190802162204278.png)
+
 接下来打开halcon软件，我们写一个简单的彩色转灰度程序。
 
-```javascript
+```cpp
 read_image (Image, 'E:/test.jpg')
 rotate_image (Image, ImageRotate, 180, 'constant')
 ```
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190802172201948.png)
-接下来选择顶部依次点击 文件——导出，设置如下，位置桌面就可以。![在这里插入图片描述](https://img-blog.csdnimg.cn/20190802161022295.png)
+
+接下来选择顶部依次点击 文件——导出，设置如下，位置桌面就可以。
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190802161022295.png)
+
 会提示无效程序，忽略就可以，因为在halcon里我们就没有写一个完整的程序，后面章节会有完整程序的导出。其实这一步很多余，一般直接写c++程序就可以，不需要用halcon导出。halcon帮助写的很完善，halcon和c++代码也可以直接在右上方选择。
+
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190802161412315.png)
+
 导出后，我们再桌面打开这个文件。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190802161443610.png)
+
 自己仔细阅读下，这个很好理解。其实就是定义一个action()函数，函数里实现我们的彩色转灰度。main里就是try catch调用这个action函数。我们直接把这两个函数复制过来用就可以了。
 
-```javascript
+```cpp
 //mainwindow.h添加
 #include <QDebug>
 ------------------------------------
@@ -262,21 +306,27 @@ void MainWindow::action()
     RotateImage(tmp_himage, &tmp_himage, 180, "constant");
 }
 ```
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190804102255701.png)
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190804102302970.png)
 
 
 
 
 
-### 4.2. 方式二   HWindowd独自完成交互
+### 4.2 4.2. 方式二   HWindowd独自完成交互
+
 使用HWindow绑定label句柄，所有界面操作直接由halcon自身完成。
 这里就是调用 HTuple  hv_WindowID[6];//窗口句柄，绑定qlabel的 Hlong MainWndID;//当前窗口句柄。让后每次label的大小变换重新出刷新halcon窗口适应label大小。
-***为了测试我们这里定义一个简单的需求，qt重写halcon模板匹配助手***
-***为了模拟大家正常使用情况，halcon程序我们由halcon自带的ide编写，让后导出c++代码，由qt引用***
-***图片浏览器和halcon相关所有代码给出，这个测试软件还包含些其他东西，我随后分开后在完整贴出***
 
-```javascript
+为了测试我们这里定义一个简单的需求，qt重写halcon模板匹配助手
+
+为了模拟大家正常使用情况，halcon程序我们由halcon自带的ide编写，让后导出c++代码，由qt引用
+
+图片浏览器和halcon相关所有代码给出，这个测试软件还包含些其他东西，我随后分开后在完整贴出
+
+```cpp
 //第一次绑定label句柄
  MainWndID = (Hlong)myscrollarea->label->winId();
     OpenWindow(0, 0, myscrollarea->label->width() ,
@@ -285,11 +335,16 @@ void MainWindow::action()
     HDevWindowStack::Push(hv_WindowID[0]);
     DispObj(ho_Image, HDevWindowStack::GetActive());
 ```
-label大小改变后需要重绘，此时更新halcon窗口。我这里的
-ho_Image_show  显示图片
+
+label大小改变后需要重绘，此时更新halcon窗口。
+
+我这里的ho_Image_show  显示图片
+
 ModelRegion_show  显示交互生成的region（halcon）
+
 ho_TransContours_show  显示结果region（halcon）
-```javascript
+
+```cpp
 //重绘函数，更新界面图片
 void frmMain::paintEvent(QPaintEvent *event)
 {    
@@ -324,12 +379,13 @@ void frmMain::paintEvent(QPaintEvent *event)
 ```
 
 
-
 这里需要一定的qt和halcon基础，首先用qt构建一个可以拖拽和缩放的图片浏览器。
 （图片用label显示，我这里提供一种浏览器显示方法，自定义myScrollArea类继承QScrollArea，类里setWidget一个QLabel用来显示图片）
 这个图片浏览器类有很多方式可以实现，用自己的也可以，只要图片显示是用label就可以了，最好把是否可以移动和缩放做成接口放到外部。
+
 本人是半路自学，代码习惯不太好，有强迫症的自行修改。右键我留了个菜单，不需要的自行删除。
-```javascript
+
+```cpp
 //myscrollarea.h添加
 #ifndef MYSCROLLAREA_H
 #define MYSCROLLAREA_H
@@ -527,7 +583,9 @@ bool myScrollArea::eventFilter(QObject *obj, QEvent *evt)
 }
 
 ```
+
 ui界面，自己找了halcon模板匹配助手绘制。我这里把ui_.h的setupUi和retranslateUi贴出来，也可以参考下。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190804104100906.png)
 
 ```javascript
@@ -1473,7 +1531,7 @@ halcon部分代码，手动打开模板匹配助手，建立模板，生成代�
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190804103720655.png)
 HALCON代码导出c++后，和第一部一样自己先简单浏览下，了解逻辑。让后我们截取选用。
 
-```javascript
+```cpp
 //halcon里用到的变量
 //---------------------界面二边缘提取变量---------------------//
     Hlong MainWndID;//当前窗口句柄
@@ -1489,7 +1547,7 @@ HALCON代码导出c++后，和第一部一样自己先简单浏览下，了解�
     //---------------------界面三缺陷筛选变量---------------------//
 ```
 
-```javascript
+```cpp
 //halcon里截出来的核心函数
 //---------------------打开图片---------------------//
 void frmMain::on_pushButton_2_clicked()
@@ -1699,8 +1757,10 @@ void frmMain::on_pushButton_9_clicked()
 
 }
 ```
+
 Connect关联，绑定按钮和画图事件、绑定horizontalSlider和spinBox数值统一
-```javascript
+
+```cpp
 void frmMain::initConnect()
 {
     connect(ui->p1,SIGNAL(clicked()),this,SLOT(on_pushButton_ModelRegionArea()));
@@ -1750,8 +1810,11 @@ void frmMain::initConnect()
 
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190804105620219.png)
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190804105639115.png)
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190804105647657.png)
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190804105706445.png)
 
 
@@ -1762,11 +1825,12 @@ void frmMain::initConnect()
 
 
 
-### 4.3. 方式三  qt完成交互传输给halcon
+### 4.3 4.3. 方式三  qt完成交互传输给halcon
+
 官方案例，HWindow绑定qt事件，每次交互操作后FlushBuffer。
 这里需要对qt和halcon都有一定的了解，去系统变量里看下HALCONEXAMPLES路径，cpp里边有个Matching的例子,我把它注释下，又添加方式二的需求，展示如何改这个案例。
 
-```javascript
+```cpp
 #pragma once
 
 #include <qlabel.h>
@@ -1820,7 +1884,7 @@ private:
 
 ```
 
-```javascript
+```cpp
 #pragma once
 #include <QWidget>
 #include <QPainter>
@@ -1884,7 +1948,7 @@ int main(int argc, char **argv)
 }
 ```
 
-```javascript
+```cpp
 CONFIG		+= qt debug
 QT              += core gui  widgets
 
@@ -1907,7 +1971,7 @@ SOURCES	    += main.cpp
 
 ```
 
-```javascript
+```cpp
 //此示例应用程序显示使用与形状模型匹配的模式来定位对象。 此外，它还展示了如何使用检测到的对象位置和旋转来构建检查任务的搜索空间。 在该特定示例中，IC上的打印用于找到IC。 从找到的位置和旋转，构造两个测量矩形以测量IC的引线之间的间隔。 由于本例中使用的照明，引线在几个位置和旋转处具有255的饱和灰度值，这扩大了引线的表观宽度，因此似乎减小了引线之间的间距，尽管使用相同的板 在所有图像中。
 #include "matching.h"
 #include <QGridLayout>
@@ -2331,7 +2395,7 @@ void Matching::ArbitrarilyDry(void)
 
 ```
 
-```javascript
+```cpp
 #include <QMouseEvent>
 #include <QWheelEvent>
 

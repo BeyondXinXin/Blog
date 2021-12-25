@@ -1,13 +1,17 @@
-实用至上
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190919181223578.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+# 【ITK】读取dcm标签
 
 
-先创建list
-```javascript
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/itk/%E3%80%90itk%E3%80%91%E8%AF%BB%E5%8F%96dcm%E6%A0%87%E7%AD%BE.md/331334415217550.png =800x)
+
+
+- 先创建list
+
+```c++
   QHash<QString, QString> dcm_tig;
 ```
-读取dcm
-```javascript
+- 读取dcm
+
+```c++
       using PixelType = signed short;
     constexpr unsigned int dimension = 2;
     using ImageType = itk::Image<PixelType, dimension>;
@@ -25,15 +29,17 @@
     }
 ```
 
-//读取dcm信息并
-```javascript
+- 读取dcm信息并
+
+```c++
 // DCM 信息读取
     using DictionaryType = itk::MetaDataDictionary;
     const DictionaryType &dictionary = dicom_io->GetMetaDataDictionary();
     using MetaDataStringType = itk::MetaDataObject<std::string>;  
 ```
-//遍历dcm信息并写入list
-```javascript
+- 遍历dcm信息并写入list
+
+```c++
  for (auto ite = dictionary.Begin(); ite != dictionary.End(); ++ite) {
         QString id = QString::fromStdString(ite->first);
         itk::MetaDataObjectBase::Pointer entry = ite->second;
@@ -46,20 +52,23 @@
         dcm_tig.insert(key, value);
     }
 ```
-打印QHash
-```javascript
+
+- 打印c++
+
+```c++
     QHash<QString, QString> ::const_iterator it;
     for (it = dcm_tig.begin(); it != dcm_tig.end(); it++) {
         qDebug() << it.key() << "," << it.value();
     }
 ```
-这个是我把提取出来的id 丢到百度翻译里出来的结果,翻译准确性不敢保证哈.
-其实不用QHash都提取出来,你要什么就对照id提取成qmap就可以了
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190919180653377.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
+- 百度翻译结果
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/itk/%E3%80%90itk%E3%80%91%E8%AF%BB%E5%8F%96dcm%E6%A0%87%E7%AD%BE.md/446244515237716.png =800x)
 
 
 完整测试代码
-```javascript
+```c++
    // DCM 信息读取
     QHash<QString, QString> dcm_tig;
 
@@ -101,7 +110,9 @@
         qDebug() << it.key() << "," << it.value();
     }
 ```
+
 头文件就用几个,我不去拆了,都复制了
+
 ```
 // ITK includes
 #include <itkImage.h>
@@ -130,13 +141,3 @@
 #include <itkRegularStepGradientDescentOptimizer.h>
 #include <itkNearestNeighborInterpolateImageFunction.h>
 ```
-&emsp;
-&emsp;
-&emsp;
-&emsp;
-&emsp;
-&emsp;
-
----
-vtk学习教程
-[Study-VTK](https://blog.csdn.net/a15005784320/article/details/104855111)

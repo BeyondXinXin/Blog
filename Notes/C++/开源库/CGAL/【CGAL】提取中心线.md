@@ -1,6 +1,8 @@
+# 【CGAL】提取中心线
+
 vtk提取中心线的思路是依次寻找最大内接球，cgal是把模型封闭，让后无线细化成一条线，我测试感觉点会突然离散，不知什么原因
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200119175624415.png#pic_center)
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/cgal/%E3%80%90cgal%E3%80%91%E6%8F%90%E5%8F%96%E4%B8%AD%E5%BF%83%E7%BA%BF.md/456170812221107.png =800x)
 
 ```cpp
 vtkSmartPointer<vtkPolyData> RefinementComputingCenterLines(

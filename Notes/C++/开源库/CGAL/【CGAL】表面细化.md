@@ -1,3 +1,5 @@
+# 【CGAL 】表面细化
+
 cgla提供了四种细化方式,这是第一天测试结果,明天四种都测试完在更新这一块,这是其中一种细化方法
 
 
@@ -48,20 +50,20 @@ void CGALMethods::CatmullClarkSubdivision(QString off_filename) {
 ```
 
 
+![细化前结果](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/cgal/%E3%80%90cgal%20%E3%80%91%E8%A1%A8%E9%9D%A2%E7%BB%86%E5%8C%96.md/451701012242535.png =800x)
 
-细化前结果
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190925185149607.png)
 
-细化后结果
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2019092518515754.png)
+
+![细化后结果](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/cgal/%E3%80%90cgal%20%E3%80%91%E8%A1%A8%E9%9D%A2%E7%BB%86%E5%8C%96.md/584011012241546.png =800x)
 
 ---
 
 完整代码
-    Source/05CGALThread/cgalthread.h
-    Source/05CGALThread/cgalthread.cpp
-    Source/05CGALThread/cgalthreadsubdivision.h
-    Source/05CGALThread/cgalthreadsubdivision.cpp
+
+* Source/05CGALThread/cgalthread.h
+* Source/05CGALThread/cgalthread.cpp
+* Source/05CGALThread/cgalthreadsubdivision.h
+* Source/05CGALThread/cgalthreadsubdivision.cpp
 
 
     

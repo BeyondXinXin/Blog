@@ -1,14 +1,17 @@
-&emsp;&emsp;DICOM文件tag标签通常比较有用，之前写过如何利用ITK读取dcm的标签&emsp;&emsp;[Study-VTK：利用 itk 读取dcm标签信息](https://blog.csdn.net/a15005784320/article/details/101030403)&emsp;&emsp; 标签。这里记录下如何利用ITK修改dcm标签。
+# 【ITK】修改dcm标签
 
-**&emsp;&emsp;请注意，修改DICOM标头的内容存在很大风险/操作标头包含有关患者的基本信息，因此必须保护其一致性，防止任何数据损坏。在尝试修改文件的DICOM标头之前，您必须确保您有充分的理由这样做。**
 
-&emsp;&emsp;源码。
-WriteDcmSrc  [http://118.25.63.144/temporary/WriteDcmSrc.zip](http://118.25.63.144/temporary/WriteDcmSrc.zip)
+> 请注意，修改DICOM标头的内容存在很大风险/操作标头包含有关患者的基本信息，因此必须保护其一致性，防止任何数据损坏。在尝试修改文件的DICOM标头之前，您必须确保您有充分的理由这样做。
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200411180245204.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
-&emsp;&emsp;程序就是读取一张全黑的dcm,标签也全部是空的，只有图像信息，自己可以写如标签并保存。如果想读取任意dcm并修改写出，只要替换程序里input_black.dcm即可。
 
-&emsp;&emsp;写入用的是**EncapsulateMetaData**
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/itk/%E3%80%90itk%E3%80%91%E4%BF%AE%E6%94%B9dcm%E6%A0%87%E7%AD%BE.md/258674815230385.png =800x)
+
+程序就是读取一张全黑的dcm,标签也全部是空的，只有图像信息，自己可以写如标签并保存。如果想读取任意dcm并修改写出，只要替换程序里input_black.dcm即可。
+
+写入用的是`EncapsulateMetaData`
+
+
 ```cpp
 itk::EncapsulateMetaData<std::string>(
             dictionary, entryId.toStdString(), value.toStdString() );
@@ -538,22 +541,3 @@ void AboutDicomTags::on_pushButton_clicked() {
 
 
 
-
-
-
-&emsp;
-&emsp;
-&emsp;
-&emsp;
-&emsp;
-&emsp;
-
----
-vtk学习教程
-[Study-VTK](https://blog.csdn.net/a15005784320/article/details/104855111)
-
-本案例代码：
-[https://gitee.com/yaoxin001/WorkDemo](https://gitee.com/yaoxin001/WorkDemo)
-
-docsify首页
-[http://118.25.63.144/](http://118.25.63.144/)

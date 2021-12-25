@@ -1,42 +1,50 @@
-**ITK图像读写机制**
+# 【ITK】多张图转mha
+
+## 1 ITK图像读写机制
  1.用户层面：itkImageFileReader（读） itkImageFileWriter（写）
  2. 内部实现：由内部ImageIO对象具体负责图像文件读写操作，该对象通过对象工厂根据用户输入文件类型生成相应的ImageIO对象
 
-**优点**
+## 2 优点
  1. 使用方便，用户无须关注内部实现细节
  2. 扩展方便，扩展支持新的图像读取而无须修改用户接口，只需添加相应的工厂类和IO类
+ 
 [ 阿兵先生](https://blog.csdn.net/webzhuce/article/details/70556228)
 [ jasonliu1919](https://blog.csdn.net/ljp1919/article/details/41487505)
 
 
 知道图片  dimension和像素格式就可以方便的读取图片
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190906115452208.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNTAwNTc4NDMyMA==,size_16,color_FFFFFF,t_70)
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/itk/%E3%80%90itk%E3%80%91%E5%A4%9A%E5%BC%A0%E5%9B%BE%E8%BD%ACmha.md/162654215229683.png =600x)
 
 
 **itk::NumericSeriesFileNames**
+
 [官方文档](https://itk.org/Doxygen/html/classitk_1_1NumericSeriesFileNames.html#a76670caa6d772004190f4e6659ec333e)
+
 便于图片批量读取
-SetSeriesFormat () 设置文件名称     %d表示图片名称
-SetStartIndex () 设置起始名称序号
-SetEndIndex()设置结束名称序号
-SetIncrementIndex()设置间隔
+- SetSeriesFormat () 设置文件名称     %d表示图片名称
+- SetStartIndex () 设置起始名称序号
+- SetEndIndex()设置结束名称序号
+- SetIncrementIndex()设置间隔
 
 举个例子 文件夹图片名称
-aaa01bbb.png  aaa02bbb.png  aaa03bbb.png  aaa04bbb.png
-SetSeriesFormat应写为
-"aaa%2dbbb.png"
+- aaa01bbb.png  aaa02bbb.png  aaa03bbb.png  aaa04bbb.png
+- SetSeriesFormat应写为 "aaa%2dbbb.png"
 
 
 这是我用mhd转stl的过程
 其中
 
+```c++
     this_struct.itk_nameGenerator = "file_path_";
     this_struct.itk_outputFilename =QString("%1/tmp_.mhd").arg(this_struct.itk_nameGenerator);
     this_struct.itk_SetStartIndex = 1;
     this_struct.itk_SetEndIndex = 330;
     this_struct.itk_SetIncrementIndex = 1;
+```
 
-```javascript
+
+```c++
 //itk 连续读取png转化为mhd(NDims = 3)
     using PixelType = unsigned short;
     constexpr unsigned int itk_dimension = 3;

@@ -1,4 +1,11 @@
-头文件我就不分了
+# CGAL OFF STL相互转换
+
+[三角网格文件OFF的格式分析及OFF到STL的转化](http://www.doc88.com/p-8495281266662.html)
+
+
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/cgal/off%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F.md/308762113220954.png =200x)
+![](https://raw.githubusercontent.com/BeyondXinXin/BeyondXinXIn/main/c%2B%2B/%E5%BC%80%E6%BA%90%E5%BA%93/cgal/off%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F.md/407792113238742.png =200x)
+
 ```cpp
 // 01frame includes
 #include "cgalthreadsubdivision.h"
@@ -22,6 +29,7 @@
 
 
 功能实现了,效率肯定没有内存直接拷过去快,我再去官方帮助文档找一找,有合适的我再换.
+
 ```cpp
 void CGALMethods::STL2OFF(
     QString stl_filename, QString off_filename) {
